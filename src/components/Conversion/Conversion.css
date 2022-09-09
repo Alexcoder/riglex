@@ -1,0 +1,87 @@
+.conversion_container_div{
+    background-color: black;
+    height: 12rem;
+    padding: 3rem 22rem 0rem 22rem;
+ }
+ .border_div{
+    border: 2px solid gray; 
+    border-radius: 4rem;
+    background-color: green;
+    height: 35rem;
+    box-shadow: 0rem 0.1rem 0.6rem 0rem black;
+    gap: 1rem;
+
+ }
+ .select{
+    box-shadow: 0rem 0.1rem 0.2rem 0rem black;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+     width: 25rem;
+     margin: 1rem;
+}
+.h1_data{
+    margin-top: 1rem;
+}
+@media screen and (max-width: 1024px){
+    .conversion_container_div{
+        height: 12rem;
+        padding: 8rem 0rem 0rem 0rem;
+     }
+     .border_div{
+        height: 40rem;
+     }
+     .select{
+        box-shadow: 0rem 0.1rem 0.2rem 0rem black;
+        border-radius: 0.5rem;
+         width: 18rem;
+    }
+    
+    }
+
+ 
+@media screen and (max-width: 420px){
+    .conversion_container_div{
+        height: 12rem;
+        padding: 8rem 0rem 0rem 0rem;
+     }
+     .select{
+        box-shadow: 0rem 0.1rem 0.2rem 0rem black;
+        border-radius: 0.5rem;
+         width: 18rem;
+    }
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .lexwares{
+        margin-top: 2rem;
+        margin-bottom: -5rem;
+        margin-left: 2rem;
+   }
+
+

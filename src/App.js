@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {Home, Navigation} from './components';
+import {Home, Navigation, ConversionPage} from './components';
 
 
 function App() {
@@ -9,11 +9,8 @@ function App() {
       <Switch>
        <Route path="/" exact component={Home}/>
        <Route path="/navigation" exact component={Navigation}/>
+       <Route path="/field-unit-converter" exact component={ConversionPage}/>
       </Switch>
-      {/* PRIMARY/PLUG CEMENTING PAGE
-      PRIMARY/PLUG CEMENTING RESULT
-      MIXFLUID PAGE
-      QUIZ PAGE */}
     </div>
   );
 }
