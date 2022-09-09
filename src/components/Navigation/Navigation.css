@@ -1,0 +1,37 @@
+.navigation_link{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    border: 1px solid gray;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-radius: 2rem;
+    background-color: blue;
+    color: white;
+    font-size: 1.3rem;
+    box-shadow: 0rem 0.1rem 0.5rem 5px gray;
+}
+.link:hover{
+    background-color: green;
+    color: white;
+}
+.link_back{
+    text-decoration: none;
+    border: 2px solid gray;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 1.2rem;
+    background-color: red;
+    color: white;
+    font-size: 1.3rem;
+    box-shadow: 0rem 0.1rem 0.5rem 5px gray;
+}
+.link_back:hover{
+    text-transform: capitalize;
+    background-color: green;
+}
+
+@media screen and (min-width: 940px) {
+    .navigation_div_container{
+     padding: 4rem 22rem 0rem 22rem;
+    }
+}

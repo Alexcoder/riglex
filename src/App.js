@@ -10,10 +10,10 @@ function App() {
        <Route path="/" exact component={Home}/>
        <Route path="/navigation" exact component={Navigation}/>
       </Switch>
-      PRIMARY/PLUG CEMENTING PAGE
+      {/* PRIMARY/PLUG CEMENTING PAGE
       PRIMARY/PLUG CEMENTING RESULT
       MIXFLUID PAGE
-      QUIZ PAGE
+      QUIZ PAGE */}
     </div>
   );
 }
