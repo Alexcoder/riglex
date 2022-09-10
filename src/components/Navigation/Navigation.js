@@ -28,7 +28,8 @@ const Navigation = () => {
       </Grid>
 
       <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-        <Link to="/field-unit-converter" className="link">UNIT CONVERSION</Link>
+        {/* <Link to="/field-unit-converter" className="link">UNIT CONVERSION</Link> */}
+        <a href="https://fieldunitconverter.netlify.app" className="link">UNIT CONVERSION</a>
       </Grid>
 
       <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} className="navigation_link">
