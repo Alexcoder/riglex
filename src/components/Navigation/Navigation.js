@@ -10,7 +10,7 @@ const Navigation = () => {
 
 
   if(navMode==="unit_conversion" & isClicked) history.push("/select/field-unit-converter")
-  else if(navMode==="primary" & isClicked) history.push("/primary");
+  else if(navMode==="primary" & isClicked) history.push("/select/primary");
   else if(navMode==="liner" & isClicked) history.push("/liner");
   else if(navMode==="plug" & isClicked) history.push("/plug");
   else if(navMode==="additive" & isClicked) history.push("/additive");
@@ -27,7 +27,6 @@ const Navigation = () => {
       <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="Xselect_grid">
         <FormControl fullWidth>
         <InputLabel>SELECT</InputLabel>
-          {/* <p>SELECT</p> */}
             <Select onChange={(e)=> {setNavMode(e.target.value)}} value={navMode} className="nav_select" >
                <MenuItem value={"unit_conversion"}>UNIT CONVERSION</MenuItem>
                <MenuItem value={"primary"}>PRIMARY CEMENTING</MenuItem>
@@ -39,31 +38,10 @@ const Navigation = () => {
         </Grid>
         <button className={!navMode? "nav_button" : "nav_button green"} onClick={()=> {navMode? setIsClicked(true): setIsClicked(false)}}>CONTINUE</button>
 
-      {/* <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-      <Link to="/primary-cementing" className="link">PRIMARY CEMENTING</Link>
-      </Grid>
-
-      <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-      <Link to="/liner-cementing" className="link">LINER CEMENTING</Link>
-      </Grid>
-
-      <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-      <Link to="/plug-cementing" className="link">PLUG CEMENTING</Link>
-      </Grid>
-
-      <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-      <Link to="/additive-converter" className="link">CEMENTING ADDITIVE</Link>
-      </Grid>
-
-      <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="navigation_link">
-        <Link to="/select/field-unit-converter" className="link">UNIT CONVERSION</Link>
-        {/* <a href="https://fieldunitconverter.netlify.app" className="link">UNIT CONVERSION</a> */}
-      {/* </Grid> */}
 
       <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} >
        <button onClick={()=> history.push('/')} className="nav_button link">BACK</button>
       </Grid> 
-
     </Grid >
 
     </div>

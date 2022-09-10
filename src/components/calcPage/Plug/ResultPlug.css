@@ -1,0 +1,10 @@
+.resultPlugContainer{
+    background-color: whitesmoke;
+    box-shadow: 0.2rem 0.2rem 0.7rem 0rem;
+    padding: 1rem;
+    width: 35rem;
+    text-align: center;
+    color: black;
+    margin: 2.2rem 0rem 0rem 5rem;
+    height: 28rem;
+}

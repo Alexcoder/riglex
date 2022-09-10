@@ -1,0 +1,50 @@
+
+.containerDiv{
+    margin-left: -2rem;
+    margin-right: 2rem;
+    height: 21.5rem;
+     background-color: white;
+     margin-top: 2rem;
+     width: 30rem;
+     padding: 0.002rem;
+     box-shadow: 2px 0px 7px 1px ;
+}
+.result_padding{
+    padding: 2rem;
+}
+
+.resultContainer{
+    padding: 3rem; border: ""; margin:-2rem 8rem 2rem 8rem; height: 28rem;
+}
+
+.vol_result{
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+button{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* -----620PX-------- */
+@media screen and (max-width: 620px) {
+    .resultContainer{
+        width: 16rem;
+    }
+    .containerDiv{ margin-left: 3rem; height: 35rem; width: 45rem;
+    }
+    .vol_result{ text-align: center; width: 45rem; 
+    }
+
+}
+/* ------420PX--------- */
+@media screen and (max-width: 420px) {
+    .containerDiv{ margin-left: 7rem; height: 25rem; width: 39rem;
+    }
+    .vol_result{ text-align: center; width: 40rem; 
+    }
+
+}

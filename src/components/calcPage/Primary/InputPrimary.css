@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&display=swap');
+
+    /* font-family: 'Lobster', cursive; */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+  body{
+    font-family: 'Poppins', sans-serif;
+    padding: 0 1rem 0 1rem;
+  }
+
+.primaryDiv{
+  text-align: center;
+  font-size: 1.2rem;
+}
+.inputAndResultFlexGrid1338{
+  display: flex; 
+  font-family: 'Poppins', sans-serif;
+}
+.inputContainer1338{ 
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  gap:0.3rem; 
+  align-items:center; 
+  width:43rem; 
+ }
+ .form{
+  margin: 0 0 0rem 0rem ;
+  height: 19rem;
+  padding: 2rem;
+  border: 2px solid inherit;
+  border-radius: 1rem 1rem 1rem 1rem ;
+ }
+ .inputMeasurementUnitSelect1338{
+  color: black; 
+  background-color: white;
+  font-size: 1.2rem; 
+  width: 35%;
+  height: 3rem;
+  text-align: center;
+  margin: -1rem 0rem 1rem 0rem;
+  text-decoration: none; 
+  border-radius: 0.2rem;
+  box-shadow: 0.1rem 0.1rem 0.2rem 0rem black ; 
+  padding: 0.5rem; 
+ }
+ .option_class{
+  width: fit-content;
+ }
+.input1338BackButton{ 
+  font-size: 1.4rem;
+  border: 2px solid gray;
+  border-radius: 1rem; 
+  width: 13.5rem;
+  height: 3rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0rem; 
+  color: white; 
+  background-color: blue; 
+}
+.blue{ background-color: blue; color: white; 
+}
+.blueviolet{background-color: blueviolet; color: white;
+}
+.green{ background-color: green; color: white; 
+}
+.brown{ background-color: brown; color: white; 
+}
+.yellow{ background-color: yellow; color: black;
+ }
+.red{background-color: red; color: white;
+}
+.blueText{color: blue;
+  font-style: oblique;
+   border: 0 0 2px 0
+}
+h1{ font-family: 'Lobster', cursive;
+}
+.input1338BackButton:hover{
+  color: blue;
+  background-color: transparent; 
+  border: 2px solid gray
+}
+::-webkit-scrollbar{display: none;
+}
+.flexUnitButton{
+  margin-left: 10rem;
+  text-align: center;
+  gap: 1rem;
+}
+ .unitButton{
+  height: 3rem; 
+  width:15rem; 
+  border: 2px solid gray; 
+  border-radius: 1rem; 
+  font-size: 1.3rem; 
+  margin-right:1rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem 0px black
+ }
+ .unitButton:hover{ background-color: blueviolet 
+}
+
+ /* ---------------MEDIA QUERY 1024PX--------------------------------- */
+@media  screen and (min-width:802px) and (max-width:1024px) {
+  .inputAndResultFlexGrid1338{ display:grid;
+     gap:1rem
+    }
+  .inputMeasurementUnitSelect1338{
+    width: 30%;
+  }
+  .primaryDiv{
+    width: 52rem;
+    margin-left: 1.5rem;
+    text-align: center;
+    }
+  .input1338Container1338{ 
+     row-gap: 1rem; 
+  } 
+  .input1338_textField{
+    width: 12rem;
+  }
+  .input1338BackButton{
+    width: 12rem;
+  }
+}
+/* ---------------MEDIA 800PX---------------------------------------- */
+@media  screen and (max-width:800px) {
+  .inputAndResultFlexGrid1338{ 
+    display:grid; gap:1rem
+  }
+  .inputMeasurementUnitSelect1338{
+    width: 40rem;
+    margin-left: 2rem;
+  }
+  .inputContainer1338{ 
+    grid-template-columns: repeat(3, 1fr);
+    gap:0.5rem; 
+    width:100%; 
+    margin-top: 2.8rem;
+   }
+   .unitButton{
+    margin: 0.5rem 0 0 0.3rem;
+   }
+  .input1338_textField{
+    width: 13rem;
+  }
+  .primaryDiv{
+     width: 105%; 
+     text-align: center;
+    }
+  .input1338BackButton{
+     /* margin-left: 0rem; */
+     width: 13rem;
+    }
+}
+/* -----------MEDIA 600PX----------------------- */
+@media  screen and (min-width: 530px) and (max-width:600px) {
+  .inputMeasurementUnitSelect1338{
+    /* width: 40rem; */
+    margin-left: 5rem;
+  }
+  .option_class{
+    width: 12rem;
+   }
+  .unitButton{
+    margin: 0.5rem 0 0 17rem;
+   }
+}
+/* -----------MEDIA 420PX----------------------- */
+@media  screen and (max-width:420px) {
+  .inputMeasurementUnitSelect1338{
+    width: 40rem;
+    margin-left: 6rem;
+  }
+  .primaryDiv{
+    width: 53rem;
+    padding-right: 0.5rem;
+    margin-left: 3rem;
+    }
+  .inputContainer1338{ 
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr);
+    gap:0.3rem; 
+    width:40rem; 
+    height: 50rem;
+    margin-left: 4rem;
+   }
+  .option_class{
+    font-size: 0.5rem;
+    width:fit-content;
+    margin-right: -30rem;
+  }
+  .flexUnitButton{
+    margin-right: -17rem;
+    gap: 1.5rem;
+  }
+  .unitButton{
+    width: 41rem;
+    
+   }
+  .input1338_textField_grid{
+    width: 26rem;
+  }
+  .input1338BackButton{
+    width: 26rem;
+    margin-bottom: 2rem;
+    margin-right: 12rem;
+    margin-top: 2rem;
+}
+}
+
+
+
