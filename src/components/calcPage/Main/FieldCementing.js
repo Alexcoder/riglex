@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {useHistory } from 'react-router-dom';
-import { CircularProgress, Grid} from '@mui/material'
+import { CircularProgress, Grid, Paper} from '@mui/material'
 import '../Primary/InputPrimary.css'
 import {InputPrimary, ResultPrimary, InputPlug, ResultPlug} from '../../../components'
 
@@ -40,13 +40,11 @@ const FieldCementing = () =>  {
       if(mode==="home"){ history.push('/'); setMode("1338")}
     },[mode, history, setMode])
 
-    // if(!mode || path==="") return <CircularProgress/>
 
 return (
 <div>
-  <div>
     <div style={{textAlign: "center"}}>
-  <select className={mode!=="0"? 'blueText inputMeasurementUnitSelect1338' : "inputMeasurementUnitSelect1338"} type="number" value={mode}
+  <select className="select_FieldCementing" type="number" value={mode}
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
       <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>PRIMARY CEMENTING</option>
@@ -57,23 +55,21 @@ return (
       <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>PLUG CEMENTING</option>
    </select>         
     </div>
-   <div style={{display: "flex"}} className="flexUnitButton">
+   <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
    <button  onClick={()=> setWellData({...wellData, unit: ("1")} )}
-       className={`unitButton ${handleButtonColor("1")}`} value={"1"} > FEET</button>
+       className={`button_field ${handleButtonColor("1")}`} value={"1"} > FEET</button>
     <button onClick={()=> setWellData({...wellData, unit: ("2")}) } 
-      className={`unitButton ${handleButtonColor("2")}`} value={"2"} > METER </button>
-   </div>
+      className={`button_field ${handleButtonColor("2")}`} value={"2"} > METER </button>
+   </Grid> 
 
-   </div>      
-
-<Grid className="inputAndResultFlexGrid1338">
-  {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
+  <Paper elevation="5">
+<Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
+  {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
   {
     ( mode!=="1338" & mode!=="958" & mode!=="7INCH" & mode!=="" & mode!=="OTHERS" & mode!=="PLUG") ? <CircularProgress style={{textAlign: "center"}}/> : null
   }
   { mode==="" || mode==="OTHERS" || !mode ? 
-  <div className="primaryDiv">
     <InputPrimary   wellData={wellData} setWellData={setWellData}
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}
@@ -83,10 +79,9 @@ return (
     CasingOD="PRESENT CSG OD (inches)"
     CasingID= "PRESENT CSG ID (inches)"
     />
-    </div> : null
+     : null
   }
 { mode==="1338" ?
-<div className="primaryDiv">
   <InputPrimary
   LABEL= "13-3/8 IN CSG CEMENTING DATA" 
   onSubmit={handleSubmit}
@@ -97,11 +92,9 @@ return (
   CasingID= "13-3/8 IN CSG ID (inches)"
   wellData={wellData} setWellData={setWellData}
   />: 
-  {/* </div> : mode==="1338" & path!=="/input"? <CircularProgress/> : null */}
-  </div> : null
+   null
 }
 { mode==="958" ?
-<div className="primaryDiv">
  <InputPrimary 
  LABEL= "9-5/8 IN CSG CEMENTING DATA" 
  onSubmit={handleSubmit}
@@ -112,11 +105,10 @@ return (
  CasingID= "9-5/8 IN CSG ID (inches)" 
  wellData={wellData} setWellData={setWellData}
  />
- </div> : null
+ :null
 }
 {/* ------------------------------------------------------------------------------ */}
 { mode==="7INCH" ? 
-<div className="primaryDiv">
   <InputPrimary   wellData={wellData} setWellData={setWellData}
   LABEL= "7 INCH CEMENTING DATA" 
   onSubmit={handleSubmit}
@@ -126,29 +118,26 @@ return (
   CasingOD="7 INCH CSG OD (inches)"
   CasingID= "7 INCH CSG ID (inches)"
   />
-  </div> : null
+  : null
 }
-{/* <CircularProgress /> */}
-{/* --------------------------------------------------------------------------------- */}
 {/* ------------------------PLUG RENDERING------------------------------------ */}
 { mode==="PLUG" ? 
-<div >
   <InputPlug   wellData={wellData} setWellData={setWellData}
   LABEL= "PLUG CEMENTING DATA" 
   onSubmit={handleSubmit}
   />
-  </div> : null
+  : null
 }
 
 {/*----------------------Result Page----------------------------*/}
-<div>
+<div className="dissapear_result_in_fileldCementing " style={{display: "none"}}>
   { mode!=="PLUG" & mode!=="0" & wellData.unit!=="0" ? 
     <ResultPrimary wellData={wellData} setWellData={setWellData}/> : 
     <ResultPlug LABEL= "RESULT"/>
   }
    </div>
    </Grid> {/*END OF GRID THAT FLEXED INPUT AND RESULT*/}
-
+   </Paper>
 </div>
 )
 }
