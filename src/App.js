@@ -8,8 +8,8 @@ function App() {
     <div>
       <Switch>
        <Route path="/" exact component={Home}/>
-       <Route path="/navigation" exact component={Navigation}/>
-       <Route path="/field-unit-converter" exact component={ConversionPage}/>
+       <Route path="/select" exact component={Navigation}/>
+       <Route path="/select/field-unit-converter" exact component={ConversionPage}/>
       </Switch>
     </div>
   );

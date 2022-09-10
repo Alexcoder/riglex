@@ -1,87 +1,267 @@
-.conversion_container_div{
-    background-color: black;
-    height: 12rem;
-    padding: 3rem 22rem 0rem 22rem;
- }
- .border_div{
-    border: 2px solid gray; 
-    border-radius: 4rem;
-    background-color: green;
-    height: 35rem;
-    box-shadow: 0rem 0.1rem 0.6rem 0rem black;
-    gap: 1rem;
-
- }
- .select{
-    box-shadow: 0rem 0.1rem 0.2rem 0rem black;
+.main_container{
+    background-color: whiteSmoke;
+    width: 25rem;
+    padding: 3rem;
+    color: black;
+    box-shadow: 0rem 0.1rem 0.5rem 0rem black;
+    border-radius: 0.9rem 0.9rem 0.9rem 0.9rem;
+    margin: 1.5rem 0rem 0rem 25rem;
+}
+.grid_container{
+    padding: 1rem;
+    width: 25rem;
+}
+.label_select{
+  color:white;
+  margin:1rem 0rem -3.2rem 26rem;
+  font-style:italic;
+  font-size: 1.5rem;
+}
+.select{
+    box-shadow: 0rem 0.2rem 0.5rem 0rem black;
     border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-     width: 25rem;
-     margin: 1rem;
+     font-size: 1.4rem; 
+     text-align: center;
+     width: 31.5rem;
+     margin-top: 3rem;
+     height: 4rem;
+     margin-left: 29%;
+}
+.textField{
+    background-color: white;
+    width: 24rem;
+    text-align: center;
+    height: 3.1rem; 
+    border: 1px solid transparent; 
+}
+.text{
+     border: 2px solid transparent;
+     height: 2.1rem; 
+     color: green;
+     width: 23.8rem;
+     margin-top: 1rem;
+     text-align: center;
+     padding-top: 1rem;
+     padding-bottom: 0.3rem;
+     font-size: 1.5rem;
+     color: green;
+     font-style: italics; 
+}
+.button{
+    color: white;
+    background-color: blue; 
+    width: 24.3rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    border-color: inherit;
+    opacity: 0.8;
+    border-radius: 0.5rem;
+}
+.margin_up_back_button{
+    margin-top: -0.1rem;
+}
+.red{
+    background-color: darkred;
+    margin-top: 0.5rem;
+}
+.button :hover{
+    background-color: white;
+    color: black;
+}
+.green{
+    background-color: green;
+    color: white;
 }
 .h1_data{
-    margin-top: 1rem;
+    color: blue;
+     text-align: center;
 }
-@media screen and (max-width: 1024px){
-    .conversion_container_div{
-        height: 12rem;
-        padding: 8rem 0rem 0rem 0rem;
-     }
-     .border_div{
-        height: 40rem;
-     }
-     .select{
-        box-shadow: 0rem 0.1rem 0.2rem 0rem black;
-        border-radius: 0.5rem;
-         width: 18rem;
+.lexwares{
+    opacity: 0.6; 
+    text-align: center; 
+    margin: 0.2rem 0rem 1rem 0rem;
+}
+::-webkit-scrollbar{display: none}
+/* ---------MEDIA QUERY 1280PX--------- */
+@media screen and (max-width: 1280px){
+    .main_container{
+        margin-left: 18rem;
+        margin-right: 5rem;
+        width: 30%;
+        margin-bottom: 5rem;
+        height: 30rem;
     }
-    
+    .grid_container{
+        width: 120%;
     }
-
- 
-@media screen and (max-width: 420px){
-    .conversion_container_div{
-        height: 12rem;
-        padding: 8rem 0rem 0rem 0rem;
-     }
-     .select{
-        box-shadow: 0rem 0.1rem 0.2rem 0rem black;
-        border-radius: 0.5rem;
-         width: 18rem;
+    .select{
+        width: 37%;
+        margin-left: 18rem;
     }
-    
+    .textField{
+        width: 65%;
+        margin-left: 2rem;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .button{
+        width: 68%;
+        margin-left: 2rem;
+        margin-top: 5rem;
+    }
+    .h1_data{
+        /* display: none; */
+         width: 80%;
+    }
+    .text{
+        width: 90%;
+        margin-left: -1rem;
+        margin-top: 3rem;
+    }
     .lexwares{
         margin-top: 2rem;
-        margin-bottom: -5rem;
-        margin-left: 2rem;
-   }
+        margin-left: -6rem;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px){
+    .main_container{
+        margin-left: 9rem;
+        margin-right: 5rem;
+        width: 55%;
+        margin-bottom: 5rem;
+        height: 30rem;
+    }
+    /* .grid_container{
+        width: 120%;
+    } */
+    .label_select{
+        margin-left: 12rem;
+    }
+    .select{
+        width: 64%;
+        margin-left: 9rem;
+    }
+    .textField{
+        width: 130%;
+        margin-left: 1rem;
+    }
+    .button{
+        width: 105%;
+        margin-left: -1rem;
+        margin-top: 3rem;
+    }
+    .margin_up_back_button{
+        margin-top: 0.5rem;
+    }
 
+    .h1_data{
+        margin-bottom:2rem ;
+        text-align: center;
+        width: 25rem;
+    }
+    .text{
+        margin-bottom: 3rem;
+    }
+    .lexwares{
+        margin-left: 0rem;
+    }
+
+}
+    @media screen and (min-width: 510px) and (max-width: 550px){
+        .main_container{
+            margin-left: 2rem;
+            margin-right: 17rem;
+            width: 70%;
+            margin-bottom: 5rem;
+            height: 28rem;
+        }
+        /* .grid_container{
+            width: 120%;
+        } */
+        .label_select{
+            margin:1rem 0rem -3.2rem 2.8rem;
+          }
+        .select{
+            width: 87%;
+            margin-left: 2rem;
+        }
+        .textField{
+            width: 130%;
+            margin-left: 1rem;
+        }
+        .button{
+            width: 105%;
+            margin-left: -1rem;
+            margin-top: 2rem;
+        }
+        .margin_up_back_button{
+            margin-top: -0.2rem;
+        }
+        
+        .h1_data{
+            margin-bottom:2rem ;
+            margin-left: -1.5rem;
+            text-align: center;
+            width: 25rem;
+        }
+        .text{
+            margin-bottom: 3rem;
+        }
+        .lexwares{
+            margin-left: 0rem;
+        }
+    
+}
+
+@media screen and (max-width: 420px){
+    .main_container{
+        margin-left: 1rem;
+        margin-right: 0rem;
+        width: 65%;
+        margin-bottom: 20rem;
+        height: 22rem;
+
+    }
+    /* .grid_container{
+        width: 80%;
+    } */
+    .label_select{
+        margin:1rem 0rem -3.2rem 10rem;
+        /* font-style:italic; */
+      }
+    .select{
+        width: 89%;
+        margin-left: 1rem;
+    }
+    .textField{
+        width: 130%;
+        margin-left: 1rem;
+    }
+    .button{
+        width: 110%;
+        margin-left: -1rem;
+        margin-top: 2rem;
+    }
+    .margin_up_back_button{
+        margin-top: -0.2rem;
+    }
+    
+    .h1_data{
+        display: none;
+        /* color: blue;
+         text-align: center;
+         width: 280px;
+         margin: 1rem 0rem 1rem 0rem; */
+    }
+    .text{
+        width: 115%;
+        margin-left: -1rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    .lexwares{
+        margin-top: 2rem;
+        margin-bottom: -3rem;
+        margin-left: 0rem;
+    }
+}
 

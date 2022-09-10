@@ -21,7 +21,7 @@ const Home = () => {
         </Grid>
         <Grid item xs={12} sm={10} md={5} lg={3} xl={3} mt={8} >
             <div style={{height:"7rem"}}>
-            <Link to="/navigation" className="home_link" >Continue<ArrowForwardIosIcon color="primary" fontSize="small"/></Link>
+            <Link to="/select" className="home_link" >Continue<ArrowForwardIosIcon color="primary" fontSize="small"/></Link>
             </div>
         </Grid>
 

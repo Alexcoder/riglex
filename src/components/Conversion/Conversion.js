@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import { Grid, TextField, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import { useHistory } from 'react-router-dom';
+import { Grid, TextField } from '@mui/material';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
-import {Link} from 'react-router-dom';
 import './Conversion.css';
 
 
 const ConversionPage = () => { 
+  const history= useHistory();
   const [factor, setFactor] = useState()
   const [modeConversion, setModeConversion] = useState("")
   
@@ -148,48 +149,47 @@ const Revert =()=>{
 }
 
   return (
-  <div  className="conversion_container_div" >
+  <div  style={{backgroundColor: "black", height: "22rem"}}>
 
-<Grid container  className="border_div" direction="column"  p={2} alignItems="center" textAlign="center" justifyContent="center">
-     <FormControl Fullwidth>
-     <InputLabel id="input-select-label">SELECT</InputLabel>
-    <Select   value={modeConversion} onChange={(e)=> setModeConversion(e.target.value)}
-     className="select" label="select"
-     id="select"  labelId="simple-select-label"
-     > 
-         <MenuItem disabled={modeConversion}>SELECT</MenuItem>
-         <MenuItem className={modeConversion==="bbl"?  "green" : null} value={"bbl"}>Barrel To CubicFt</MenuItem>
-         <MenuItem className={modeConversion==="cuft"?  "green" : null} value={"cuft"}>CubicFt To Barrel</MenuItem>
-         <MenuItem className={modeConversion==="gal"?   "green" : null} value={"gal"}>Gallons To Barrel</MenuItem>
-         <MenuItem className={modeConversion==="bbls"?  "green" : null} value={"bbls"}>Barrel To Gallons</MenuItem>
-         <MenuItem className={modeConversion==="m3"?    "green" : null} value={"m3"}>CubicMeter To Barrel</MenuItem>
-         <MenuItem className={modeConversion==="bblss"? "green" : null} value={"bblss"}>Barrel To CubicMeter</MenuItem>
-         <MenuItem className={modeConversion==="ft3"?   "green" : null} value={"ft3"}>CubicFt To CubicMeter</MenuItem>
-         <MenuItem className={modeConversion==="cuMeter"? "green" : null} value={"cuMeter"}>CubicMeter To CubicFt</MenuItem>
-         <MenuItem className={modeConversion==="ftt" ? "green" : null} value={"ftt"}>Feet To Inches</MenuItem>
-         <MenuItem className={modeConversion==="inches" ? "green" : null} value={"inches"}>Inches To Feet</MenuItem>
-         <MenuItem className={modeConversion==="kg"?    "green" : null} value={"kg"}>Kilogram To Pounds</MenuItem>
-         <MenuItem className={modeConversion==="pounds"? "green": null} value={"pounds"}>Pounds To Kilogram</MenuItem>
-         <MenuItem className={modeConversion==="sacks" ?   "green" : null} value={"sacks"}>Cement Sacks To MetricTon</MenuItem>
-         <MenuItem className={modeConversion==="MT"    ?   "green" : null} value={"MT"}>Cement MetricTon To Sacks</MenuItem>
-         <MenuItem className={modeConversion==="ft"    ?   "green" : null} value={"ft"}>Feet To Meter</MenuItem>
-         <MenuItem className={modeConversion==="m"     ?   "green" : null} value={"m"}>Meter To Feet</MenuItem>
-         <MenuItem className={modeConversion==="Centigrade" ?   "green" : null} value={"Centigrade"}>Celsius To Fahrenheit</MenuItem>
-         <MenuItem className={modeConversion==="Fahrenheit" ?   "green" : null} value={"Fahrenheit"}>Fahrenheit To Celsius</MenuItem>
-         </Select>
-         </FormControl>
+    <p>
+     <p className="label_select">SELECT</p >
+    <select   value={modeConversion} onChange={(e)=> setModeConversion(e.target.value)}
+     className="select" label="SELECT CONVERSION MODE"> 
+         <option disabled={modeConversion}>SELECT</option>
+         <option className={modeConversion==="bbl"?  "green" : null} value={"bbl"}>Barrel To CubicFt</option>
+         <option className={modeConversion==="cuft"?  "green" : null} value={"cuft"}>CubicFt To Barrel</option>
+         <option className={modeConversion==="gal"?   "green" : null} value={"gal"}>Gallons To Barrel</option>
+         <option className={modeConversion==="bbls"?  "green" : null} value={"bbls"}>Barrel To Gallons</option>
+         <option className={modeConversion==="m3"?    "green" : null} value={"m3"}>CubicMeter To Barrel</option>
+         <option className={modeConversion==="bblss"? "green" : null} value={"bblss"}>Barrel To CubicMeter</option>
+         <option className={modeConversion==="ft3"?   "green" : null} value={"ft3"}>CubicFt To CubicMeter</option>
+         <option className={modeConversion==="cuMeter"? "green" : null} value={"cuMeter"}>CubicMeter To CubicFt</option>
+         <option className={modeConversion==="ftt" ? "green" : null} value={"ftt"}>Feet To Inches</option>
+         <option className={modeConversion==="inches" ? "green" : null} value={"inches"}>Inches To Feet</option>
+         <option className={modeConversion==="kg"?    "green" : null} value={"kg"}>Kilogram To Pounds</option>
+         <option className={modeConversion==="pounds"? "green": null} value={"pounds"}>Pounds To Kilogram</option>
+         <option className={modeConversion==="sacks" ?   "green" : null} value={"sacks"}>Cement Sacks To MetricTon</option>
+         <option className={modeConversion==="MT"    ?   "green" : null} value={"MT"}>Cement MetricTon To Sacks</option>
+         <option className={modeConversion==="ft"    ?   "green" : null} value={"ft"}>Feet To Meter</option>
+         <option className={modeConversion==="m"     ?   "green" : null} value={"m"}>Meter To Feet</option>
+         <option className={modeConversion==="Centigrade" ?   "green" : null} value={"Centigrade"}>Celsius To Fahrenheit</option>
+         <option className={modeConversion==="Fahrenheit" ?   "green" : null} value={"Fahrenheit"}>Fahrenheit To Celsius</option>
+         </select>
+         </p>
 
-    <Grid item xs={12} sm={12} md={8} lg={3} xl={3}>
+    <p className="main_container">
+{/* ---Grid item className below is no longer valid------- */}
+    <Grid item xs={10} md={10} sm={10} className ="xxgrid_container" sx={{borderColor: "none"}}
+    > 
       <h1 className="h1_data"> {data} </h1>
-    </Grid>
-    <Grid item xs={12} sm={12} md={8} lg={3} xl={3} sx={{display: "flex"}} mt={2} mb={2}>
-      <TextField style={{textAlign: "center", height: "3.1rem", border: "1px solid transparent" }} id="outlined-basic" type='number' variant="outlined"
+      <p style={{display: "flex"}}>
+      <TextField id="outlined-basic" type='number' variant="outlined"
        value={factor} label={`${baseUnit}`} 
        onChange={(e)=> {modeConversion && setFactor(e.target.value)}}
-       className='stextField'
+       className='textField'
        />
       <button style={{height:"3.58rem"}} onClick={Revert}><SyncAltIcon/></button>
-      </Grid>
+      </p>
 
 
        {
@@ -200,25 +200,16 @@ const Revert =()=>{
       :factor<0 ?  <div style={{color: "red",fontStyle:"italics", marginTop:"2rem"}} className='div'> Error: Negative Input !</div>
        :<div className='text' > {factor} <span style={{color:"red"}}>{baseUnit}</span> equals  {ResultChanger} <span style={{color: "blue"}}>{resultUnit}</span></div>
        }
-
-      <Grid item xs={12} sm={12} md={8} lg={3} xl={3}
-      >
        <button style={{marginTop:"1rem"}} className= "button red" 
        onClick={()=> {setFactor(""); 
        localStorage.setItem('factor', null); 
         setModeConversion(modeConversion)}}>CLEAR
-        </button> 
-        </Grid>
-        <Grid item xs={12} sm={12} md={8} lg={3} xl={3}
-        >
-        <Link to='/'>Back</Link>
-        </Grid>
-        <Grid item xs={12} sm={12} md={8} lg={3} xl={3}
-        >
-          <div className="lexwares">Lexwares @2022</div>
-      </Grid>
+        </button>
+        <button className="button blue margin_up_back_button" onClick={()=>{history.push("/select")}}>BACK</button>
+
+   <div className="lexwares">Lexwares @2022</div>
     </Grid>
-    {/* </Grid> */}
+    </p>
     {/* <Additive /> */}
   </div>
   )
