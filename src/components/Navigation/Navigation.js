@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useHistory } from 'react-router-dom';
-import {FormControl, Grid, Select, MenuItem, InputLabel} from '@mui/material';
+import {Grid} from '@mui/material';
 import './Navigation.css';
 import { useGlobalState } from '../../state';
 

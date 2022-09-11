@@ -3,7 +3,7 @@
 export const inputDataPrimary = {
     jobMode: "",
     openHoleID: "",
-    overlap: "",
+    overlap: "0",
     lengthOfTailAboveShoe: "",
     unit: "",
     shoeTrack: "",
