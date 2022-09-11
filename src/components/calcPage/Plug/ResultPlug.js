@@ -41,10 +41,10 @@ const ResultPlug = ({LABEL}) =>{
       const SpacerBehindVolume_In_Stinger = (CapacityOfStinger * LengthOfSpacer_DrillPipeMD_to_TopOfSpacer).toFixed(1);
       const SpacerBehindVolume_In_DrillPipe = (CapacityOfDrillPipe* LengthOfSpacerInDrillPipe_Zone).toFixed(1);
       const TotalSpacerBehind_With_Dp = SpacerBehindVolume_In_Stinger + SpacerBehindVolume_In_DrillPipe;
-      const Spacer_Behind_With_Dp_Changer = CrossOver < 0? TotalSpacerBehind_With_Dp : VolumeOfSpacerAhead;
+      const Spacer_Behind_With_Dp_Changer = CrossOver < 0? TotalSpacerBehind_With_Dp : VolumeOfSpacerBehind;
                                   // Displacement in the case of DrillPipe 
-      const Displacement_1 = Number(CapacityOfDrillPipe*plug.drillPipeMD)+Number(CapacityOfStinger*TopOfSpacer);
-      const Displacement_2 = CapacityOfDrillPipe*TopOfSpacerWithCrossOver;
+      const Displacement_1 = (Number(CapacityOfDrillPipe*plug.drillPipeMD)+Number(CapacityOfStinger*TopOfSpacer)).toFixed(2);
+      const Displacement_2 = (CapacityOfDrillPipe*TopOfSpacerWithCrossOver).toFixed(2);
       const Displacement_Changer = CrossOver > 0 ? Displacement_1 : Displacement_2; 
       
 
@@ -55,9 +55,9 @@ const ResultPlug = ({LABEL}) =>{
             sx={{width:"35rem", padding: "1rem", color: "black", backgroundColor:"whitesmoke",
               }}>
             <h1 style={{color: "blue",}}>{LABEL}</h1>
-            <h2 className=''>{VolOfPlug.toFixed(1)} bbl Of Cement Slurry </h2>
+            <h2><span style={{color:"blue"}}>{VolOfPlug.toFixed(1)}</span> bbl Of Cement Slurry </h2>
             <h2>
-             Displacement : { plug.drillPipe? Displacement_Changer : Displacement } bbl
+             Displacement : <span style={{color: "green"}}>{ plug.drillPipe? Displacement_Changer : Displacement }</span>  bbl
             </h2>
             <h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
             <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 

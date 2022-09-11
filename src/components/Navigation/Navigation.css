@@ -49,9 +49,22 @@
         width: 19rem;
         margin: 0rem -1.2rem 0rem -0.8rem;
     }
+    .tag_p{
+        border:1px solid gray;
+        width: 35rem;
+    }
+    .click_select{
+        color: black; 
+        height: 0rem; 
+        border-radius:50%;
+        border: 2px solid gray; 
+        padding:1rem; 
+        margin-top: 1.3rem ;
+        margin-left: 1rem;
+    }
     .nav_button{
         width: 19rem;
-        margin: 7rem 0rem -3.5rem 1.5rem;
+        margin: 1rem 0rem -3.5rem 1.5rem;
         padding: 0.7rem 5rem;
     }
     

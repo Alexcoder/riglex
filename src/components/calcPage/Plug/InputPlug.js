@@ -8,14 +8,14 @@ import { useHistory } from 'react-router-dom';
 
 const InputPlug = ({LABEL}) => { 
 
-const {plug, setPlug,} =  useGlobalState();
+const {plug, setPlug,drillPipe, setDrillPipe} =  useGlobalState();
 const history = useHistory();
 const handleChange=(e)=>{
      setPlug({...plug, [e.target.name]: e.target.value})
 }
 
   return (
-    <Container sx={{}} className="container">
+    <Container  className="container">
 
     <Paper elevation="5" sx={{padding:"2rem"}}>
     <Grid direction= "column"
@@ -49,11 +49,17 @@ const handleChange=(e)=>{
       onChange={handleChange}
       />
       </>
-      
+       <p style={{border: "1px solid gray"}}>
+      <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center", marginTop: "1rem"}}>
+         <button className={drillPipe? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
+        border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" }}
+         onClick={()=> setDrillPipe((pre)=> !pre)}></button>
+         <h2>DrillPipe Data</h2>
+      </Grid>
+       </p>
       {
-        plug.drillPipe?
+        drillPipe?
       <>
-      <h2>DRILLPIPE DATA</h2>
       <SingleInputPlug name="drillPipeID" value= {plug.drillPipeID} label="DRILLPIPE ID (inches)" 
       onChange={handleChange}
       />
@@ -66,7 +72,8 @@ const handleChange=(e)=>{
             <SingleInputPlug name="dpOuterZoneId" value= {plug.dpOuterZoneId} label="DP ZONE ID (inches)" 
       onChange={handleChange}
       />
-      </> : null
+      </> 
+      : null
       }
 
       <button className="submitButton" onClick={()=> history.push('/select/result-plug')}>View Result</button>

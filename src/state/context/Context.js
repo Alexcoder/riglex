@@ -12,6 +12,7 @@ export const ContextProvider = ({children}) => {
   const [theme, setTheme] = useState("green");
   const [jobMode, setJobMode] = useState();
   const [plug, setPlug] = useState(inputDataPlug)
+  const [drillPipe, setDrillPipe] = useState(false)
 
   const ExcessLead = (Number(wellData.leadExcess) +100)*0.01
   const ExcessTail = (Number(wellData.tailExcess) +100)*0.01
@@ -68,7 +69,7 @@ export const ContextProvider = ({children}) => {
     value={{
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
-     setPlug,
+     setPlug, drillPipe, setDrillPipe,
     }}
     >
         {children}
