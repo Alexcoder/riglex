@@ -17,7 +17,10 @@ export const SinglePrimary = ({label,value, name, onChange}) => {
          style={{padding: "0.45rem"}}
             id="outlined-basic" 
             label={label}
-            variant="outlined"
+            // variant="outlined"
+            variant="filled"
+            // variant="contained"
+            color="primary"
             name={name}
             type='number' 
             value={value} 

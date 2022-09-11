@@ -63,7 +63,7 @@ return (
    </Grid> 
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
-  <Paper elevation="5">
+  {/* <Paper elevation="5"> */}
 <Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
   {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
   {
@@ -129,15 +129,8 @@ return (
   : null
 }
 
-{/*----------------------Result Page----------------------------*/}
-<div className="dissapear_result_in_fileldCementing " style={{display: "none"}}>
-  { mode!=="PLUG" & mode!=="0" & wellData.unit!=="0" ? 
-    <ResultPrimary wellData={wellData} setWellData={setWellData}/> : 
-    <ResultPlug LABEL= "RESULT"/>
-  }
-   </div>
-   </Grid> {/*END OF GRID THAT FLEXED INPUT AND RESULT*/}
-   </Paper>
+   </Grid> 
+   {/* </Paper> */}
 </div>
 )
 }

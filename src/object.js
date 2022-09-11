@@ -37,9 +37,14 @@ export const inputDataPrimary = {
       OHE: "10",
       stingerID: "2.8",
       slurryYield: "1.57",
-      lengthOfSpacer: "300",
+      volOfSpacerAhead: "",
       bottom: "11452",
-      unit: ""
+      drillPipeID: "",
+      drillPipeOD: "",
+      drillPipeMD: "",
+      dpOuterZoneId: "",
+      unit: "",
+      drillPipe: true,
   }
 
 

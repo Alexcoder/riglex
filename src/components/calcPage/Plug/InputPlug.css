@@ -1,20 +1,5 @@
-.form{
-    padding: 1.5rem 2rem 1rem 2rem;
-    margin: 0 1rem 0 2rem;
-    background-color: whitesmoke;
-    box-shadow: 0.2rem 0.2rem 0.4rem 0rem black;
-}
-.inputPagePlugGridContainer{
-    text-align: center;
-    justify-content: center;
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    gap:0.5rem;
-}
-.inputPagePlugIndividualTextField{
-    background:fixed;
-    background-color: white;
-    gap: 0.3rem;
+.container{
+    padding: 1rem 18rem 1rem 18rem;
 }
 .inputPagePlugDivContainer{
     color:black;
@@ -23,20 +8,15 @@
     background-color:blue;
     border-color: white;
     color: white;
-    height: 4rem;
+    width: 15rem;
+    padding: 0.5rem;
     margin-top: 0.7rem;
-    border-radius: 7rem;
-    font-size: 2rem;
-    /* width: 17rem; */
+    border-radius: 1rem;
+    font-size: 1.1rem;
 }
 /* ----------MEDIA 620PX--------- */
 @media screen and (max-width: 620px){
-.inputPagePlugGridContainer{
-    grid-template-columns: repeat(1, 1fr);
-    gap:0.5rem;
-}
-.form{
-    height: fit-content;
-    width: 35rem;
+.container{
+    padding: 1rem;
 }
 }

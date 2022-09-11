@@ -4,17 +4,17 @@ import {TextField, Grid} from '@mui/material'
 export const SingleInputPlug = ({onChange,label,value,name}) => {
 
   return (
-    <Grid item xs={10} md={10} sm={10}>
+    <Grid item xs={12} sm={12} md={10} lg={8} xl={8}>
        <TextField 
                  InputProps={{
                   inputProps:{
-                    style:{textAlign: "center" , fontSize: "1.2rem",}
+                    style:{textAlign: "center" , fontSize: "1.2rem", width: "70%"}
                 }
               }}
-       className="inputPagePlugIndividualTextField" name={name}
-       fullWidth id="outlined-basic" label={label} variant="outlined" type="number" value={value}
+       className="xinputPagePlugIndividualTextField" name={name}
+        id="outlined-basic" label={label} variant="filled" type="number" value={value}
        onChange={onChange}
-       style={{fontSize: 12}}/>
+       />
    </Grid>
   )
 }

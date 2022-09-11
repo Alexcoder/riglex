@@ -2,17 +2,21 @@ import React, {useState} from 'react';
 import {useHistory } from 'react-router-dom';
 import {FormControl, Grid, Select, MenuItem, InputLabel} from '@mui/material';
 import './Navigation.css';
+import { useGlobalState } from '../../state';
 
-const Navigation = () => {
+const Navigation = () => { 
+  const {setMode,} =  useGlobalState();
   const history = useHistory();
   const [navMode, setNavMode] = useState("")
   const [isClicked, setIsClicked] = useState(false)
 
 
   if(navMode==="unit_conversion" & isClicked) history.push("/select/field-unit-converter")
-  else if(navMode==="primary" & isClicked) history.push("/select/primary");
-  else if(navMode==="liner" & isClicked) history.push("/liner");
-  else if(navMode==="plug" & isClicked) history.push("/plug");
+  else if(navMode==="primary" & isClicked) history.push("/select/primary")
+  else if(navMode==="1338" & isClicked) {setMode("1338"); history.push("/select/primary")}
+  else if(navMode==="958" & isClicked) {setMode("958"); history.push("/select/primary")}
+  else if(navMode==="7INCH" & isClicked) {setMode("7INCH"); history.push("/select/primary")}
+  else if(navMode==="PLUG" & isClicked) {setMode("PLUG"); history.push("/select/primary")}
   else if(navMode==="additive" & isClicked) history.push("/additive");
   // else return
 
@@ -30,8 +34,11 @@ const Navigation = () => {
             <Select onChange={(e)=> {setNavMode(e.target.value)}} value={navMode} className="nav_select" >
                <MenuItem value={"unit_conversion"}>UNIT CONVERSION</MenuItem>
                <MenuItem value={"primary"}>PRIMARY CEMENTING</MenuItem>
+               <MenuItem value={"1338"}>13-3/8" CSG CEMENTING</MenuItem>
+               <MenuItem value={"958"}>9-5/8" CEMENTING</MenuItem>
+               <MenuItem value={"7INCH"}>7INCH CEMENTING</MenuItem>
                <MenuItem value={"liner"}>LINER CEMENTING</MenuItem>
-               <MenuItem value={"plug"}>PLUG CEMENTING</MenuItem>
+               <MenuItem value={"PLUG"}>PLUG CEMENTING</MenuItem>
                <MenuItem value={"additive"}>CEMENTING ADDITIVE</MenuItem>
             </Select>
         </FormControl>

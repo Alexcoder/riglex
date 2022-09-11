@@ -40,19 +40,14 @@
     .navigation_div_container{
      padding: 5rem 8rem 15rem 0rem;
     }
-    /* .grid_container{
-        margin: 3rem 2rem 0rem -0rem;
-        border: 2px solid gray;
-        width: 35rem;
-    } */
     .select_grid{
         width: 25rem;
-        margin-left: -2rem;
+        margin-left: -1rem;
         margin-right: 2rem;
     }
     .nav_select{
         width: 19rem;
-        margin: 0rem -1.2rem 0rem 0rem;
+        margin: 0rem -1.2rem 0rem -0.8rem;
     }
     .nav_button{
         width: 19rem;
@@ -61,9 +56,9 @@
     }
     
     .link{
-       background-color: red;
+       background-color: darkred;
        margin-top: -5rem;
-       margin-left: 0.9rem;
+       margin-left: 0.7rem;
     }
     
 }
