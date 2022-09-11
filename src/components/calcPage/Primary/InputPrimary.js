@@ -1,6 +1,6 @@
 import React from 'react';
 import './InputPrimary.css';
-import { Grid,} from '@mui/material';
+import { Grid, Paper} from '@mui/material';
 
 import { useGlobalState } from '../../../state';
 
@@ -20,10 +20,11 @@ const InputPrimary = ({ onSubmit, PreviousCsgShoe,PreviousCsgOD, PreviousCsgID,C
 
   return (
     <div>
-      <div style={{padding: "1.8rem" ,}}>
+      <div style={{padding: "1rem 2rem 1rem 2rem"}}>
+      
           {/* ----------------------------INPUT FOR START ----------------------------------------------------- */}
+     <Paper elevation="5"  ></Paper>    
     <h3 style={{color: "blue", marginTop: "-1rem"}}>{LABEL}</h3>
-
 
       <Grid container direction=""  alignItem="center" justifyContent="center" textAlign="center"
       className="input_primary_grid_container">

@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {useHistory } from 'react-router-dom';
-import { CircularProgress, Grid, Paper} from '@mui/material'
+import { CircularProgress, Grid} from '@mui/material'
 import '../Primary/InputPrimary.css'
-import {InputPrimary, ResultPrimary, InputPlug, ResultPlug} from '../../../components'
+import {InputPrimary, InputPlug} from '../../../components'
 
 import { useGlobalState } from '../../../state';
 import {useLocation} from 'react-router-dom'

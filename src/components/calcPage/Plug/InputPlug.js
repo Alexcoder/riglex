@@ -13,9 +13,6 @@ const history = useHistory();
 const handleChange=(e)=>{
      setPlug({...plug, [e.target.name]: e.target.value})
 }
-const handleSubmit =(e) => {
-   // e.preventDefault();
-}
 
   return (
     <Container sx={{}} className="container">
