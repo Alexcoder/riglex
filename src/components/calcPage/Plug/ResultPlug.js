@@ -4,7 +4,7 @@ import { useGlobalState } from '../../../state';
 import {Grid} from '@mui/material';
 
 const ResultPlug = ({LABEL}) =>{
-       const {plug, wellData} =  useGlobalState();
+       const {plug, wellData, drillPipe} =  useGlobalState();
        const changer = wellData.unit==="1"? 1029.4 : 313.8;
        const unitChanger = wellData.unit==="1"? "ft" : "m";
 
@@ -26,26 +26,28 @@ const ResultPlug = ({LABEL}) =>{
       const CapacityOfDrillPipe = (plug.drillPipeID *plug.drillPipeID)/(changer);
       const TopOfCementWithPipeIn = Number(plug.bottom) - Number(LengthOfCementWithPipeIn);
       const TopOfSpacer = Number(TopOfCementWithPipeIn) - Number(LengthOfSpacer);
+                             // if the result above is positive it means spacer didnt cross-over
       const LengthOfSpacer_DrillPipeMD_to_TopOfSpacer = Number(TopOfSpacer) - Number(plug.drillPipeMD);
                                  // CHECK IF SPACER ENTERED DRILLPIPE ANNULUS
-      const CrossOver = Number(LengthOfSpacer_DrillPipeMD_to_TopOfSpacer) - Number(LengthOfSpacer);
-                       // if the result above is positive it means spacer didnt cross-over
       const VolumeInStinger_PlugZoneAnnular =AnnularCapacityOfPlugZoneStinger * LengthOfSpacer_DrillPipeMD_to_TopOfSpacer 
       const VolumeInDrillPipe_Annulus = Number(VolumeOfSpacerAhead) - Number(VolumeInStinger_PlugZoneAnnular);
       const AnnCapDrillPipe_OuterZone = ((plug.dpOuterZoneId * plug.dpOuterZoneId) -
                                         (plug.drillPipeOD * plug.drillPipeOD)) /(changer);
       const LengthOfSpacerInDrillPipe_Zone =  (VolumeInDrillPipe_Annulus / AnnCapDrillPipe_OuterZone);
-      const TopOfSpacerWithCrossOver = Number(LengthOfSpacer_DrillPipeMD_to_TopOfSpacer) +Number(LengthOfSpacerInDrillPipe_Zone)
+      const TopOfSpacerWithCrossOver = Number(TopOfCementWithPipeIn)-
+      Number(LengthOfSpacer_DrillPipeMD_to_TopOfSpacer) +Number(LengthOfSpacerInDrillPipe_Zone)
 
                                   // -----Spacer behind for case DrillPipe
       const SpacerBehindVolume_In_Stinger = (CapacityOfStinger * LengthOfSpacer_DrillPipeMD_to_TopOfSpacer).toFixed(1);
       const SpacerBehindVolume_In_DrillPipe = (CapacityOfDrillPipe* LengthOfSpacerInDrillPipe_Zone).toFixed(1);
       const TotalSpacerBehind_With_Dp = SpacerBehindVolume_In_Stinger + SpacerBehindVolume_In_DrillPipe;
-      const Spacer_Behind_With_Dp_Changer = CrossOver < 0? TotalSpacerBehind_With_Dp : VolumeOfSpacerBehind;
+      const Spacer_Behind_With_Dp_Changer = drillPipe ? TotalSpacerBehind_With_Dp : VolumeOfSpacerBehind;
                                   // Displacement in the case of DrillPipe 
-      const Displacement_1 = (Number(CapacityOfDrillPipe*plug.drillPipeMD)+Number(CapacityOfStinger*TopOfSpacer)).toFixed(2);
+      const Displacement_1 = (Number(CapacityOfDrillPipe*plug.drillPipeMD)
+       +Number(CapacityOfStinger*LengthOfSpacer_DrillPipeMD_to_TopOfSpacer )).toFixed(2);
       const Displacement_2 = (CapacityOfDrillPipe*TopOfSpacerWithCrossOver).toFixed(2);
-      const Displacement_Changer = CrossOver > 0 ? Displacement_1 : Displacement_2; 
+      const Displacement_Changer =TopOfSpacer> plug.drillPipeMD ? Displacement_1:  Displacement_2
+      // TopOfSpacer> plug.drillPipeMD ? Displacement_1 : Displacement_2; 
       
 
           return(
@@ -57,8 +59,11 @@ const ResultPlug = ({LABEL}) =>{
             <h1 style={{color: "blue",}}>{LABEL}</h1>
             <h2><span style={{color:"blue"}}>{VolOfPlug.toFixed(1)}</span> bbl Of Cement Slurry </h2>
             <h2>
-             Displacement : <span style={{color: "green"}}>{ plug.drillPipe? Displacement_Changer : Displacement }</span>  bbl
+             Displacement : <span style={{color: "green"}}> { drillPipe? Displacement_Changer : Displacement} </span>  bbl
             </h2>
+            <div>drillpipe cap {CapacityOfDrillPipe.toFixed(4)}</div>
+            <div>Top of spacer {TopOfSpacer.toFixed(0)}</div>
+            <div>Drill Pipe Depth {[plug.drillPipeMD]}</div>
             <h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
             <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 
             <h4>Cement Quantity: {CementQuantityInSacks.toFixed(2)} Sacks = {CementQuantityInMT.toFixed(1)} MT</h4>

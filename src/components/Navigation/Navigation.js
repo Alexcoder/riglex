@@ -99,7 +99,7 @@ const Navigation = () => {
          <button className={navMode==="additive"? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("additive")}></button>
-         <h2>Cementing Additives</h2>
+         <h2>Additive</h2>
       </Grid>
 
        </p>
