@@ -66,7 +66,7 @@ const handleChange=(e)=>{
       <SingleInputPlug name="drillPipeOD" value= {plug.drillPipeOD} label="DRILLPIPE OD (inches)" 
       onChange={handleChange}
       />
-      <SingleInputPlug name="drillPipeMD" value= {plug.drillPipeMD} label="DRILLPIPE DEPTH (inches)" 
+      <SingleInputPlug name="drillPipeMD" value= {plug.drillPipeMD} label="DRILLPIPE DEPTH" 
       onChange={handleChange}
       />
             <SingleInputPlug name="dpOuterZoneId" value= {plug.dpOuterZoneId} label="DP ZONE ID (inches)" 

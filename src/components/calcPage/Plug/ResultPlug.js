@@ -62,8 +62,8 @@ const ResultPlug = ({LABEL}) =>{
              Displacement : <span style={{color: "green"}}> { drillPipe? Displacement_Changer : Displacement} </span>  bbl
             </h2>
             <div>drillpipe cap {CapacityOfDrillPipe.toFixed(4)}</div>
-            <div>Top of spacer {TopOfSpacer.toFixed(0)}</div>
-            <div>Drill Pipe Depth {[plug.drillPipeMD]}</div>
+            <div>Top of spacer {TopOfSpacer.toFixed(0)} {unitChanger}</div>
+            <div>Drill Pipe Depth {[plug.drillPipeMD]} {unitChanger}</div>
             <h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
             <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 
             <h4>Cement Quantity: {CementQuantityInSacks.toFixed(2)} Sacks = {CementQuantityInMT.toFixed(1)} MT</h4>
