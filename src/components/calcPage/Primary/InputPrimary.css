@@ -12,9 +12,11 @@
   .select_FieldCementing{
     width:23rem;
     padding: 1rem 1rem 1rem 1rem; 
+    box-shadow: 2px 2px 0.2rem 0px gray ;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    border: 1px solid gray;
   }
   .button_field{
     width: 9rem;

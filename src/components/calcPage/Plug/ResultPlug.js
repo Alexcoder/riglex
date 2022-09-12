@@ -7,8 +7,8 @@ import {Grid} from '@mui/material';
 const ResultPlug = ({LABEL}) =>{
   const history = useHistory();
        const {plug, wellData, drillPipe} =  useGlobalState();
-       const changer = wellData.unit==="1"? 1029.4 : 313.8;
-       const unitChanger = wellData.unit==="1"? "ft" : "m";
+       const changer = wellData.unit==="ft"? 1029.4 : 313.8;
+       const unitChanger = wellData.unit==="ft"? "ft" : "m";
 
       //  NO DRILLPIPE ATTACHED TO STINGER CASE 1
       const Excess = (Number(plug.OHE)+100)*0.01;
@@ -49,7 +49,6 @@ const ResultPlug = ({LABEL}) =>{
        +Number(CapacityOfStinger*LengthOfSpacer_DrillPipeMD_to_TopOfSpacer )).toFixed(2);
       const Displacement_2 = (CapacityOfDrillPipe*TopOfSpacerWithCrossOver).toFixed(2);
       const Displacement_Changer =TopOfSpacer> plug.drillPipeMD ? Displacement_1:  Displacement_2
-      // TopOfSpacer> plug.drillPipeMD ? Displacement_1 : Displacement_2; 
       
 
           return(
@@ -60,22 +59,42 @@ const ResultPlug = ({LABEL}) =>{
               }} className="grid_container_css">
                 <Grid item xs={12} sm={12} md={12} >
             <h1 style={{color: "blue",}}>{LABEL}</h1>
+            <Grid item xs={12} sm={12} md={9}>
             <h2>Cement Slurry : <span style={{color:"blue"}}>{VolOfPlug.toFixed(1)}</span> bbl </h2>
+            </Grid>
+            <Grid item xs={12} sm={12} md={9}>
             <h2>
              Displacement : <span style={{color: "green"}}> { drillPipe? Displacement_Changer : Displacement} </span>  bbl
             </h2>
+            </Grid>
       {drillPipe ? 
             <p>
+            <Grid item xs={12} sm={12} md={9}>
             <div>drillpipe cap {CapacityOfDrillPipe.toFixed(4)} bbl/{unitChanger}</div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={9}>
             <div>Top of spacer {TopOfSpacer.toFixed(0)} {unitChanger}</div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={9}>
             <div>Drill Pipe Depth {[plug.drillPipeMD]} {unitChanger}</div>
+            </Grid>
             </p> : null
       }
-            <h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
-            <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 
-            <h4>Cement Quantity: {CementQuantityInSacks.toFixed(2)} Sacks = {CementQuantityInMT.toFixed(1)} MT</h4>
-            <h4>Length Of Cement With Pipe In : {LengthOfCementWithPipeIn} {unitChanger}</h4>
-        <button onClick={()=>{history.push('/select/primary')}}>Back</button>
+            <Grid item xs={12} sm={12} md={9}>
+              
+              </Grid><h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
+            <Grid item xs={12} sm={12} md={9}>
+              <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 
+              </Grid>
+            <Grid item xs={12} sm={12} md={9}>
+              <h4>Cement Quantity: {CementQuantityInSacks.toFixed(2)} Sacks = {CementQuantityInMT.toFixed(1)} MT</h4>
+              </Grid>
+            <Grid item xs={12} sm={12} md={9}>
+              <h4>Length Of Cement With Pipe In : {LengthOfCementWithPipeIn} {unitChanger}</h4>
+              </Grid>
+           <Grid item xs={12} sm={12} md={9}>
+          <button onClick={()=>{history.push('/select/primary')}}>Back</button>
+          </Grid>
 
           </Grid>
           </Grid>

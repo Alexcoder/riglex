@@ -16,7 +16,7 @@ export const ContextProvider = ({children}) => {
 
   const ExcessLead = (Number(wellData.leadExcess) +100)*0.01
   const ExcessTail = (Number(wellData.tailExcess) +100)*0.01
-  const switchJobUnit = wellData.unit==="2"? 313.8 : 1029.4
+  const switchJobUnit = wellData.unit==="m"? 313.8 : 1029.4
   const changerPresentCsgOD = mode==="1338" ? 13.375 : mode==="958"? 9.625: mode==="7INCH"? 7 : wellData.presentCsgOD
 
   // -------------------PRIMARY CEMENTING CALCULATION------------------------------

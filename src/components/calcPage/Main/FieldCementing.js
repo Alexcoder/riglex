@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import {useHistory } from 'react-router-dom';
 import { CircularProgress, Grid} from '@mui/material'
 import '../Primary/InputPrimary.css'
 import {InputPrimary, InputPlug} from '../../../components'
@@ -11,11 +10,6 @@ import {useLocation} from 'react-router-dom'
 const FieldCementing = () =>  { 
   const {theme, mode, setMode, wellData ,setWellData}= useGlobalState();
   const path = useLocation().pathname;
-  const history=useHistory()
-
-    const handleSubmit=(e)=>{
-    e.preventDefault();
-   };
 
    const handleButtonColor = (value) => {
     if(wellData.unit=== value){
@@ -36,10 +30,9 @@ const FieldCementing = () =>  {
 
   },[mode, setMode, wellData, setWellData, path])
 
-    useEffect(()=> {
-      if(mode==="home"){ history.push('/'); setMode("1338")}
-    },[mode, history, setMode])
-
+const handleSubmit =(e)=> {
+e.preventDefault()
+}
 
 return (
 <div>
@@ -47,12 +40,11 @@ return (
   <select className="select_FieldCementing" type="number" value={mode}
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
-      <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>PRIMARY CEMENTING</option>
-      <option className={mode==="1338"? 'green option_class' : "option_class"} disabled={mode==="1338"} value={"1338"}>13-3/8 INCH CASING CEMENTING</option>
-      <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 INCH CASING CEMENTING</option>
-      <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7INCH CSG CEMENTING</option>
-      {/* <option className={`option_class`} disabled={mode!=="0"}>Remedial Cementing</option> */}
-      <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>PLUG CEMENTING</option>
+      <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>Primary Cementing</option>
+      <option className={mode==="1338"? 'green option_class' : "option_class"} disabled={mode==="1338"} value={"1338"}>13-3/8 inch Casing Cementing</option>
+      <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 inch Casing Cementing</option>
+      <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7 inch Casing Cementing</option>
+      <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>Plug Cementing</option>
    </select>         
     </div>
    <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
@@ -63,7 +55,6 @@ return (
    </Grid> 
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
-  {/* <Paper elevation="5"> */}
 <Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
   {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
   {
@@ -130,7 +121,6 @@ return (
 }
 
    </Grid> 
-   {/* </Paper> */}
 </div>
 )
 }

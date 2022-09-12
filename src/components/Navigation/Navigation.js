@@ -17,6 +17,7 @@ const Navigation = () => {
   else if(navMode==="958" & isClicked) {setMode("958"); history.push("/select/primary")}
   else if(navMode==="7INCH" & isClicked) {setMode("7INCH"); history.push("/select/primary")}
   else if(navMode==="PLUG" & isClicked) {setMode("PLUG"); history.push("/select/primary")}
+  else if(navMode==="liner" & isClicked) {setMode("liner"); history.push("/select/primary/liner")}
   else if(navMode==="additive" & isClicked) history.push("/additive");
   // else return
 

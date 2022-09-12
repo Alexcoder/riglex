@@ -23,7 +23,7 @@ const ResultPage1338 = ( ) => {
 // git push -u origin main
 
 
-    const unitChanger = wellData.unit==="2"? 'm' : 'ft';
+    const unitChanger = wellData.unit==="m"? 'm' : 'ft';
 
      return (
        <div  className="xcontainerDiv"  >
