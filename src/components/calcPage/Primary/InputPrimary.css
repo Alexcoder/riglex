@@ -27,14 +27,23 @@
   }
   .button_field:hover{
     background-color: transparent;
-    border: 1px solid gray;
     color: blue;
   }
 .input_primary_BackButton{
   width: 20rem;
   padding: 0.8rem;
+  margin: 0.5rem;
   font-size: 1rem;
   margin-top: 1rem;
+  border: 1px solid gray;
+}
+
+@media screen and (max-width: 1024px){
+  .button_field:hover{
+    background-color: green;
+    border: 1px solid gray;
+    color: white;
+  }
 }
 
 

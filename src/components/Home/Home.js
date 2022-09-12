@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <div className="home_container_div" >
     <Grid container direction="column" justifyContent="center" alignItems="center" textAlign="center"
-    columnSpacing={1} rowSpacing={1} p={2} className="grid_container"
+    columnSpacing={1} rowSpacing={5} p={2} mt={2} className="grid_container"
     >
         <Grid item xs={12} sm={10} md={8} lg={3} xl={3}>
-           <Typography variant="h3"> <span style={{color: "blue"}}>Welcome !</span> </Typography>
+           <Typography variant="h3"> <span style={{color: "brown",}}>Welcome !</span> </Typography>
         </Grid>
         <Grid item xs={12} sm={10} md={5} lg={3} xl={3} mt={4}>
             <Typography wrap  variant="h5">

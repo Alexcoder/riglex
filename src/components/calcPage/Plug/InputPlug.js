@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './InputPlug.css';
 import {Grid, Paper, Container} from '@mui/material'
 import {SingleInputPlug} from '../../../components';
@@ -9,10 +9,21 @@ import { useHistory } from 'react-router-dom';
 const InputPlug = ({LABEL}) => { 
 
 const {plug, setPlug,drillPipe, setDrillPipe} =  useGlobalState();
+const [isClicked, setIsClicked] = useState(false)
 const history = useHistory();
 const handleChange=(e)=>{
      setPlug({...plug, [e.target.name]: e.target.value})
 }
+
+// if(!plug.length || !plug.zoneId || !plug.OHE || !plug.stingerID || 
+//   !plug.stingerOD || !plug.volOfSpacerAhead || !plug.bottom  & isClicked ) alert("Ensure all field are filled")
+//   else if(drillPipe & !plug.drillPipeID || !plug.drillPipeOD || !plug.drillPipeMD || !plug.dpOuterZoneId
+//     & isClicked ) alert("Fill drillPipe data to continue!")
+    
+  
+  
+  
+  if(isClicked) history.push('/select/result-plug');
 
   return (
     <Container  className="container">
@@ -76,8 +87,8 @@ const handleChange=(e)=>{
       : null
       }
 
-      <button className="submitButton" onClick={()=> history.push('/select/result-plug')}>View Result</button>
       <button className="submitButton" onClick={()=> history.push('/select')}>Back</button>
+      <button className="submitButton" onClick={()=>setIsClicked(true) }>View Result</button>
     </Grid>
     </Paper>
     </Container>

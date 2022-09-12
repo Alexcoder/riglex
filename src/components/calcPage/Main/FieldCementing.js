@@ -51,15 +51,15 @@ return (
       <option className={mode==="1338"? 'green option_class' : "option_class"} disabled={mode==="1338"} value={"1338"}>13-3/8 INCH CASING CEMENTING</option>
       <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 INCH CASING CEMENTING</option>
       <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7INCH CSG CEMENTING</option>
-      <option className={`option_class`} disabled={mode!=="0"}>Remedial Cementing</option>
+      {/* <option className={`option_class`} disabled={mode!=="0"}>Remedial Cementing</option> */}
       <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>PLUG CEMENTING</option>
    </select>         
     </div>
    <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
-   <button  onClick={()=> setWellData({...wellData, unit: ("1")} )}
-       className={`button_field ${handleButtonColor("1")}`} value={"1"} > FEET</button>
-    <button onClick={()=> setWellData({...wellData, unit: ("2")}) } 
-      className={`button_field ${handleButtonColor("2")}`} value={"2"} > METER </button>
+   <button  onClick={()=> setWellData({...wellData, unit: ("ft")} )}
+       className={`button_field ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
+    <button onClick={()=> setWellData({...wellData, unit: ("m")}) } 
+      className={`button_field ${handleButtonColor("m")}`} value={"m"} > METER </button>
    </Grid> 
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}

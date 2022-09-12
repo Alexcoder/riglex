@@ -53,10 +53,10 @@ const InputPrimary = ({ onSubmit, PreviousCsgShoe,PreviousCsgOD, PreviousCsgID,C
       </Grid> 
 
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem black", }} 
-      onClick={()=> history.push("/select/result-primary")}> VIEW RESULT </button>
+      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem gray", }} onClick={()=> history.push("/select")}> BACK </button>
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem black", }} onClick={()=> history.push("/select")}> BACK </button>
+      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem gray", }} 
+      onClick={()=> history.push("/select/result-primary")}> VIEW RESULT </button>
 
       {/* </div> */}
 

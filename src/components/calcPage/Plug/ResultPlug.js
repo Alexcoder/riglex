@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './ResultPlug.css'
 import { useGlobalState } from '../../../state';
 import {Grid} from '@mui/material';
 
 const ResultPlug = ({LABEL}) =>{
+  const history = useHistory();
        const {plug, wellData, drillPipe} =  useGlobalState();
        const changer = wellData.unit==="1"? 1029.4 : 313.8;
        const unitChanger = wellData.unit==="1"? "ft" : "m";
@@ -54,20 +56,28 @@ const ResultPlug = ({LABEL}) =>{
             <div className='resultPlugContainer'
               >
             <Grid container direction="column" justifyContent="center" alignItems="center" textAlign="center"
-            sx={{width:"35rem", padding: "1rem", color: "black", backgroundColor:"whitesmoke",
-              }}>
+            sx={{width:"", padding: "", color: "black", backgroundColor:"whitesmoke",
+              }} className="grid_container_css">
+                <Grid item xs={12} sm={12} md={12} >
             <h1 style={{color: "blue",}}>{LABEL}</h1>
-            <h2><span style={{color:"blue"}}>{VolOfPlug.toFixed(1)}</span> bbl Of Cement Slurry </h2>
+            <h2>Cement Slurry : <span style={{color:"blue"}}>{VolOfPlug.toFixed(1)}</span> bbl </h2>
             <h2>
              Displacement : <span style={{color: "green"}}> { drillPipe? Displacement_Changer : Displacement} </span>  bbl
             </h2>
-            <div>drillpipe cap {CapacityOfDrillPipe.toFixed(4)}</div>
+      {drillPipe ? 
+            <p>
+            <div>drillpipe cap {CapacityOfDrillPipe.toFixed(4)} bbl/{unitChanger}</div>
             <div>Top of spacer {TopOfSpacer.toFixed(0)} {unitChanger}</div>
             <div>Drill Pipe Depth {[plug.drillPipeMD]} {unitChanger}</div>
+            </p> : null
+      }
             <h4>Volume of Spacer Ahead : {VolumeOfSpacerAhead} bbl</h4>
             <h4>Volume of Spacer Behind : { plug.drillPipe? Spacer_Behind_With_Dp_Changer: VolumeOfSpacerBehind} bbl</h4> 
             <h4>Cement Quantity: {CementQuantityInSacks.toFixed(2)} Sacks = {CementQuantityInMT.toFixed(1)} MT</h4>
             <h4>Length Of Cement With Pipe In : {LengthOfCementWithPipeIn} {unitChanger}</h4>
+        <button onClick={()=>{history.push('/select/primary')}}>Back</button>
+
+          </Grid>
           </Grid>
             </div>  
           )

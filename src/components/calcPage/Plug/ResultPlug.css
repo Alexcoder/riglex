@@ -1,6 +1,26 @@
-.xresultPlugContainer{
+.resultPlugContainer{
     background-color: whitesmoke;
     box-shadow: 0.2rem 0.2rem 0.7rem 0rem;
-    margin: 2.2rem 0rem 0rem 5rem;
-    height: 28rem;
+    margin: 2.2rem 20rem 0rem 15rem;
+    height: 42rem;
+    text-align: center;
+}
+.grid_container_css{
+    margin-left: 15rem;
+    width: 35rem;
+}
+@media screen and (max-width: 620px){
+    .resultPlugContainer{
+        text-align: center;
+        background-color: whitesmoke;
+        box-shadow: 0.2rem 0.2rem 0.7rem 0rem;
+        margin: 1.5rem 0.5rem 0rem 0.5rem;
+        height: 48rem;
+    }
+    .grid_container_css{
+        padding: 1rem;
+        margin: 2.2rem 0rem 0rem 4rem;
+
+    }
+    
 }
