@@ -3,7 +3,7 @@ import { Grid, TextField} from '@mui/material';
 import '../calcPage/Primary/InputPrimary.css';
 
 
-export const SinglePrimary = ({label,value, name, onChange}) => { 
+export const SinglePrimary = ({label,value, name, onChange, disabled}) => { 
   return (
         <Grid item xs={12} sm={12} md={6} 
         className ="input1338_textField_grid"
@@ -15,7 +15,8 @@ export const SinglePrimary = ({label,value, name, onChange}) => {
             }
           }}
          style={{padding: "0.45rem"}}
-            id="outlined-basic" 
+            id="outlined-basic"
+            disabled={disabled}
             label={label}
             // variant="outlined"
             variant="filled"

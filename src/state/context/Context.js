@@ -1,4 +1,4 @@
-import React, {createContext, useState ,useContext} from 'react';
+import React, {createContext, useState ,useContext, useEffect} from 'react';
 import {inputDataPrimary} from '../../object'
 import {inputDataPlug} from '../../object'
 
@@ -13,11 +13,24 @@ export const ContextProvider = ({children}) => {
   const [jobMode, setJobMode] = useState();
   const [plug, setPlug] = useState(inputDataPlug)
   const [drillPipe, setDrillPipe] = useState(false)
+  const [navMode, setNavMode] = useState("")
+
 
   const ExcessLead = (Number(wellData.leadExcess) +100)*0.01
   const ExcessTail = (Number(wellData.tailExcess) +100)*0.01
   const switchJobUnit = wellData.unit==="m"? 313.8 : 1029.4
   const changerPresentCsgOD = mode==="1338" ? 13.375 : mode==="958"? 9.625: mode==="7INCH"? 7 : wellData.presentCsgOD
+
+  const Liner_csg_csg_gap = Number(wellData.presentCsgShoe)-Number(wellData.previousCsgShoe);
+ const Length_Of_Tail__Above_Shoe_Changer = mode==="liner" ? Liner_csg_csg_gap : wellData.lengthOfTailAboveShoe;
+ const Liner_Slurry_Volume =(Number(wellData.volOfLead) + Number(wellData.volOfTail)).toFixed(1)
+
+ useEffect(() => {
+  if(mode==="liner") {setWellData({...wellData , lengthOfTailAboveShoe: Liner_csg_csg_gap});
+                      setWellData({...wellData , leadExcess: wellData.tailExcess});
+                    }
+ }, [mode, wellData, Liner_csg_csg_gap])
+ 
 
   // -------------------PRIMARY CEMENTING CALCULATION------------------------------
   wellData.openHoleCap = (
@@ -42,15 +55,21 @@ export const ContextProvider = ({children}) => {
   wellData.topOfFloat=
         (wellData.presentCsgShoe-wellData.shoeTrack)   ; 
   wellData.topOfTail=
-        (wellData.presentCsgShoe-wellData.lengthOfTailAboveShoe) ;  
+        (wellData.presentCsgShoe - Length_Of_Tail__Above_Shoe_Changer) ;  
   // wellData.topOfLead= (wellData.previousCsgShoe-wellData.overlap);  
 //-------------- RESULT COMPUTATION--------------------------------
-  wellData.volOfLead = ( 
-        ( (wellData.previousCsgShoe-wellData.topOfLead)
-         * (wellData.csgCsgAnn )  ) +
-        (  (wellData.openHoleCsgAnn) * 
-          (wellData.topOfTail-wellData.previousCsgShoe) * (ExcessLead))
-        ).toFixed(1)
+  wellData.volOfLead = mode==="liner"? ( 
+                     ( (wellData.previousCsgShoe-wellData.topOfLead)
+                      * (wellData.csgCsgAnn ))).toFixed(1)
+                   :             
+                     (
+                     ( (wellData.previousCsgShoe-wellData.topOfLead)
+                     * (wellData.csgCsgAnn )  ) +
+                     (  (wellData.openHoleCsgAnn) * 
+                      (wellData.topOfTail-wellData.previousCsgShoe) * (ExcessLead))
+                     ).toFixed(1)
+
+
 //--------------- TAIL-------------------------------
   wellData.volOfTail = (
         ( (wellData.presentCsgShoe-wellData.topOfTail)
@@ -69,7 +88,7 @@ export const ContextProvider = ({children}) => {
     value={{
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
-     setPlug, drillPipe, setDrillPipe,
+     setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume,
     }}
     >
         {children}

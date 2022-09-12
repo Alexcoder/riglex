@@ -45,6 +45,8 @@ return (
       <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 inch Casing Cementing</option>
       <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7 inch Casing Cementing</option>
       <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>Plug Cementing</option>
+      <option className={`option_class ${handleButtonColor("liner")}`} value={"liner"}>Liner Cementing</option>
+
    </select>         
     </div>
    <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
@@ -58,7 +60,7 @@ return (
 <Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
   {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
   {
-    ( mode!=="1338" & mode!=="958" & mode!=="7INCH" & mode!=="" & mode!=="OTHERS" & mode!=="PLUG") ? <CircularProgress style={{textAlign: "center"}}/> : null
+    ( mode!=="1338" & mode!=="958" & mode!=="7INCH" & mode!=="" & mode!=="OTHERS" & mode!=="PLUG" & mode!=="liner") ? <CircularProgress style={{textAlign: "center"}}/> : null
   }
   { mode==="" || mode==="OTHERS" || !mode ? 
     <InputPrimary   wellData={wellData} setWellData={setWellData}
@@ -119,6 +121,20 @@ return (
   />
   : null
 }
+{/* ---------------LINER------------------- */}
+{ mode==="liner" ? 
+    <InputPrimary   wellData={wellData} setWellData={setWellData}
+    LABEL= "LINER CEMENTING DATA" 
+    onSubmit={handleSubmit}
+    PreviousCsgShoe="PREVIOUS CSG SHOE"
+    PreviousCsgOD="PREVIOUS CSG OD (inches)"
+    PreviousCsgID="PREVIOUS CSG ID (inches)"
+    CasingOD="LINER CSG OD (inches)"
+    CasingID= "LINER CSG ID (inches)"
+    />
+     : null
+  }
+
 
    </Grid> 
 </div>

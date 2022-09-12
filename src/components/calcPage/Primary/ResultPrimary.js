@@ -7,7 +7,7 @@ import { useGlobalState } from '../../../state';
 
 
 const ResultPage1338 = ( ) => { 
-   const {wellData} = useGlobalState()
+   const {wellData, mode, Liner_Slurry_Volume} = useGlobalState()
    const history = useHistory();
 
 // echo "# cementing" >> README.md
@@ -33,14 +33,25 @@ const ResultPage1338 = ( ) => {
           <h1 style={{ color: "blue", marginTop: "0.5rem"}}>RESULT</h1>   
           <div className='vol_result'  style={{marginLeft: "0rem"}}>
             <h4>{wellData.jobType} </h4> 
-            <h4><span style={{color: "red"}}>{wellData.volOfLead}</span> bbl of Lead Slurry</h4> 
-            <h4><span style={{color: "red"}}>{wellData.volOfTail}</span> bbl of Tail Slurry</h4> 
-            <h4><span style={{color: "blue"}}>{wellData.displacement}</span> bbl Displacement </h4> 
-            <h4>Top Of Lead : {wellData.topOfLead} {unitChanger}</h4> 
-            <h4>Top Of Tail : {wellData.topOfTail} {unitChanger}</h4> 
-            <h4>Casing Capacity {wellData.casingCap} bbl/{unitChanger} </h4>
-            <h4>Csg/csg annular capacity {wellData.csgCsgAnn} bbl/{unitChanger} </h4>
-            <h4>OpenHole/csg annular capacity {wellData.openHoleCsgAnn} bbl/{unitChanger} </h4>
+            {mode==="liner"?
+              <>
+              <h4><span style={{color: "red"}}>{Liner_Slurry_Volume}</span> bbl of Slurry</h4>
+              <h4>Top Of Slurry : {wellData.topOfLead} {unitChanger}</h4> 
+              <h4> Displacement volume loading.....</h4> 
+              </>
+              :<>
+              <h4><span style={{color: "red"}}>{wellData.volOfLead}</span> bbl of Lead Slurry</h4> 
+              <h4><span style={{color: "red"}}>{wellData.volOfTail}</span> bbl of Tail Slurry</h4>
+              <h4>Top Of Lead : {wellData.topOfLead} {unitChanger}</h4> 
+             <h4>Top Of Tail : {wellData.topOfTail} {unitChanger}</h4> 
+             <h4><span style={{color: "blue"}}>{wellData.displacement}</span> bbl Displacement </h4> 
+             <h4>Top Of Lead : {wellData.topOfLead} {unitChanger}</h4> 
+             <h4>Top Of Tail : {wellData.topOfTail} {unitChanger}</h4> 
+             <h4>Casing Capacity {wellData.casingCap} bbl/{unitChanger} </h4>
+             <h4>Csg/csg annular capacity {wellData.csgCsgAnn} bbl/{unitChanger} </h4>
+             <h4>OpenHole/csg annular capacity {wellData.openHoleCsgAnn} bbl/{unitChanger} </h4>
+              </>
+            }
         </div>
 
         <button className="result_button green" onClick={()=>{history.push('/select/primary')}}>BACK</button>

@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useHistory } from 'react-router-dom';
 import {Grid} from '@mui/material';
 import './Navigation.css';
 import { useGlobalState } from '../../state';
 
 const Navigation = () => { 
-  const {setMode,} =  useGlobalState();
+  const {navMode, setNavMode, setMode,} =  useGlobalState();
   const history = useHistory();
-  const [navMode, setNavMode] = useState("")
   const [isClicked, setIsClicked] = useState(false)
 
+  
 
   if(navMode==="unit_conversion" & isClicked) history.push("/select/field-unit-converter")
   else if(navMode==="primary" & isClicked) history.push("/select/primary")
@@ -17,9 +17,15 @@ const Navigation = () => {
   else if(navMode==="958" & isClicked) {setMode("958"); history.push("/select/primary")}
   else if(navMode==="7INCH" & isClicked) {setMode("7INCH"); history.push("/select/primary")}
   else if(navMode==="PLUG" & isClicked) {setMode("PLUG"); history.push("/select/primary")}
-  else if(navMode==="liner" & isClicked) {setMode("liner"); history.push("/select/primary/liner")}
+  else if(navMode==="liner" & isClicked) {setMode("liner"); history.push("/select/primary")}
   else if(navMode==="additive" & isClicked) history.push("/additive");
   // else return
+
+  useEffect(() => {
+   if(navMode) localStorage.setItem('navMode', navMode)
+   setNavMode(localStorage.getItem('navMode', navMode))
+ }, [navMode, setNavMode])
+
 
 
   return (
@@ -90,6 +96,7 @@ const Navigation = () => {
       7 inch Cementing
        </button>
       </Grid>
+
 
       <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center", marginTop: "1rem", marginBottom: "-2rem",}}>
          <button className={navMode==="PLUG"? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
