@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './InputPlug.css';
 import {Grid, Paper, Container} from '@mui/material'
 import {SingleInputPlug} from '../../../components';
@@ -9,27 +9,22 @@ import { useHistory } from 'react-router-dom';
 const InputPlug = ({LABEL}) => { 
 
 const {plug, setPlug,drillPipe, setDrillPipe} =  useGlobalState();
-const [isClicked, setIsClicked] = useState(false)
 const history = useHistory();
 const handleChange=(e)=>{
      setPlug({...plug, [e.target.name]: e.target.value})
 }
 
-// if(!plug.length || !plug.zoneId || !plug.OHE || !plug.stingerID || 
-//   !plug.stingerOD || !plug.volOfSpacerAhead || !plug.bottom  & isClicked ) alert("Ensure all field are filled")
-//   else if(drillPipe & !plug.drillPipeID || !plug.drillPipeOD || !plug.drillPipeMD || !plug.dpOuterZoneId
-//     & isClicked ) alert("Fill drillPipe data to continue!")
-    
   
   
-  
-  if(isClicked) history.push('/select/result-plug');
+  function handleViewResult () {
+    history.push('/select/result-plug');
+  }
 
   return (
     <Container  className="container">
 
-    <Paper elevation="5" sx={{padding:"2rem"}}>
-    <Grid direction= "column"
+    <Paper elevation={3} sx={{padding:"2rem"}}>
+    <Grid container direction= "column"
      textAlign="center" alignItems="center" justifyContent="center">
       <h1 style={{color: "blue"}}>{LABEL}</h1>
       <>
@@ -60,14 +55,16 @@ const handleChange=(e)=>{
       onChange={handleChange}
       />
       </>
-       <p style={{border: "1px solid gray"}}>
+       <div style={{border: "1px solid gray", width: "18rem", marginTop: "0.5rem", marginBottom: "0.5rem"}}>
       <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center", marginTop: "1rem"}}>
          <button className={drillPipe? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
-        border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" }}
+        border: "2px solid gray", padding:"1rem", marginTop: "1rem", marginLeft: "1rem", marginBottom: "1rem" }}
          onClick={()=> setDrillPipe((pre)=> !pre)}></button>
-         <h2>DrillPipe Data</h2>
+         <button onClick={()=> setDrillPipe((pre)=> !pre)} 
+         style={{border: "none", backgroundColor: "inherit",fontSize: "1.7rem", width: "18rem", paddin: "1rem",}}
+         >DrillPipe Data</button>
       </Grid>
-       </p>
+       </div>
       {
         drillPipe?
       <>
@@ -88,7 +85,7 @@ const handleChange=(e)=>{
       }
 
       <button className="submitButton" onClick={()=> history.push('/select')}>Back</button>
-      <button className="submitButton" onClick={()=>setIsClicked(true) }>View Result</button>
+      <button className="submitButton" onClick={handleViewResult}>View Result</button>
     </Grid>
     </Paper>
     </Container>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {useHistory } from 'react-router-dom';
 import {Grid} from '@mui/material';
 import './Navigation.css';
@@ -7,24 +7,24 @@ import { useGlobalState } from '../../state';
 const Navigation = () => { 
   const {navMode, setNavMode, setMode,} =  useGlobalState();
   const history = useHistory();
-  const [isClicked, setIsClicked] = useState(false)
 
-  
+const handleContinue = () =>{
+   if(navMode==="unit_conversion") history.push("/select/field-unit-converter")
+   else if(navMode==="additive") history.push("/select/additive")
+   else if(navMode==="primary"){setMode("OTHERS"); history.push("/select/primary")}
+   else if(navMode==="1338") {setMode("1338"); history.push("/select/primary")}
+   else if(navMode==="958") {setMode("958"); history.push("/select/primary")}
+   else if(navMode==="7INCH" ) {setMode("7INCH"); history.push("/select/primary")}
+   else if(navMode==="PLUG") {setMode("PLUG"); history.push("/select/primary")}
+   else if(navMode==="liner") {setMode("liner"); history.push("/select/primary")}
 
-  if(navMode==="unit_conversion" & isClicked) history.push("/select/field-unit-converter")
-  else if(navMode==="primary" & isClicked) history.push("/select/primary")
-  else if(navMode==="1338" & isClicked) {setMode("1338"); history.push("/select/primary")}
-  else if(navMode==="958" & isClicked) {setMode("958"); history.push("/select/primary")}
-  else if(navMode==="7INCH" & isClicked) {setMode("7INCH"); history.push("/select/primary")}
-  else if(navMode==="PLUG" & isClicked) {setMode("PLUG"); history.push("/select/primary")}
-  else if(navMode==="liner" & isClicked) {setMode("liner"); history.push("/select/primary")}
-  else if(navMode==="additive" & isClicked) history.push("/additive");
-  // else return
-
-  useEffect(() => {
+   else history.push('/select')
+} 
+useEffect(() => {
    if(navMode) localStorage.setItem('navMode', navMode)
    setNavMode(localStorage.getItem('navMode', navMode))
  }, [navMode, setNavMode])
+
 
 
 
@@ -32,7 +32,8 @@ const Navigation = () => {
     <div className="navigation_div_container">
 
     <Grid container direction="column" justifyContent="center" alignItems="center" textAlign="center"
-    columnSpacing={1} rowSpacing={7} p={5} className="xgrid_container"
+    columnSpacing={1} rowSpacing={7} p={5} 
+   //  className="xgrid_container"
     >
 
       {/* <Grid item xs={12} sm={12} md={8} lg={3} xl={3} className="Xselect_grid">
@@ -51,12 +52,12 @@ const Navigation = () => {
         </FormControl>
         </Grid> */}
 
-        <p  className="tag_p">
+        <div  className="tag_p">
       <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center", marginBottom: "-2rem"}}>
          <button className={navMode==="unit_conversion"? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("unit_conversion")}></button>
-         <button className="second_grid_button" onClick={()=> setNavMode("unit_conversion")} >
+         <button className="second_grid_button" onClick={()=> {setNavMode("unit_conversion")}} >
          Unit Conversion
          </button>
          </Grid>
@@ -127,10 +128,10 @@ const Navigation = () => {
 
       </Grid>
 
-       </p>
+       </div>
 
        <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} >
-       <button className={!navMode? "nav_button" : "nav_button green"} onClick={()=> {navMode? setIsClicked(true): setIsClicked(false)}}>CONTINUE</button>
+       <button className={!navMode? "nav_button" : "nav_button green"} onClick={handleContinue}>CONTINUE</button>
        </Grid> 
       <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} >
        <button onClick={()=> history.push('/')} className="nav_button link">BACK</button>

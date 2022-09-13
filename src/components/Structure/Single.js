@@ -11,7 +11,7 @@ export const SingleInputPlug = ({onChange,label,value,name}) => {
                     style:{textAlign: "center" , fontSize: "1.2rem", width: "70%"}
                 }
               }}
-       className="xinputPagePlugIndividualTextField" name={name}
+         name={name}
         id="outlined-basic" label={label} variant="filled" type="number" value={value}
        onChange={onChange}
        />

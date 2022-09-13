@@ -1,15 +1,13 @@
 import React, {useEffect} from 'react'
-import { CircularProgress, Grid} from '@mui/material'
+import { Grid} from '@mui/material'
 import '../Primary/InputPrimary.css'
 import {InputPrimary, InputPlug} from '../../../components'
 
 import { useGlobalState } from '../../../state';
-import {useLocation} from 'react-router-dom'
 
 
 const FieldCementing = () =>  { 
   const {theme, mode, setMode, wellData ,setWellData}= useGlobalState();
-  const path = useLocation().pathname;
 
    const handleButtonColor = (value) => {
     if(wellData.unit=== value){
@@ -19,16 +17,16 @@ const FieldCementing = () =>  {
     }
    }
    const handleSelect=(e)=>{
-    setMode(e.target.value || JSON.parse(localStorage.getItem('mode', mode)));
+    setMode(e.target.value);
    }
-  //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
+   //--------EFFECT HOOK FOR LOCAL STORAGE------------------
    useEffect(()=>{
     if(mode) localStorage.setItem('mode', mode) ;
     setMode(localStorage.getItem('mode', mode));
     if(wellData.unit) localStorage.setItem('unitButton', wellData.unit) ;
     setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
 
-  },[mode, setMode, wellData, setWellData, path])
+  },[wellData,setWellData, setMode, mode])
 
 const handleSubmit =(e)=> {
 e.preventDefault()
@@ -59,10 +57,10 @@ return (
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
 <Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
   {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
-  {
+  {/* {
     ( mode!=="1338" & mode!=="958" & mode!=="7INCH" & mode!=="" & mode!=="OTHERS" & mode!=="PLUG" & mode!=="liner") ? <CircularProgress style={{textAlign: "center"}}/> : null
-  }
-  { mode==="" || mode==="OTHERS" || !mode ? 
+  } */}
+  { mode==="OTHERS"  ? 
     <InputPrimary   wellData={wellData} setWellData={setWellData}
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}

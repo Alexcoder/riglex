@@ -151,8 +151,8 @@ const Revert =()=>{
   return (
   <div  style={{backgroundColor: "black", height: "22rem"}}>
 
-    <p>
-     <p className="label_select">SELECT</p >
+    <div>
+     <div className="label_select">SELECT</div >
     <select   value={modeConversion} onChange={(e)=> setModeConversion(e.target.value)}
      className="select" label="SELECT CONVERSION MODE"> 
          <option disabled={modeConversion}>SELECT</option>
@@ -175,21 +175,21 @@ const Revert =()=>{
          <option className={modeConversion==="Centigrade" ?   "green" : null} value={"Centigrade"}>Celsius To Fahrenheit</option>
          <option className={modeConversion==="Fahrenheit" ?   "green" : null} value={"Fahrenheit"}>Fahrenheit To Celsius</option>
          </select>
-         </p>
+         </div>
 
-    <p className="main_container">
+    <div className="main_container">
 {/* ---Grid item className below is no longer valid------- */}
     <Grid item xs={10} md={10} sm={10} className ="xxgrid_container" sx={{borderColor: "none"}}
     > 
       <h1 className="h1_data"> {data} </h1>
-      <p style={{display: "flex"}}>
+      <div style={{display: "flex"}}>
       <TextField id="outlined-basic" type='number' variant="outlined"
        value={factor} label={`${baseUnit}`} 
        onChange={(e)=> {modeConversion && setFactor(e.target.value)}}
        className='textField'
        />
       <button style={{height:"3.58rem"}} onClick={Revert}><SyncAltIcon/></button>
-      </p>
+      </div>
 
 
        {
@@ -200,16 +200,16 @@ const Revert =()=>{
       :factor<0 ?  <div style={{color: "red",fontStyle:"italics", marginTop:"2rem"}} className='div'> Error: Negative Input !</div>
        :<div className='text' > {factor} <span style={{color:"red"}}>{baseUnit}</span> equals  {ResultChanger} <span style={{color: "blue"}}>{resultUnit}</span></div>
        }
-       <button style={{marginTop:"1rem"}} className= "button red" 
+       <button style={{marginTop:"1rem"}} className= "button_conversion red" 
        onClick={()=> {setFactor(""); 
        localStorage.setItem('factor', null); 
         setModeConversion(modeConversion)}}>CLEAR
         </button>
-        <button className="button blue margin_up_back_button" onClick={()=>{history.push("/select")}}>BACK</button>
+        <button className="button_conversion blue" onClick={()=>{history.push("/select")}}>BACK</button>
 
    <div className="lexwares">Lexwares @2022</div>
     </Grid>
-    </p>
+    </div>
     {/* <Additive /> */}
   </div>
   )

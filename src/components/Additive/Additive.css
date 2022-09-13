@@ -1,0 +1,73 @@
+.container{
+    background-color: whiteSmoke;
+    width: 26rem;
+    padding: 3rem;
+    color: black;
+    display: grid;
+    gap: 0.7rem;
+    margin: 1rem 0rem ;
+    box-shadow: 0rem 0.1rem 0.5rem 0rem black;
+    border-radius: 0.2rem;
+}
+.additive_input{
+    width: 19rem;
+    height: 3.5rem;
+}
+.div{
+     border: 2px solid inherit;
+     color: black;
+     width: 20rem;
+     border-color: black;
+     margin-top: 1rem;
+     text-align: center;
+     padding-top: 1rem;
+     padding-bottom: 0.3rem;
+}
+.cement_sack_render{
+    text-align: center;
+    color: blue;
+    /* border: 2px solid gray; */
+    width: 24.2rem;
+    padding:1rem 0 0.5rem 0;
+    margin: -2rem 0 0rem 0;
+    font-size: 1rem;
+}
+.button{
+    color: white;
+    background-color: blue; 
+    width: 20rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    border-color: inherit;
+    opacity: 0.8;
+    border-radius: 0.5rem;
+}
+.red{
+    background-color: darkred;
+    margin-top: 0.5rem;
+}
+.button :hover{
+    background-color: white;
+    color: black;
+}
+.green{
+    background-color: green;
+    color: white;
+}
+.lexwares{
+    opacity: 0.6; 
+    text-align: center; 
+    margin: 2rem 0rem -2rem 0rem;
+}
+@media screen and (max-width: 440px){
+    .container{
+        /* margin: 8rem 0rem 0rem 29rem; */
+        height: 60rem;
+    }
+    .additive_input{
+        /* width: 19rem; */
+        height: 1rem;
+    }
+
+}

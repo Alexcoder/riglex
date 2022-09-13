@@ -6,10 +6,12 @@ import InputPrimary from './calcPage/Primary/InputPrimary';
 import ResultPrimary from './calcPage/Primary/ResultPrimary';
 import InputPlug from './calcPage/Plug/InputPlug';
 import ResultPlug from './calcPage/Plug/ResultPlug';
+import Additive from './Additive/Additive'
+import Header from './Header/Header'
 import {SinglePrimary} from './Structure/SinglePrimary';
 import {SingleInputPlug} from './Structure/Single';
 
 
 
 export{Home, Navigation, ConversionPage, FieldCementing, InputPrimary, ResultPrimary, InputPlug, ResultPlug,
-       SinglePrimary, SingleInputPlug}
+       Additive, SinglePrimary, SingleInputPlug, Header}

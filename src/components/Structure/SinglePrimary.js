@@ -18,9 +18,7 @@ export const SinglePrimary = ({label,value, name, onChange, disabled}) => {
             id="outlined-basic"
             disabled={disabled}
             label={label}
-            // variant="outlined"
             variant="filled"
-            // variant="contained"
             color="primary"
             name={name}
             type='number' 
