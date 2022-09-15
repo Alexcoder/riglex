@@ -1,17 +1,11 @@
 import React from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 import { Container, AppBar, Typography, ButtonBase } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
 
 const Header = () => {
 const history = useHistory()
-const path= useLocation().pathname;
 
 
-
-const GoTo =(a)=>{
-  history.push(a)
-}
 
 
 
