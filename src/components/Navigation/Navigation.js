@@ -78,7 +78,7 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("1338")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("1338")} >
-         13-3/8 inch Casing Cementing
+         13-3/8 inch Csg Cementing
       </button>
       </Grid>
 
