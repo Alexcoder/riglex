@@ -1,14 +1,14 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {Home, Navigation, ConversionPage, FieldCementing, ResultPrimary, ResultPlug ,Additive, Header,
-        HeaderNav, BumpPressure} from './components';
+        BumpPressure} from './components';
 
 
 function App() {
   return (
     <div>
       <Header />
-      <HeaderNav/>
+      {/* <HeaderNav/> */}
       <Switch>
        <Route path="/" exact component={Home}/>
        <Route path="/select" exact component={Navigation}/>
