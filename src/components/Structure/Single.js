@@ -4,11 +4,11 @@ import {TextField, Grid} from '@mui/material'
 export const SingleInputPlug = ({onChange,label,value,name}) => {
 
   return (
-    <Grid item xs={12} sm={12} md={10} lg={8} xl={8}>
+    <Grid item xs={12} sm={12} md={3}>
        <TextField 
                  InputProps={{
                   inputProps:{
-                    style:{textAlign: "center" , fontSize: "1.2rem", width: "70%"}
+                    style:{fontSize: "1.2rem", width: "18rem"}
                 }
               }}
          name={name}

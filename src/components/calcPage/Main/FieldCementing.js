@@ -1,13 +1,15 @@
-import React, {useEffect} from 'react'
-import { Grid} from '@mui/material'
-import '../Primary/InputPrimary.css'
+import React, {useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
+import { Grid} from '@mui/material';
+import '../Primary/InputPrimary.css';
 import {InputPrimary, InputPlug} from '../../../components'
 
 import { useGlobalState } from '../../../state';
 
 
 const FieldCementing = () =>  { 
-  const {theme, mode, setMode, wellData ,setWellData}= useGlobalState();
+  const history = useHistory()
+  const {theme, mode, setMode, wellData ,setWellData, unitChanger}= useGlobalState();
 
    const handleButtonColor = (value) => {
     if(wellData.unit=== value){
@@ -19,7 +21,22 @@ const FieldCementing = () =>  {
    const handleSelect=(e)=>{
     setMode(e.target.value);
    }
-   //--------EFFECT HOOK FOR LOCAL STORAGE------------------
+
+   if(mode==="bump-pressure") history.push("/select/bump-pressure")
+  //  function handleEffect(){
+  //   localStorage.setItem('mode', mode) ;
+  //   setMode(localStorage.getItem('mode', mode));
+  //   localStorage.setItem('unitButton', wellData.unit) ;
+  //   setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
+  //  }
+
+  //  if(mode) handleEffect();
+  //  if(wellData.unit) handleEffect()
+
+
+
+
+  //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
    useEffect(()=>{
     if(mode) localStorage.setItem('mode', mode) ;
     setMode(localStorage.getItem('mode', mode));
@@ -27,6 +44,8 @@ const FieldCementing = () =>  {
     setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
 
   },[wellData,setWellData, setMode, mode])
+
+
 
 const handleSubmit =(e)=> {
 e.preventDefault()
@@ -39,11 +58,12 @@ return (
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
       <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>Primary Cementing</option>
-      <option className={mode==="1338"? 'green option_class' : "option_class"} disabled={mode==="1338"} value={"1338"}>13-3/8 inch Casing Cementing</option>
+      <option className={mode==="1338"? 'green option_class' : "option_class"} value={"1338"}>13-3/8 inch Casing Cementing</option>
       <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 inch Casing Cementing</option>
       <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7 inch Casing Cementing</option>
       <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>Plug Cementing</option>
       <option className={`option_class ${handleButtonColor("liner")}`} value={"liner"}>Liner Cementing</option>
+      <option className={`option_class ${handleButtonColor("bump-pressure")}`} value={"bump-pressure"}> Bump Pressure</option>
 
    </select>         
     </div>
@@ -64,7 +84,7 @@ return (
     <InputPrimary   wellData={wellData} setWellData={setWellData}
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}
-    PreviousCsgShoe="PREVIOUS CSG SHOE"
+    PreviousCsgShoe={`PREVIOUS CSG SHOE (${unitChanger})`}
     PreviousCsgOD="PREVIOUS CSG OD (inches)"
     PreviousCsgID="PREVIOUS CSG ID (inches)"
     CasingOD="PRESENT CSG OD (inches)"
@@ -76,7 +96,7 @@ return (
   <InputPrimary
   LABEL= "13-3/8 IN CSG CEMENTING DATA" 
   onSubmit={handleSubmit}
-  PreviousCsgShoe="CONDUCTOR CSG SHOE"
+  PreviousCsgShoe={`CONDUCTOR CSG SHOE (${unitChanger})`}
   PreviousCsgOD="CONDUCTOR CSG OD (inches)"
   PreviousCsgID="CONDUCTOR CSG ID (inches)"
   CasingOD="13-3/8 IN CSG OD (inches)"
@@ -89,7 +109,7 @@ return (
  <InputPrimary 
  LABEL= "9-5/8 IN CSG CEMENTING DATA" 
  onSubmit={handleSubmit}
- PreviousCsgShoe="13-3/8 CSG SHOE"
+ PreviousCsgShoe={`13-3/8 CSG SHOE (${unitChanger})`}
  PreviousCsgOD="13-3/8 CSG OD (inches)"
  PreviousCsgID="13-3/8 CSG ID (inches)"
  CasingOD="9-5/8 IN CSG OD (inches)"
@@ -101,7 +121,7 @@ return (
 {/* ------------------------------------------------------------------------------ */}
 { mode==="7INCH" ? 
   <InputPrimary   wellData={wellData} setWellData={setWellData}
-  LABEL= "7 INCH CEMENTING DATA" 
+  LABEL= {`7 INCH CEMENTING DATA (${unitChanger})`} 
   onSubmit={handleSubmit}
   PreviousCsgShoe="9-5/8 CSG SHOE"
   PreviousCsgOD="9-5/8 CSG OD (inches)"
@@ -124,7 +144,7 @@ return (
     <InputPrimary   wellData={wellData} setWellData={setWellData}
     LABEL= "LINER CEMENTING DATA" 
     onSubmit={handleSubmit}
-    PreviousCsgShoe="PREVIOUS CSG SHOE"
+    PreviousCsgShoe= {`PREVIOUS CSG SHOE (${unitChanger})`}
     PreviousCsgOD="PREVIOUS CSG OD (inches)"
     PreviousCsgID="PREVIOUS CSG ID (inches)"
     CasingOD="LINER CSG OD (inches)"

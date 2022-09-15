@@ -7,23 +7,26 @@ import { useGlobalState } from '../../../state';
 
 
 const ResultPage1338 = ( ) => { 
-   const {wellData, mode, Liner_Slurry_Volume} = useGlobalState()
-   const history = useHistory();
+  const history = useHistory();
+  const {wellData, mode, Liner_Slurry_Volume, unitChanger, SwitchJobUnit} = useGlobalState();
 
-// echo "# cementing" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/Alexcoder/cementing.git
-// git push -u origin main
+  // topOfTail, casingCap, csgCsgAnn, openHoleCsgAnn,  presentCsgTvd
+  const{jobType, volOfLead, volOfTail,displacement,topOfLead, 
+        mudWeight, weightOfLeadSlurry, weightOfTailSlurry, weightOfDisplacementFluid,topOfLeadTvd,
+        topOfTailTvd, topOfFloatTvd, tvd, } = wellData;
+  
+  const BumpPressure = (0.052*((mudWeight*topOfLeadTvd) + weightOfLeadSlurry*(topOfTailTvd-topOfLeadTvd)+
+                      weightOfTailSlurry*(tvd-topOfTailTvd) + weightOfTailSlurry*(tvd-topOfFloatTvd))
+                                    -
+                      0.052*(weightOfDisplacementFluid*topOfFloatTvd)).toFixed(0)
+  // Liner Displacement
+  const  Drill_Pipe_Capacity = (wellData.drillPipeIdLiner**2)/SwitchJobUnit
+  const Setting_Tool_Capacity= (wellData.settingToolAssemblyIdLiner**2)/SwitchJobUnit
+  const Liner_Capacity = (wellData.presentCsgID**2)/SwitchJobUnit
+  const Liner_Displacement_Volume = ((Drill_Pipe_Capacity *(wellData.drillPipeDepthLiner)) +
+                                    (Setting_Tool_Capacity*(wellData.topOfLead-wellData.drillPipeDepthLiner))+
+                                    (Liner_Capacity*(wellData.topOfFloat-wellData.topOfLead))).toFixed(1)
 
-// git remote add origin https://github.com/Alexcoder/cementing.git
-// git branch -M main
-// git push -u origin main
-
-
-    const unitChanger = wellData.unit==="m"? 'm' : 'ft';
 
      return (
        <div  className="xcontainerDiv"  >
@@ -32,26 +35,21 @@ const ResultPage1338 = ( ) => {
         <Paper elevation={5} sx={{padding: "2rem 2rem 2rem 2rem"}}>
           <h1 style={{ color: "blue", marginTop: "0.5rem"}}>RESULT</h1>   
           <div className='vol_result'  style={{marginLeft: "0rem"}}>
-            <h4>{wellData.jobType} </h4> 
+            <h4>{jobType} </h4> 
             {mode==="liner"?
               <>
               <h4><span style={{color: "red"}}>{Liner_Slurry_Volume}</span> bbl of Slurry</h4>
-              <h4>Top Of Slurry : {wellData.topOfLead} {unitChanger}</h4> 
-              <h4> Displacement volume loading.....</h4> 
+              <h4>Top Of Slurry : {topOfLead} {unitChanger}</h4>
+              <h4>Displacement {Liner_Displacement_Volume} bbl</h4> 
               </>
               :<>
-              <h4><span style={{color: "red"}}>{wellData.volOfLead}</span> bbl of Lead Slurry</h4> 
-              <h4><span style={{color: "red"}}>{wellData.volOfTail}</span> bbl of Tail Slurry</h4>
-              <h4>Top Of Lead : {wellData.topOfLead} {unitChanger}</h4> 
-             <h4>Top Of Tail : {wellData.topOfTail} {unitChanger}</h4> 
-             <h4><span style={{color: "blue"}}>{wellData.displacement}</span> bbl Displacement </h4> 
-             <h4>Top Of Lead : {wellData.topOfLead} {unitChanger}</h4> 
-             <h4>Top Of Tail : {wellData.topOfTail} {unitChanger}</h4> 
-             <h4>Casing Capacity {wellData.casingCap} bbl/{unitChanger} </h4>
-             <h4>Csg/csg annular capacity {wellData.csgCsgAnn} bbl/{unitChanger} </h4>
-             <h4>OpenHole/csg annular capacity {wellData.openHoleCsgAnn} bbl/{unitChanger} </h4>
+              <h4><span style={{color: "red"}}>{volOfLead}</span> bbl of Lead Slurry</h4> 
+              <h4><span style={{color: "red"}}>{volOfTail}</span> bbl of Tail Slurry</h4>
+             <h4><span style={{color: "blue"}}>{displacement}</span> bbl Displacement </h4> 
+             <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
               </>
             }
+              <h4> <span style={{color: "red"}}>{BumpPressure}</span> psi Pressure to Bump Plug</h4> :
         </div>
 
         <button className="result_button green" onClick={()=>{history.push('/select/primary')}}>BACK</button>

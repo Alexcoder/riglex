@@ -4,8 +4,7 @@ import { Grid, TextField } from '@mui/material';
 const SingleAdditive = ({label,value,onChange}) => {
 
   return (
-    <Grid container>
-      <Grid item xs={10} sm={10} md={10}>
+      <Grid item xs={10} sm={10} md={4}>
         <TextField
         InputProps={{
             inputProps:{
@@ -19,7 +18,6 @@ const SingleAdditive = ({label,value,onChange}) => {
       onChange={onChange}
       />
       </Grid>
-    </Grid>
   )
 }
 

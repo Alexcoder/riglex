@@ -22,7 +22,10 @@ const Additive = () => {
   const MixFluid_With_DeadVolume_Changer = !slurryYield & !sacksOfCement ? "No Empty Field Allowed" 
                         : !slurryVolume || !mixFluidConc || !deadVolume || !additiveConcentration ?
                         "No Empty Field Allowed"
+                        : sacksOfCement>"0" & mixFluidConc>"0" & deadVolume>="0" & additiveConcentration>"0"?
+                          (TotalMixFluid_With_DeadVolume + "bbl of mixfluid")
                         : (TotalMixFluid_With_DeadVolume + "bbl of mixfluid")
+
 
 
   const clear =()=>{
@@ -38,9 +41,12 @@ const Additive = () => {
 
   return (
   <div>
-     <Grid item xs={10} md={10} sm={10} className ="container" gap={1}
+     <Grid container justifyContent="center" alignItems="center" textAlign="center"
+     rowSpacing={5}
       > 
-      <h1 style={{color: "blue", textAlign: "center", marginTop: "-2rem"}}> Additive Calculator </h1>
+      <Grid item xs={10} sm={10} md={10}>
+      <h2 style={{color: "blue", textAlign: "center", marginBottom: "-1rem"}}> Additive Check </h2>
+      </Grid>
 
       { sacksOfCement ? null :
       <>
@@ -72,24 +78,36 @@ const Additive = () => {
        {/* -----------RESULT-------------- */}
 
        {
-        slurryVolume>"0" & slurryYield>"0" & mixFluidConc!=="0" & deadVolume>="0" & additiveConcentration>"0" ?
-        <h3 style={{textAlign: "center", color: "blue", marginTop: "0.5rem"}}>Additive 
+        slurryVolume>"0" & slurryYield>"0" & mixFluidConc>="0" & deadVolume>="0" & additiveConcentration>"0" ?
+        <Grid item xs={10} sm={10} md={10}>
+        <h3 style={{textAlign: "center", color: "blue",}}>Additive 
        <span style={{color: "red"}}> {Additive} </span>  
         gallon</h3>
-        : null
+        </Grid>
+        :sacksOfCement>"0" & mixFluidConc>="0" & deadVolume>="0" & additiveConcentration>"0" ?
+        <Grid item xs={10} sm={10} md={10}>
+        <h3 style={{textAlign: "center", color: "blue",}}>Additive 
+        <span style={{color: "red"}}> {Additive} </span>  
+         gallon</h3>
+         </Grid>
+         : null
        }
-       <h3 style={{textAlign: "center", color: "red", marginTop: "-1rem"}}>{MixFluid_With_DeadVolume_Changer}</h3>
-
-       {/* {      //Calculated Sacks Of Cement
-       slurryVolume<="0" || slurryYield<="0"? null :
-       slurryYield || slurryVolume?
-       <h5 className="cement_sack_render">{CementSacksChanger} sacks of cement</h5> : null
-       } */}
-
+       <Grid item xs={10} sm={10} md={10}>
+       <h3 style={{textAlign: "center", color: "red",}}>{MixFluid_With_DeadVolume_Changer}</h3>
+       </Grid>
+      
+      <Grid item xs={10} sm={10} md={10}>
        <button className= "button red" onClick={clear}>CLEAR</button>
-       <Link to="/select">Exit</Link>
+       </Grid>
 
-   <div className="lexwares" >Lexwares @2022</div>
+       <Grid item xs={10} sm={10} md={10}>
+       <Link to="/select" className="exit_button">Exit</Link>
+       </Grid>
+
+      <Grid item xs={10} sm={10} md={10}>
+      <div className="lexwares" >Lexwares @2022</div>
+      </Grid>
+
     </Grid>
   </div>
   )

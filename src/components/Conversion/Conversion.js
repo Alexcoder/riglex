@@ -149,7 +149,7 @@ const Revert =()=>{
 }
 
   return (
-  <div  style={{backgroundColor: "black", height: "22rem"}}>
+  <div  style={{backgroundColor: "lightgray", height: "29rem"}}>
 
     <div>
      <div className="label_select">SELECT</div >
@@ -184,7 +184,7 @@ const Revert =()=>{
       <h1 className="h1_data"> {data} </h1>
       <div style={{display: "flex"}}>
       <TextField id="outlined-basic" type='number' variant="outlined"
-       value={factor} label={`${baseUnit}`} 
+       value={factor} label={`${baseUnit}`} sx={{textAlign: "center"}}
        onChange={(e)=> {modeConversion && setFactor(e.target.value)}}
        className='textField'
        />
@@ -210,7 +210,6 @@ const Revert =()=>{
    <div className="lexwares">Lexwares @2022</div>
     </Grid>
     </div>
-    {/* <Additive /> */}
   </div>
   )
 }

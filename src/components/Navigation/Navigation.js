@@ -11,12 +11,14 @@ const Navigation = () => {
 const handleContinue = () =>{
    if(navMode==="unit_conversion") history.push("/select/field-unit-converter")
    else if(navMode==="additive") history.push("/select/additive")
+   else if(navMode==="bump-pressure") history.push("/select/bump-pressure")
    else if(navMode==="primary"){setMode("OTHERS"); history.push("/select/primary")}
    else if(navMode==="1338") {setMode("1338"); history.push("/select/primary")}
    else if(navMode==="958") {setMode("958"); history.push("/select/primary")}
    else if(navMode==="7INCH" ) {setMode("7INCH"); history.push("/select/primary")}
    else if(navMode==="PLUG") {setMode("PLUG"); history.push("/select/primary")}
    else if(navMode==="liner") {setMode("liner"); history.push("/select/primary")}
+   else if(navMode==="liner") history.push("/select/primary")
 
    else history.push('/select')
 } 
@@ -76,7 +78,7 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("1338")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("1338")} >
-         13-3/8" Cementing
+         13-3/8 inch Casing Cementing
       </button>
       </Grid>
 
@@ -85,7 +87,7 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("958")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("958")} >
-        9-5/8" Cementing
+        9-5/8 inch Casing Cementing
        </button>
       </Grid>
 
@@ -94,8 +96,17 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("7INCH")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("7INCH")} >
-      7 inch Cementing
+      7 inch Csg Cementing
        </button>
+      </Grid>
+
+      <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center", marginTop: "1rem", marginBottom: "-2rem",}}>
+         <button className={navMode==="bump-pressure"? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
+        border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
+         onClick={()=> setNavMode("bump-pressure")}></button>
+      <button className="second_grid_button" onClick={()=> setNavMode("bump-pressure")} >
+       Bump Pressure
+      </button>
       </Grid>
 
 
@@ -104,7 +115,7 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("PLUG")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("PLUG")} >
-      Plug Cementing
+      Plug (Remedial) Cementing
       </button>
       </Grid>
 
@@ -123,19 +134,18 @@ useEffect(() => {
         border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
          onClick={()=> setNavMode("additive")}></button>
       <button className="second_grid_button" onClick={()=> setNavMode("additive")} >
-       Additive
+       Additive Check
       </button>
-
       </Grid>
 
        </div>
 
-       <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} >
+       <Grid item xs={12} sm={10} md={3} mt={4} >
        <button className={!navMode? "nav_button" : "nav_button green"} onClick={handleContinue}>CONTINUE</button>
        </Grid> 
-      <Grid item xs={12} sm={10} md={8} lg={3} xl={3} mt={4} >
+      {/* <Grid item xs={12} sm={10} md={3} mt={4} >
        <button onClick={()=> history.push('/')} className="nav_button link">BACK</button>
-      </Grid>
+      </Grid> */}
 
 
     </Grid >

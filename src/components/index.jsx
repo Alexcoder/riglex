@@ -8,10 +8,12 @@ import InputPlug from './calcPage/Plug/InputPlug';
 import ResultPlug from './calcPage/Plug/ResultPlug';
 import Additive from './Additive/Additive'
 import Header from './Header/Header'
+import BumpPressure from './calcPage/BumpPressure/BumpPressure';
+import HeaderNav from './Header/HeaderNav/HeaderNav'
 import {SinglePrimary} from './Structure/SinglePrimary';
 import {SingleInputPlug} from './Structure/Single';
 
 
 
 export{Home, Navigation, ConversionPage, FieldCementing, InputPrimary, ResultPrimary, InputPlug, ResultPlug,
-       Additive, SinglePrimary, SingleInputPlug, Header}
+       Additive, SinglePrimary, SingleInputPlug, Header, HeaderNav, BumpPressure}

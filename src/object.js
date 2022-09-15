@@ -27,7 +27,25 @@ export const inputDataPrimary = {
     volOfLead:"",
     volOfTail: "",
     displacement:"",
-    //RESULT FINISH
+
+    //LINER
+    drillPipeIdLiner:"",
+    drillPipeDepthLiner:"",
+    settingToolAssemblyIdLiner: "",
+
+
+// BUMP PRESSURE
+   mudWeight: "",
+   weightOfLeadSlurry:"",
+   weighOfTailSlurry: "",
+   weightOfDisplacementFluid:"",
+   topOfLeadTvd:"",
+   topOfTailTvd:"",
+   topOfFloatTvd:"",
+   presentCsgTvd: "",
+   tvd:"",
+
+
   }
 
   export const inputDataPlug = {

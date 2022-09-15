@@ -1,4 +1,4 @@
-import React, {createContext, useState ,useContext, useEffect} from 'react';
+import React, {createContext, useState ,useContext } from 'react';
 import {inputDataPrimary} from '../../object'
 import {inputDataPlug} from '../../object'
 
@@ -18,45 +18,25 @@ export const ContextProvider = ({children}) => {
 
   const ExcessLead = (Number(wellData.leadExcess) +100)*0.01
   const ExcessTail = (Number(wellData.tailExcess) +100)*0.01
-  const switchJobUnit = wellData.unit==="m"? 313.8 : 1029.4
-  const changerPresentCsgOD = mode==="1338" ? 13.375 : mode==="958"? 9.625: mode==="7INCH"? 7 : wellData.presentCsgOD
-
+  const SwitchJobUnit = wellData.unit==="m"? 313.8 : 1029.4
+  const unitChanger = wellData.unit==="m"? "m" : "ft"
+  const ChangerPresentCsgOD = mode==="1338" ? 13.375 : mode==="958"? 9.625: mode==="7INCH"? 7 : wellData.presentCsgOD
+  const ExcessLeadChanger = mode==="liner" ? ExcessTail : ExcessLead;
   const Liner_csg_csg_gap = Number(wellData.presentCsgShoe)-Number(wellData.previousCsgShoe);
  const Length_Of_Tail__Above_Shoe_Changer = mode==="liner" ? Liner_csg_csg_gap : wellData.lengthOfTailAboveShoe;
  const Liner_Slurry_Volume =(Number(wellData.volOfLead) + Number(wellData.volOfTail)).toFixed(1)
 
- useEffect(() => {
-  if(mode==="liner") {setWellData({...wellData , lengthOfTailAboveShoe: Liner_csg_csg_gap});
-                      setWellData({...wellData , leadExcess: wellData.tailExcess});
-                    }
- }, [mode, wellData, Liner_csg_csg_gap])
  
 
   // -------------------PRIMARY CEMENTING CALCULATION------------------------------
-  wellData.openHoleCap = (
-        (wellData.openHoleID * wellData.openHoleID)/(switchJobUnit) 
-        );
-  wellData.csgCsgAnn=(
-         (  (wellData.previousCsgID*wellData.previousCsgID)-
-         (changerPresentCsgOD*changerPresentCsgOD)  )/
-         (switchJobUnit) 
-          ).toFixed(4);
-  wellData.openHoleCsgAnn=(
-         (  (wellData.openHoleID*wellData.openHoleID)-
-         (changerPresentCsgOD*changerPresentCsgOD)  )/
-         (switchJobUnit)  
-          ).toFixed(4);
-  wellData.casingCap=(
-        (wellData.presentCsgID*wellData.presentCsgID)
-        /(switchJobUnit)
-        ).toFixed(4) ;
-  wellData.presentCsgShoe=
-       (wellData.measuredDepth - wellData.ratHole);  
-  wellData.topOfFloat=
-        (wellData.presentCsgShoe-wellData.shoeTrack)   ; 
-  wellData.topOfTail=
-        (wellData.presentCsgShoe - Length_Of_Tail__Above_Shoe_Changer) ;  
-  // wellData.topOfLead= (wellData.previousCsgShoe-wellData.overlap);  
+  wellData.openHoleCap = ((wellData.openHoleID **2)/(SwitchJobUnit) ).toFixed(4);
+  wellData.csgCsgAnn=(((wellData.previousCsgID **2) - (ChangerPresentCsgOD **2)) /(SwitchJobUnit) ).toFixed(4);
+  wellData.openHoleCsgAnn=(((wellData.openHoleID **2) - (ChangerPresentCsgOD **2)) /(SwitchJobUnit)).toFixed(4);
+  wellData.casingCap=((wellData.presentCsgID **2) /(SwitchJobUnit)).toFixed(4) ;
+  wellData.presentCsgShoe= (wellData.measuredDepth - wellData.ratHole);  
+  wellData.topOfFloat= (wellData.presentCsgShoe-wellData.shoeTrack)   ; 
+  wellData.topOfTail= (wellData.presentCsgShoe - Length_Of_Tail__Above_Shoe_Changer) ; 
+
 //-------------- RESULT COMPUTATION--------------------------------
   wellData.volOfLead = mode==="liner"? ( 
                      ( (wellData.previousCsgShoe-wellData.topOfLead)
@@ -66,7 +46,7 @@ export const ContextProvider = ({children}) => {
                      ( (wellData.previousCsgShoe-wellData.topOfLead)
                      * (wellData.csgCsgAnn )  ) +
                      (  (wellData.openHoleCsgAnn) * 
-                      (wellData.topOfTail-wellData.previousCsgShoe) * (ExcessLead))
+                      (wellData.topOfTail-wellData.previousCsgShoe) * (ExcessLeadChanger))
                      ).toFixed(1)
 
 
@@ -88,7 +68,8 @@ export const ContextProvider = ({children}) => {
     value={{
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
-     setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume,
+     setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume, ChangerPresentCsgOD,
+     unitChanger, SwitchJobUnit,
     }}
     >
         {children}

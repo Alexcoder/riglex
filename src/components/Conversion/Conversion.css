@@ -13,10 +13,11 @@
     width: 25rem;
 }
 .label_select{
-  color:white;
+  color: black;
   margin:1rem 0rem -3.2rem 26rem;
-  font-style:italic;
-  font-size: 1.5rem;
+  /* font-style:oblique; */
+  font-size: 1.3rem;
+  font-weight: 6rem
 }
 .select{
     box-shadow: 0rem 0.2rem 0.5rem 0rem black;
@@ -31,7 +32,6 @@
 .textField{
     background-color: white;
     width: 24rem;
-    text-align: center;
     height: 3.1rem; 
     border: 1px solid transparent; 
 }
@@ -221,7 +221,7 @@
         height: 22rem;
     }
     .label_select{
-        margin:3.7rem 0rem -3.2rem 2rem;
+        margin: 0rem 0rem -3.2rem 2rem;
       }
     .select{
         width: 89%;

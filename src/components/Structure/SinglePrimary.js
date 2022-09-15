@@ -5,7 +5,7 @@ import '../calcPage/Primary/InputPrimary.css';
 
 export const SinglePrimary = ({label,value, name, onChange, disabled}) => { 
   return (
-        <Grid item xs={12} sm={12} md={6} 
+        <Grid item xs={12} sm={12} md={3} 
         className ="input1338_textField_grid"
         >
          <TextField  

@@ -1,12 +1,14 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {Home, Navigation, ConversionPage, FieldCementing, ResultPrimary, ResultPlug ,Additive, Header} from './components';
+import {Home, Navigation, ConversionPage, FieldCementing, ResultPrimary, ResultPlug ,Additive, Header,
+        HeaderNav, BumpPressure} from './components';
 
 
 function App() {
   return (
     <div>
       <Header />
+      <HeaderNav/>
       <Switch>
        <Route path="/" exact component={Home}/>
        <Route path="/select" exact component={Navigation}/>
@@ -15,6 +17,7 @@ function App() {
        <Route path="/select/result-primary" exact component={ResultPrimary}/>
        <Route path="/select/result-plug" exact component={ResultPlug}/>
        <Route path="/select/additive" exact component={Additive}/>
+       <Route path="/select/bump-pressure" exact component={BumpPressure}/>
       </Switch>
     </div>
   );

@@ -6,7 +6,7 @@
     display: grid;
     gap: 0.7rem;
     margin: 1rem 0rem ;
-    box-shadow: 0rem 0.1rem 0.5rem 0rem black;
+    /* box-shadow: 0rem 0.1rem 0.5rem 0rem black; */
     border-radius: 0.2rem;
 }
 .additive_input{
@@ -35,7 +35,7 @@
 .button{
     color: white;
     background-color: blue; 
-    width: 20rem;
+    width: 18rem;
     height: 3.5rem;
     font-size: 1.3rem;
     margin-top: 0.5rem;
@@ -60,14 +60,23 @@
     text-align: center; 
     margin: 2rem 0rem -2rem 0rem;
 }
+.exit_button{
+    font-size: 1.3rem;
+}
+
 @media screen and (max-width: 440px){
     .container{
         /* margin: 8rem 0rem 0rem 29rem; */
         height: 60rem;
+        border: 1px solid transparent;
+        box-shadow: 0rem transparent;
     }
     .additive_input{
         /* width: 19rem; */
         height: 1rem;
+    }
+    .exit_button{
+        font-size: 1.3rem;
     }
 
 }
