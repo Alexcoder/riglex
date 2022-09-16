@@ -18,33 +18,23 @@ const FieldCementing = () =>  {
       return 
     }
    }
+
+
    const handleSelect=(e)=>{
     setMode(e.target.value);
+    localStorage.setItem('mode', mode) ;
    }
 
    if(mode==="bump-pressure") history.push("/select/bump-pressure")
-  //  function handleEffect(){
-  //   localStorage.setItem('mode', mode) ;
-  //   setMode(localStorage.getItem('mode', mode));
-  //   localStorage.setItem('unitButton', wellData.unit) ;
-  //   setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
-  //  }
-
-  //  if(mode) handleEffect();
-  //  if(wellData.unit) handleEffect()
-
-
 
 
   //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
    useEffect(()=>{
     if(mode) localStorage.setItem('mode', mode) ;
-    setMode(localStorage.getItem('mode', mode));
     if(wellData.unit) localStorage.setItem('unitButton', wellData.unit) ;
+    setMode(localStorage.getItem('mode', mode));
     setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
-
   },[wellData,setWellData, setMode, mode])
-
 
 
 const handleSubmit =(e)=> {
@@ -67,21 +57,12 @@ return (
 
    </select>         
     </div>
-   <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
-   <button  onClick={()=> setWellData({...wellData, unit: ("ft")} )}
-       className={`button_field ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
-    <button onClick={()=> setWellData({...wellData, unit: ("m")}) } 
-      className={`button_field ${handleButtonColor("m")}`} value={"m"} > METER </button>
-   </Grid> 
+    {/* --USED TO CONTAIN BUTTON GRID */}
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
-<Grid container textAlign= "center" justifyContent="center" alignItems="center" className="field_container_grid2">
-  {mode==="0" ? <h1>CLICK TO SELECT CEMENTING TYPE AND UNIT</h1>: null}
-  {/* {
-    ( mode!=="1338" & mode!=="958" & mode!=="7INCH" & mode!=="" & mode!=="OTHERS" & mode!=="PLUG" & mode!=="liner") ? <CircularProgress style={{textAlign: "center"}}/> : null
-  } */}
+<Grid container textAlign= "center" justifyContent="center" alignItems="center">
   { mode==="OTHERS"  ? 
-    <InputPrimary   wellData={wellData} setWellData={setWellData}
+    <InputPrimary 
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}
     PreviousCsgShoe={`PREVIOUS CSG SHOE (${unitChanger})`}
@@ -120,10 +101,10 @@ return (
 }
 {/* ------------------------------------------------------------------------------ */}
 { mode==="7INCH" ? 
-  <InputPrimary   wellData={wellData} setWellData={setWellData}
-  LABEL= {`7 INCH CEMENTING DATA (${unitChanger})`} 
+  <InputPrimary
+  LABEL= "7 INCH CEMENTING DATA"
   onSubmit={handleSubmit}
-  PreviousCsgShoe="9-5/8 CSG SHOE"
+  PreviousCsgShoe={`"9-5/8 CSG SHOE" ${unitChanger})`} 
   PreviousCsgOD="9-5/8 CSG OD (inches)"
   PreviousCsgID="9-5/8 CSG ID (inches)"
   CasingOD="7 INCH CSG OD (inches)"
@@ -133,7 +114,7 @@ return (
 }
 {/* ------------------------PLUG RENDERING------------------------------------ */}
 { mode==="PLUG" ? 
-  <InputPlug   wellData={wellData} setWellData={setWellData}
+  <InputPlug
   LABEL= "PLUG CEMENTING DATA" 
   onSubmit={handleSubmit}
   />
@@ -141,7 +122,7 @@ return (
 }
 {/* ---------------LINER------------------- */}
 { mode==="liner" ? 
-    <InputPrimary   wellData={wellData} setWellData={setWellData}
+    <InputPrimary 
     LABEL= "LINER CEMENTING DATA" 
     onSubmit={handleSubmit}
     PreviousCsgShoe= {`PREVIOUS CSG SHOE (${unitChanger})`}
@@ -153,6 +134,12 @@ return (
      : null
   }
 
+{/* ---------------BUMP PRESSURE----------- */}
+  {/* {mode==="bump-pressure"?
+    <BumpPressure/>
+      : null
+  }
+ */}
 
    </Grid> 
 </div>

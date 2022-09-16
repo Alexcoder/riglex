@@ -20,7 +20,7 @@ border: 1px solid gray;
 width: 42rem; 
 margin-bottom: -2rem;
 background-color: white;
-box-shadow: 1px 0.2px 0.1rem 0.5px gray;
+/* box-shadow: 1px 0.2px 0.1rem 0.5px gray; */
 margin-top: -2.5rem;
 }
 .nav_button_list{

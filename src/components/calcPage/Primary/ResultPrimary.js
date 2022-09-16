@@ -11,7 +11,7 @@ const ResultPage1338 = ( ) => {
   const {wellData, mode, Liner_Slurry_Volume, unitChanger, SwitchJobUnit} = useGlobalState();
 
   // topOfTail, casingCap, csgCsgAnn, openHoleCsgAnn,  presentCsgTvd
-  const{jobType, volOfLead, volOfTail,displacement,topOfLead, 
+  const{jobType,unit, volOfLead, volOfTail,displacement,topOfLead, 
         mudWeight, weightOfLeadSlurry, weightOfTailSlurry, weightOfDisplacementFluid,topOfLeadTvd,
         topOfTailTvd, topOfFloatTvd, tvd, } = wellData;
   
@@ -19,6 +19,8 @@ const ResultPage1338 = ( ) => {
                       weightOfTailSlurry*(tvd-topOfTailTvd) + weightOfTailSlurry*(tvd-topOfFloatTvd))
                                     -
                       0.052*(weightOfDisplacementFluid*topOfFloatTvd)).toFixed(0)
+  const BumpPressureChanger = unit==="ft" ? BumpPressure : (BumpPressure*3.28).toFixed(0)                                 
+
   // Liner Displacement
   const  Drill_Pipe_Capacity = (wellData.drillPipeIdLiner**2)/SwitchJobUnit
   const Setting_Tool_Capacity= (wellData.settingToolAssemblyIdLiner**2)/SwitchJobUnit
@@ -26,6 +28,7 @@ const ResultPage1338 = ( ) => {
   const Liner_Displacement_Volume = ((Drill_Pipe_Capacity *(wellData.drillPipeDepthLiner)) +
                                     (Setting_Tool_Capacity*(wellData.topOfLead-wellData.drillPipeDepthLiner))+
                                     (Liner_Capacity*(wellData.topOfFloat-wellData.topOfLead))).toFixed(1)
+
 
 
      return (
@@ -49,7 +52,7 @@ const ResultPage1338 = ( ) => {
              <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
               </>
             }
-              <h4> <span style={{color: "red"}}>{BumpPressure}</span> psi Pressure to Bump Plug</h4> :
+              <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Pressure to Bump Plug</h4> :
         </div>
 
         <button className="result_button green" onClick={()=>{history.push('/select/primary')}}>BACK</button>
