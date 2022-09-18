@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL}) =>{ 
 
-      const {wellData, setWellData, theme, mode, ChangerPresentCsgOD, unitChanger} = useGlobalState();
+      const {wellData, setWellData, theme, mode, ChangerPresentCsgOD, unitChanger, handleSetModeUnit} = useGlobalState();
 
       const history = useHistory();
       const handleChange=(e)=>{
@@ -23,13 +23,6 @@ const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL
         } else {
           return 
         }
-       }
-
-       const handleButton=(clicked)=>{
-        localStorage.setItem('unitButton', wellData.unit);
-        if(clicked==="ft") {setWellData({...wellData, unit: "ft"} ) ; }
-        else if(clicked==="m") {setWellData({...wellData, unit: "m"} ) ; }
-        else return 
        }
     
     
@@ -66,9 +59,9 @@ const handleViewResult=()=>{
      <h3 style={{color: "blue", marginTop: "-0.6rem"}}>{LABEL}</h3>
 
      <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
-   <button  onClick={()=>{handleButton("ft")} }
+   <button  onClick={()=>{handleSetModeUnit("ft")} }
        className={`button_field ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
-    <button onClick={()=> {handleButton("m") }} 
+    <button onClick={()=> {handleSetModeUnit("m") }} 
       className={`button_field ${handleButtonColor("m")}`} value={"m"} > METER </button>
    </Grid> 
 
@@ -89,8 +82,7 @@ const handleViewResult=()=>{
        value={mode==="OTHERS" ? wellData.presentCsgOD : ChangerPresentCsgOD} onChange={handleChange}/>
       <SinglePrimary label="OPEN HOLE SIZE (inches)" name="openHoleID"  value={wellData.openHoleID} onChange={handleChange}/>
       {mode ==="liner" ? null : 
-      <SinglePrimary disabled={mode==="liner"} label={mode==="liner"? `SLURRY LENGHT ABOVE SHOE (${unitChanger})`  : `LENGTH OF TAIL ABOVE CSG SHOE (${unitChanger})`}
-         name="lengthOfTailAboveShoe" value={wellData.lengthOfTailAboveShoe} onChange={handleChange}/> 
+      <SinglePrimary label={`TOP OF TAIL SLURRY (${unitChanger})`} name="topOfTail" value={wellData.topOfTail} onChange={handleChange}/> 
       } 
       <SinglePrimary label={CasingID} name="presentCsgID"  value={wellData.presentCsgID} onChange={handleChange}/>
       <SinglePrimary label={mode==="liner"? `TOP OF LINER SLURRY (${unitChanger})` : `TOP OF LEAD SLURRY (${unitChanger})`} name="topOfLead" value={wellData.topOfLead} onChange={handleChange}/> 

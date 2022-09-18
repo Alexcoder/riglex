@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 
 const InputPlug = ({LABEL}) => { 
 
-const {wellData, setWellData, theme, plug, setPlug,drillPipe, setDrillPipe} =  useGlobalState();
+const {wellData, theme, plug, setPlug,drillPipe, setDrillPipe, handleSetModeUnit} =  useGlobalState();
 const history = useHistory();
 const handleChange=(e)=>{
      setPlug({...plug, [e.target.name]: e.target.value})
@@ -20,13 +20,6 @@ const handleButtonColor = (value) => {
   } else {
     return 
   }
- }
-
- const handleButton=(clicked)=>{
-  localStorage.setItem('unitButton', wellData.unit);
-  if(clicked==="ft") {setWellData({...wellData, unit: "ft"} ) ; }
-  else if(clicked==="m") {setWellData({...wellData, unit: "m"} ) ; }
-  else return 
  }
 
   
@@ -43,9 +36,9 @@ const handleButtonColor = (value) => {
      textAlign="center" alignItems="center" justifyContent="center">
      <h1 style={{color: "blue", margin: "-1rem 0rem 0.5rem 0rem"}}>{LABEL}</h1>
      <Grid container textAlign="center" justifyContent="center" sx={{gap:"1rem"}} className="flexUnitButton">
-        <button  style={{marginBottom: "1rem",}} onClick={()=>{handleButton("ft")} }
+        <button  style={{marginBottom: "1rem",}} onClick={()=>{handleSetModeUnit("ft")} }
         className={`button_field ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
-        <button style={{marginBottom: "1rem",}} onClick={()=> {handleButton("m") }} 
+        <button style={{marginBottom: "1rem",}} onClick={()=> {handleSetModeUnit("m") }} 
         className={`button_field ${handleButtonColor("m")}`} value={"m"} > METER </button>
        </Grid> 
       <>

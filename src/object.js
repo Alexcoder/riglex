@@ -16,6 +16,7 @@ export const inputDataPrimary = {
     presentCsgID: "",
     previousCsgID: "",
     topOfLead:"",
+    topOfTail:"",
 //     
     presentCsgShoe:"",
     csgCsgAnn: "",
@@ -23,7 +24,6 @@ export const inputDataPrimary = {
     casingCap: "",
     topOfFloat: "",
     //RESULT
-    topOfTail: "",
     volOfLead:"",
     volOfTail: "",
     displacement:"",

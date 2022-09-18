@@ -15,6 +15,12 @@ export const ContextProvider = ({children}) => {
   const [drillPipe, setDrillPipe] = useState(false)
   const [navMode, setNavMode] = useState("")
 
+  const handleSetModeUnit=(unit)=>{
+    localStorage.setItem('unitButton', wellData.unit);
+    setWellData({...wellData, unit: unit} )
+  }
+
+  wellData.lengthOfTailAboveShoe = wellData.presentCsgShoe - wellData.topOfTail
 
   const ExcessLead = (Number(wellData.leadExcess) +100)*0.01
   const ExcessTail = (Number(wellData.tailExcess) +100)*0.01
@@ -35,7 +41,7 @@ export const ContextProvider = ({children}) => {
   wellData.casingCap=((wellData.presentCsgID **2) /(SwitchJobUnit)).toFixed(4) ;
   wellData.presentCsgShoe= (wellData.measuredDepth - wellData.ratHole);  
   wellData.topOfFloat= (wellData.presentCsgShoe-wellData.shoeTrack)   ; 
-  wellData.topOfTail= (wellData.presentCsgShoe - Length_Of_Tail__Above_Shoe_Changer) ; 
+  const TopOfTail= (wellData.presentCsgShoe - Length_Of_Tail__Above_Shoe_Changer) ; 
 
 //-------------- RESULT COMPUTATION--------------------------------
   wellData.volOfLead = mode==="liner"? ( 
@@ -46,13 +52,13 @@ export const ContextProvider = ({children}) => {
                      ( (wellData.previousCsgShoe-wellData.topOfLead)
                      * (wellData.csgCsgAnn )  ) +
                      (  (wellData.openHoleCsgAnn) * 
-                      (wellData.topOfTail-wellData.previousCsgShoe) * (ExcessLeadChanger))
+                      (TopOfTail-wellData.previousCsgShoe) * (ExcessLeadChanger))
                      ).toFixed(1)
 
 
 //--------------- TAIL-------------------------------
   wellData.volOfTail = (
-        ( (wellData.presentCsgShoe-wellData.topOfTail)
+        ( (wellData.presentCsgShoe-TopOfTail)
         *(wellData.openHoleCsgAnn) *
          (ExcessTail)  
            +
@@ -69,7 +75,7 @@ export const ContextProvider = ({children}) => {
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
      setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume, ChangerPresentCsgOD,
-     unitChanger, SwitchJobUnit,
+     unitChanger, SwitchJobUnit, handleSetModeUnit,
     }}
     >
         {children}

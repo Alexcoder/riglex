@@ -82,7 +82,6 @@ return (
   PreviousCsgID="CONDUCTOR CSG ID (inches)"
   CasingOD="13-3/8 IN CSG OD (inches)"
   CasingID= "13-3/8 IN CSG ID (inches)"
-  wellData={wellData} setWellData={setWellData}
   />: 
    null
 }
@@ -95,7 +94,6 @@ return (
  PreviousCsgID="13-3/8 CSG ID (inches)"
  CasingOD="9-5/8 IN CSG OD (inches)"
  CasingID= "9-5/8 IN CSG ID (inches)" 
- wellData={wellData} setWellData={setWellData}
  />
  :null
 }
@@ -104,7 +102,7 @@ return (
   <InputPrimary
   LABEL= "7 INCH CEMENTING DATA"
   onSubmit={handleSubmit}
-  PreviousCsgShoe={`"9-5/8 CSG SHOE" ${unitChanger})`} 
+  PreviousCsgShoe={`9-5/8 CSG SHOE (${unitChanger})`} 
   PreviousCsgOD="9-5/8 CSG OD (inches)"
   PreviousCsgID="9-5/8 CSG ID (inches)"
   CasingOD="7 INCH CSG OD (inches)"
