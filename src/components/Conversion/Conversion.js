@@ -158,16 +158,16 @@ const Revert =()=>{
          <option disabled={modeConversion}>SELECT</option>
          <option className={modeConversion==="bbl"?  "green" : null} value={"bbl"}>Barrel To CubicFt</option>
          <option className={modeConversion==="cuft"?  "green" : null} value={"cuft"}>CubicFt To Barrel</option>
+         <option className={modeConversion==="bbls"?  "green" : null} value={"bbls"}>Barrel To Gallon</option>
          <option className={modeConversion==="gal"?   "green" : null} value={"gal"}>Gallons To Barrel</option>
-         <option className={modeConversion==="bbls"?  "green" : null} value={"bbls"}>Barrel To Gallons</option>
-         <option className={modeConversion==="m3"?    "green" : null} value={"m3"}>CubicMeter To Barrel</option>
          <option className={modeConversion==="bblss"? "green" : null} value={"bblss"}>Barrel To CubicMeter</option>
+         <option className={modeConversion==="m3"?    "green" : null} value={"m3"}>CubicMeter To Barrel</option>
          <option className={modeConversion==="ft3"?   "green" : null} value={"ft3"}>CubicFt To CubicMeter</option>
          <option className={modeConversion==="cuMeter"? "green" : null} value={"cuMeter"}>CubicMeter To CubicFt</option>
          <option className={modeConversion==="ftt" ? "green" : null} value={"ftt"}>Feet To Inches</option>
          <option className={modeConversion==="inches" ? "green" : null} value={"inches"}>Inches To Feet</option>
-         <option className={modeConversion==="kg"?    "green" : null} value={"kg"}>Kilogram To Pounds</option>
          <option className={modeConversion==="pounds"? "green": null} value={"pounds"}>Pounds To Kilogram</option>
+         <option className={modeConversion==="kg"?    "green" : null} value={"kg"}>Kilogram To Pounds</option>
          <option className={modeConversion==="sacks" ?   "green" : null} value={"sacks"}>Cement Sacks To MetricTon</option>
          <option className={modeConversion==="MT"    ?   "green" : null} value={"MT"}>Cement MetricTon To Sacks</option>
          <option className={modeConversion==="ft"    ?   "green" : null} value={"ft"}>Feet To Meter</option>
@@ -179,7 +179,7 @@ const Revert =()=>{
 
     <div className="main_container">
 {/* ---Grid item className below is no longer valid------- */}
-    <Grid item xs={10} md={10} sm={10} className ="xxgrid_container" sx={{borderColor: "none"}}
+    <Grid item xs={10} md={10} sm={10} sx={{borderColor: "none"}}
     > 
       <h1 className="h1_data"> {data} </h1>
       <div style={{display: "flex"}}>

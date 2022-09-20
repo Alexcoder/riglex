@@ -35,7 +35,7 @@ const ResultPage1338 = ( ) => {
        <div  className="xcontainerDiv"  >
         
         <Grid container alignItems="center" justifyContent="center" textAlign="center" mt={4}>
-        <Paper elevation={5} sx={{padding: "2rem 2rem 2rem 2rem"}}>
+        <Paper elevation={2} sx={{padding: "2rem 2rem 2rem 2rem", height:{xs: "45rem",sm:"30rem", md: "30rem"} }}>
           <h1 style={{ color: "blue", marginTop: "0.5rem"}}>RESULT</h1>   
           <div className='vol_result'  style={{marginLeft: "0rem"}}>
             <h4>{jobType} </h4> 
