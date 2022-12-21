@@ -18,6 +18,7 @@ const handleContinue = () =>{
    else if(navMode==="7INCH" ) {setMode("7INCH"); history.push("/select/primary")}
    else if(navMode==="PLUG") {setMode("PLUG"); history.push("/select/primary")}
    else if(navMode==="liner") {setMode("liner"); history.push("/select/primary")}
+   else if(navMode==="vol_cap") {setMode("liner"); history.push("/select/volume-capacity")}
    else if(navMode==="liner") history.push("/select/primary")
 
    else history.push('/select')
@@ -44,6 +45,15 @@ useEffect(() => {
            onClick={()=> setNavMode("unit_conversion")}></button>
          <button className="second_grid_button" onClick={()=> {setNavMode("unit_conversion")}} >
            Unit Conversion
+         </button>
+      </Grid>
+
+      <Grid item xs={12} sm={12} md={8} sx={{display: "flex", gap:"1rem", textAlign:"center",marginTop: "1rem", marginBottom: "-2rem"}}>
+         <button className={navMode==="vol_cap"? "green": ""} style={{color: "black", height: "0rem", borderRadius:"50%",
+           border: "2px solid gray", padding:"1rem", marginTop: "1.3rem", marginLeft: "1rem" ,}}
+           onClick={()=> setNavMode("vol_cap")}></button>
+         <button className="second_grid_button" onClick={()=> {setNavMode("vol_cap")}} >
+           Volume and Capacity
          </button>
       </Grid>
 
@@ -118,14 +128,11 @@ useEffect(() => {
            Additive Check
          </button>
       </Grid>
-    </Paper>
-
-      <Grid item xs={12} sm={10} md={3} mt={4} >
+      <Grid item xs={12} sm={10} md={3} mt={4} mb={2} sx={{marginLeft:{xs:"1rem", sm:"3rem", md:"10rem"}}} >
         <button className={!navMode? "nav_button" : "nav_button green"} onClick={handleContinue}>CONTINUE</button>
       </Grid> 
-      {/* <Grid item xs={12} sm={10} md={3} mt={4} >
-       <button onClick={()=> history.push('/')} className="nav_button link">BACK</button>
-      </Grid> */}
+    </Paper>
+
 
    </Grid >
 

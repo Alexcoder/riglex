@@ -1,0 +1,68 @@
+.vol_cap_main{
+    margin: 1.5rem 0rem 0rem 0rem;
+    padding: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+.vol_cap_section1{
+    margin: 0% 40%;
+    padding: 1rem;
+    background: rgb(73, 73, 95);
+    border-radius: 0.4rem;
+}
+.vol_cap_button{
+    border: 1px solid transparent;
+    background: rgb(90, 14, 14);
+    width: 7rem;
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    color: white;
+}
+.vol_cap_input_div{
+    display: block;
+    margin-top: 0.5rem;
+}
+input{
+    border-radius: 0.2rem;
+    width: 8rem;
+    height: 2rem;
+    border: 1px solid transparent;
+}
+.vol_cap_text{
+    color: white;
+    font-weight: 500;
+}
+.vol_cap_vol_result{
+     margin: 10% 5%;
+}
+
+
+
+::-webkit-scrollbar{display: none}
+/* ---------MEDIA QUERY 1280PX--------- */
+@media screen and (max-width: 1280px){
+    .vol_cap_section1{
+        margin: 0% 20%;
+    }
+    .vol_cap_button{
+        width: 10rem;
+        padding: 1rem;
+    }
+    input{
+        width: 12rem;
+    }     
+}
+
+@media screen and (max-width: 420px){
+    .vol_cap_section1{
+        margin: 0% 10%;
+    }    
+}
+@media screen and (max-width: 290px){
+    .vol_cap_section1{
+        margin: 0% 5%;
+    }    
+        
+}
+
+

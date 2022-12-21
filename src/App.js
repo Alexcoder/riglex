@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {Home, Navigation, ConversionPage, FieldCementing, ResultPrimary, ResultPlug ,Additive, Header,
-        BumpPressure} from './components';
+        BumpPressure, Volume_Capacity} from './components';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
        <Route path="/select/result-plug" exact component={ResultPlug}/>
        <Route path="/select/additive" exact component={Additive}/>
        <Route path="/select/bump-pressure" exact component={BumpPressure}/>
+       <Route path="/select/volume-capacity" exact component={Volume_Capacity}/>
       </Switch>
     </div>
   );
