@@ -16,7 +16,7 @@ const Volume_Capacity = () => {
     const {name, value} = e.target;
     setInputData((prev)=> ({...prev, [name] : value }))
   }
-  
+
   const handleClick = () => {
     setStringVolume((prev)=> !prev)
   }
@@ -52,7 +52,7 @@ console.log(Anncapacity)
       <div className= "vol_cap_input_div"> 
        <div className="vol_cap_text"> OD (inches) </div>
         <input 
-        placeholder = "Outside Diameter"
+        placeholder = "OD of Inner String"
         name = "casingOD"
         type="number"
         value={casingOD}
@@ -62,7 +62,7 @@ console.log(Anncapacity)
       <div className= "vol_cap_input_div">
       <div className="vol_cap_text"> Slurry Length (ft) </div>
         <input 
-        placeholder = "slurryLength"
+        placeholder = "Length of Slurry"
         name = "slurryLength"
         type="number"
         value={slurryLength}
