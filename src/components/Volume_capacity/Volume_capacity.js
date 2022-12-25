@@ -72,7 +72,7 @@ console.log(Anncapacity)
       <div className= "vol_cap_input_div">
       <div className="vol_cap_text"> Excess (%) </div>
         <input 
-        placeholder = "Excess (%)"
+        placeholder = "Excess (%)...eg 10"
         name = "excess"
         type="number"
         value={excess}

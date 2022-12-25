@@ -1,257 +1,162 @@
 .main_container{
     background-color: whiteSmoke;
-    width: 25rem;
-    padding: 3rem;
+    padding: 2rem 2rem 0rem 2rem;
     color: black;
-    box-shadow: 0rem 0.1rem 0.5rem 0rem black;
-    border-radius: 0.9rem 0.9rem 0.9rem 0.9rem;
-    margin: 1.5rem 0rem 0rem 25rem;
-    height: 24rem;
-}
-.grid_container{
-    padding: 1rem;
-    width: 25rem;
+    box-shadow: 0rem 0.1rem 0.5rem 0rem gray;
+    border-radius: 0.6rem;
+    margin: 2% 30%;
+    height: 90%;
 }
 .label_select{
-  color: black;
-  margin:1rem 0rem -3.2rem 26rem;
-  /* font-style:oblique; */
-  font-size: 1.3rem;
-  font-weight: 6rem
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0rem 29rem 0rem 0rem;
 }
 .select{
-    box-shadow: 0rem 0.2rem 0.5rem 0rem black;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
-     font-size: 1.4rem; 
-     text-align: center;
-     width: 31.5rem;
-     margin-top: 3rem;
-     height: 4rem;
-     margin-left: 29%;
-}
-.textField{
-    background-color: white;
-    width: 24rem;
-    height: 3.1rem; 
-    border: 1px solid transparent; 
-}
-.text{
-     border: 2px solid transparent;
-     height: 2.1rem; 
-     color: green;
-     width: 23.8rem;
-     margin-top: 1rem;
-     margin-bottom: 2rem;
-     text-align: center;
-     padding-top: 1rem;
-     padding-bottom: 0.3rem;
-     font-size: 1.5rem;
-     color: green;
-     font-style: italics; 
-}
-.button_conversion{
-    color: white;
-    background-color: blue; 
-    width: 24.3rem;
-    height: 3.5rem;
-    font-size: 1.3rem;
-    border-color: inherit;
-    opacity: 0.8;
-    border-radius: 0.5rem;
-}
-.margin_up_back_button{
-    margin-top: 0.8rem;
-}
-.red{
-    background-color: darkred;
-    margin-top: 0.5rem;
-}
-.button_conversion :hover{
-    background-color: white;
-    color: black;
-}
-.green{
-    background-color: green;
-    color: white;
+    width:40%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    text-align:center;
+    box-shadow: 0rem 0.1rem 0.5rem 0rem gray;
 }
 .h1_data{
     color: blue;
-     text-align: center;
 }
-.lexwares{
-    opacity: 0.6; 
-    text-align: center; 
-    margin: 0.6rem 0rem 1rem 0rem;
+.textField_toggle{
 }
+/* Result */
+.text{
+    margin: 2rem 0rem 0rem 0rem;
+    font-size: 1.4rem;
+    font-weight: 550;
+    color:green;
+}
+.button_container{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.button_clear{
+    width: 30%;
+    padding: 0.6rem 2rem;
+    border: 1px solid transparent;
+    color: white;
+    background: darkred;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+
+.button_back{
+    width: 30%;
+    padding: 0.6rem 2rem;
+    border: 1px solid transparent;
+    color: white;
+    background: blue;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+
+}
+
+
+
+
+
+
 ::-webkit-scrollbar{display: none}
 /* ---------MEDIA QUERY 1280PX--------- */
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1024px){
     .main_container{
-        margin-left: 18rem;
-        margin-right: 5rem;
-        width: 30%;
-        margin-bottom: 5rem;
-        height: 30rem;
-    }
-    .grid_container{
-        width: 120%;
-    }
-    .select{
-        width: 37%;
-        margin-left: 18rem;
-    }
-    .textField{
-        width: 65%;
-        margin-left: 2rem;
-    }
-    .button_conversion{
-        width: 68%;
-        margin-left: 2rem;
-        margin-top: 5rem;
-    }
-    .h1_data{
-        /* display: none; */
-         width: 80%;
-    }
-    .text{
-        width: 90%;
-        margin-left: -1rem;
-        margin-top: 3rem;
-    }
-    .lexwares{
-        margin-top: 2rem;
-        margin-left: -6rem;
-    }
-}
-@media screen and (min-width: 600px) and (max-width: 1024px){
-    .main_container{
-        margin-left: 9rem;
-        margin-right: 5rem;
-        width: 55%;
-        margin-bottom: 5rem;
-        height: 30rem;
-    }
-    /* .grid_container{
-        width: 120%;
-    } */
-    .label_select{
-        margin-left: 12rem;
-    }
-    .select{
-        width: 64%;
-        margin-left: 9rem;
-    }
-    .textField{
-        width: 130%;
-        margin-left: 1rem;
-    }
-    .button_conversion{
-        width: 105%;
-        margin-left: -1rem;
-        margin-top: 3rem;
-    }
-    .margin_up_back_button{
-        margin-top: 0.5rem;
-    }
-
-    .h1_data{
-        margin-bottom:2rem ;
-        text-align: center;
-        width: 25rem;
-    }
-    .text{
-        margin-bottom: 3rem;
-    }
-    .lexwares{
-        margin-left: 0rem;
-    }
-
-}
-    @media screen and (min-width: 510px) and (max-width: 550px){
-        .main_container{
-            margin-left: 2rem;
-            margin-right: 17rem;
-            width: 70%;
-            margin-bottom: 5rem;
-            height: 28rem;
-        }
-        /* .grid_container{
-            width: 120%;
-        } */
-        .label_select{
-            margin:1rem 0rem -3.2rem 2.8rem;
-          }
-        .select{
-            width: 87%;
-            margin-left: 2rem;
-        }
-        .textField{
-            width: 130%;
-            margin-left: 1rem;
-        }
-        .button_conversion{
-            width: 105%;
-            margin-left: -1rem;
-            margin-top: 2rem;
-        }
-        .margin_up_back_button{
-            margin-top: 0.5rem;
-        }
-        .h1_data{
-            margin-bottom:2rem ;
-            margin-left: -1.5rem;
-            text-align: center;
-            width: 25rem;
-        }
-        .text{
-            margin-bottom: 3rem;
-        }
-        .lexwares{
-            margin-left: 0rem;
-        }
-}
-
-
-@media screen and (max-width: 420px){
-    .main_container{
-        margin-left: 1rem;
-        margin-right: 0rem;
-        width: 65%;
-        margin-bottom: 20rem;
-        height: 22rem;
+        margin: 2% 10%;
+        height: 100%;
     }
     .label_select{
-        margin: 0rem 0rem -3.2rem 2rem;
-      }
+        margin: 0rem 35rem 0rem 0rem;
+    }
     .select{
-        width: 89%;
-        margin-left: 1rem;
+        width: 80%;
     }
-    .textField{
-        width: 130%;
-        margin-left: 1rem;
+    .button_container{
+        margin-top: 3rem;
     }
-    .button_conversion{
-        width: 110%;
-        margin-left: -1rem;
-        margin-top: 2rem;
+    .button_clear{
+        width: 40%;
     }
-    .margin_up_back_button{
-        margin-top: 1rem;
+    .button_back{
+        width: 40%;   
+    }  
+}
+
+@media screen and (max-width: 620px) {
+    .main_container{
+        margin: 2% 5%;
+        height: 80%;
     }
     .h1_data{
         display: none;
+    }    
+    .label_select{
+        margin: 0rem 19rem 0rem 0rem;
     }
-    .text{
-        width: 115%;
-        margin-left: -1rem;
+    .select{
+        width:90%;
+    }
+    .button_container{
         margin-top: 3rem;
-        margin-bottom: 1.5rem;
     }
-    .lexwares{
-        margin-top: 2rem;
-        margin-bottom: -3rem;
-        margin-left: 0rem;
+    .button_clear{
+        width: 40%;
     }
+    .button_back{
+        width: 40%;   
+    }  
+}
+
+@media screen and (max-width: 390px) {
+    .main_container{
+        margin: 2% 2%;
+        height: 80%;
+    }
+    .h1_data{
+        display: none;
+    }    
+    .label_select{
+        margin: 0rem 17rem 0rem 0rem;
+    }
+    .select{
+        width:95%;
+        height: 3rem;
+    }
+    .button_clear{
+        width: 40%;
+    }
+    .button_back{
+        width: 40%;   
+    }  
+}
+
+@media screen and (max-width: 290px) {
+    .main_container{
+        margin: 2% 2%;
+        height: 90%;
+    }
+    .h1_data{
+        display: none;
+    }    
+    .label_select{
+        margin: 0rem 12rem 0rem 0rem;
+    }
+    .select{
+        width:95%;
+        height: 3rem;
+    }
+    .button_clear{
+        width: 50%;
+    }
+    .button_back{
+        width: 50%;   
+    }  
 }
 

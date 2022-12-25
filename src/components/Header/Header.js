@@ -8,7 +8,7 @@ const history = useHistory()
 
 
   return (
-    <Container  sx={{ marginBottom: "3.5rem"}}>
+    <Container  sx={{ marginBottom: "2rem"}}>
       <ButtonBase onClick={()=> history.push('/select')}>
             <AppBar>
             <Typography elevation={5} variant="h3" sx={{color: "white", textAlign:"center"}}>FIELD APP</Typography>
