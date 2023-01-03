@@ -1,10 +1,8 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
 import {useGlobalState} from "../../state/context/Context.js";
 import { Container, AppBar, Typography, ButtonBase } from '@mui/material';
 
 const Header = () => {
-const history = useHistory()
 const {setSidebar}= useGlobalState();
 
 
