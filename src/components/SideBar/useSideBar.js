@@ -5,7 +5,7 @@ import { useGlobalState } from '../../state';
 
 const useSideBar = () =>{
     const {push} = useHistory();
-    const {navMode, setNavMode, setMode,} =  useGlobalState();
+    const {navMode, setNavMode, setMode, setSidebar} =  useGlobalState();
 
 
     const handleColor = (clicked) =>{
@@ -17,7 +17,8 @@ const useSideBar = () =>{
     const Navigate = (page, clicked) =>{
         setNavMode(clicked);
         setMode(()=> clicked==="primary" ? "OTHERS" : clicked);
-        push(page)
+        push(page);
+        setSidebar(false);
     }
 
     useEffect(() => {

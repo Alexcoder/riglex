@@ -41,7 +41,7 @@ const BumpPressure = () => {
       <SingleBumpPressure label={`Present Csg Depth TVD (${unitChanger})`} name="presentCsgTvd" value={presentCsgTvd} onChange={handleChange}/>
 
     </Grid>
-    <Button onClick={handleClick} variant="contained" sx={{marginTop:"2rem", width: "18rem"}}>VIEW RESULT</Button>
+    <Button onClick={handleClick} variant="contained" sx={{marginTop:"2rem", width:{md:"18rem", sm:"18rem", xs:"14rem"}}}>VIEW RESULT</Button>
       </Paper>
     </Container>
 
