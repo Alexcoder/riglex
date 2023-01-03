@@ -3,12 +3,14 @@
     padding: 1rem;
     text-align: center;
     justify-content: center;
+    width: 100vw;
 }
 .vol_cap_section1{
-    margin: 0% 40%;
+    margin: 0% 30%;
     padding: 1rem;
     background: rgb(73, 73, 95);
     border-radius: 0.4rem;
+    width: 20%;
 }
 .vol_cap_button{
     border: 1px solid transparent;
@@ -42,7 +44,9 @@ input{
 /* ---------MEDIA QUERY 1280PX--------- */
 @media screen and (max-width: 1280px){
     .vol_cap_section1{
-        margin: 0% 20%;
+        margin: 0% 30%;
+        width: 100%;
+
     }
     .vol_cap_button{
         width: 10rem;
@@ -50,18 +54,81 @@ input{
     }
     input{
         width: 12rem;
-    }     
+    }   
+    .vol_cap_main{
+        width: 200%;
+    }
+       
+  
+}
+
+@media screen and (max-width: 790px){
+    .vol_cap_section1{
+        margin: 0% 30%;
+        width: 100%;
+
+    }
+    .vol_cap_button{
+        width: 10rem;
+        padding: 1rem;
+    }
+    input{
+        width: 12rem;
+    }   
+    .vol_cap_main{
+        width: 170%;
+    }
+       
+  
+}
+@media screen and (max-width: 550px){
+    .vol_cap_section1{
+        margin: 0% 30%;
+        width: 100%;
+
+    }
+    .vol_cap_button{
+        width: 10rem;
+        padding: 1rem;
+    }
+    input{
+        width: 12rem;
+    }   
+    .vol_cap_main{
+        width: 120%;
+    }
+       
+  
 }
 
 @media screen and (max-width: 420px){
     .vol_cap_section1{
-        margin: 0% 10%;
-    }    
+        margin: 0% 5%;
+        width: 150%;
+    } 
+    .vol_cap_main{
+        width: 80%;
+    }
+       
+}
+@media screen and (max-width: 375px){
+    .vol_cap_section1{
+        margin: 0% 5%;
+        width: 140%;
+    } 
+    .vol_cap_main{
+        width: 80%;
+    }
+       
 }
 @media screen and (max-width: 290px){
     .vol_cap_section1{
         margin: 0% 5%;
-    }    
+    } 
+    .vol_cap_main{
+        width: 55%;
+    }
+   
         
 }
 

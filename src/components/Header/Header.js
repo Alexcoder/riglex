@@ -1,15 +1,17 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
+import {useGlobalState} from "../../state/context/Context.js";
 import { Container, AppBar, Typography, ButtonBase } from '@mui/material';
 
 const Header = () => {
 const history = useHistory()
+const {setSidebar}= useGlobalState();
 
 
 
   return (
     <Container  sx={{ marginBottom: "2rem"}}>
-      <ButtonBase onClick={()=> history.push('/select')}>
+      <ButtonBase onClick={()=> {setSidebar((prev)=> !prev)}}>
             <AppBar>
             <Typography elevation={5} variant="h3" sx={{color: "white", textAlign:"center"}}>FIELD APP</Typography>
           </AppBar>

@@ -14,6 +14,7 @@ export const ContextProvider = ({children}) => {
   const [plug, setPlug] = useState(inputDataPlug)
   const [drillPipe, setDrillPipe] = useState(false)
   const [navMode, setNavMode] = useState("")
+  const [sidebar, setSidebar] = useState(true)
 
   const handleSetModeUnit=(unit)=>{
     localStorage.setItem('unitButton', wellData.unit);
@@ -75,7 +76,7 @@ export const ContextProvider = ({children}) => {
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
      setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume, ChangerPresentCsgOD,
-     unitChanger, SwitchJobUnit, handleSetModeUnit,
+     unitChanger, SwitchJobUnit, handleSetModeUnit, sidebar, setSidebar
     }}
     >
         {children}

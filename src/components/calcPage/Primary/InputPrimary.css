@@ -9,6 +9,11 @@
     padding: 0;
     box-sizing: 0;
   }
+  .input_primary_container{
+    padding: 1rem 2rem 1rem 2rem; 
+    width: 75%; 
+    margin-left: 16%;
+  }
   .select_FieldCementing{
     width:23rem;
     padding: 1rem 1rem 1rem 1rem; 
@@ -46,17 +51,14 @@
     border: 1px solid gray;
     color: white;
   }
+  .input_primary_container{
+    margin-left: 5%;
+  }
+
   .button_field{
     width: 8.5rem;
   }
 }
-
-
-
-
-
-
-
   .input_primary_grid_container{
     display: grid;
     grid-template-columns: 1fr;

@@ -6,7 +6,7 @@ const SingleBumpPressure =({label, onChange, value, name})=>{
 
         <Grid item xs={12} sm={12} md={4}>
             <TextField variant="filled" type="number" label={label} onChange={onChange} value={value} name={name}
-            sx={{width: "22rem"}}/>
+            sx={{width: "17rem"}}/>
         </Grid>
     )
 }

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link } from 'react-router-dom';
 import SingleAdditive from './SingleAdditive';
 import { Grid,  } from '@mui/material';
 import './Additive.css';
@@ -40,38 +39,38 @@ const Additive = () => {
 
 
   return (
-  <div>
+  <div style={{width: "100vw"}}>
      <Grid container justifyContent="center" alignItems="center" textAlign="center"
-     rowSpacing={5}
+     rowSpacing={1} sx={{width: "90%",}}
       > 
       <Grid item xs={10} sm={10} md={10}>
-      <h2 style={{color: "blue", textAlign: "center", marginBottom: "-1rem"}}> Additive Check </h2>
+      <h2 style={{color: "blue", textAlign: "center", marginBottom: "0.2rem"}}> Additive Check </h2>
       </Grid>
 
       { sacksOfCement ? null :
       <>
-      <SingleAdditive value={slurryVolume} label={`SLURRY VOLUME (bbl)`} 
+      <SingleAdditive value={slurryVolume} label={`Slurry Volume (bbl)`} 
       onChange={(e)=> setSlurryVolume(e.target.value)}
       />
-       <SingleAdditive value={slurryYield} label={`SLURRY YIELD (ft3/sk)`} 
+       <SingleAdditive value={slurryYield} label={`Slurry Yield (ft3/sk)`} 
        onChange={(e)=> {setSlurryYield(e.target.value)}}/>
       </>
       }
 
       {      //CONDITIONAL RENDERING */}
        slurryYield || slurryVolume? null :
-       <SingleAdditive value={sacksOfCement} label={`SACKS OF CEMENT`} 
+       <SingleAdditive value={sacksOfCement} label={`Sacks Of Cement`} 
        onChange={(e)=> {setSacksOfCement(e.target.value)}}
        /> 
        }
 
-       <SingleAdditive value={mixFluidConc} label={`MIXFLUID CONCENTRATION (gal/sk)`} 
+       <SingleAdditive value={mixFluidConc} label={`Mixfluid Concentration (gal/sk)`} 
         onChange={(e)=> {setMixFluidConc(e.target.value)}} 
         />
-       <SingleAdditive value={deadVolume} label={`TANK DEAD VOLUME (bbl)`} 
+       <SingleAdditive value={deadVolume} label={`Tank Dead Volume (bbl)`} 
        onChange={(e)=> {setDeadVolume(e.target.value)}}
        />
-       <SingleAdditive value={additiveConcentration} label={`ADDITIVE CONCENTRATION (gal/sk)`} 
+       <SingleAdditive value={additiveConcentration} label={`Additive Concentration (gal/sk)`} 
        onChange={(e)=> {setAdditiveConcentration(e.target.value)}} 
        />
 
@@ -93,15 +92,11 @@ const Additive = () => {
          : null
        }
        <Grid item xs={10} sm={10} md={10}>
-       <h3 style={{textAlign: "center", color: "red",}}>{MixFluid_With_DeadVolume_Changer}</h3>
+       <h4 style={{textAlign: "center", color: "red", marginTop: "-0.5rem"}}>{MixFluid_With_DeadVolume_Changer}</h4>
        </Grid>
       
-      <Grid item xs={10} sm={10} md={10}>
-       <button className= "button red" onClick={clear}>CLEAR</button>
-       </Grid>
-
-       <Grid item xs={10} sm={10} md={10}>
-       <Link to="/select" className="exit_button">Exit</Link>
+      <Grid item xs={12} sm={10} md={10}>
+       <button className= "additive_button" onClick={clear}>CLEAR</button>
        </Grid>
 
       <Grid item xs={10} sm={10} md={10}>

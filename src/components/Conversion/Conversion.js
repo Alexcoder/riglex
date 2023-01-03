@@ -29,7 +29,7 @@ const handleBack =()=> history.push("/select");
 
 
   return (
-  <div  style={{backgroundColor: "lightgray", height: "25rem", textAlign:"center", justfyContent:"center"}}>
+  <div  style={{backgroundColor: "", height: "25rem", textAlign:"center", justfyContent:"center", width: "100vw"}}>
 
     <MySelect
     modeConversion={modeConversion}

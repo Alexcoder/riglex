@@ -65,11 +65,11 @@ return (
     <InputPrimary 
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}
-    PreviousCsgShoe={`PREVIOUS CSG SHOE (${unitChanger})`}
-    PreviousCsgOD="PREVIOUS CSG OD (inches)"
-    PreviousCsgID="PREVIOUS CSG ID (inches)"
-    CasingOD="PRESENT CSG OD (inches)"
-    CasingID= "PRESENT CSG ID (inches)"
+    PreviousCsgShoe={`Previous Csg Shoe (${unitChanger})`}
+    PreviousCsgOD="Previous Csg OD (inches)"
+    PreviousCsgID="Previous Csg ID (inches)"
+    CasingOD="Present Csg OD (inches)"
+    CasingID= "Present Csg ID (inches)"
     />
      : null
   }
@@ -77,11 +77,11 @@ return (
   <InputPrimary
   LABEL= "13-3/8 IN CSG CEMENTING DATA" 
   onSubmit={handleSubmit}
-  PreviousCsgShoe={`CONDUCTOR CSG SHOE (${unitChanger})`}
-  PreviousCsgOD="CONDUCTOR CSG OD (inches)"
-  PreviousCsgID="CONDUCTOR CSG ID (inches)"
-  CasingOD="13-3/8 IN CSG OD (inches)"
-  CasingID= "13-3/8 IN CSG ID (inches)"
+  PreviousCsgShoe={`Conductor Csg SHOE (${unitChanger})`}
+  PreviousCsgOD="Conductor Csg OD (inches)"
+  PreviousCsgID="Conductor Csg ID (inches)"
+  CasingOD="13-3/8 Csg OD (inches)"
+  CasingID= "13-3/8 Csg ID (inches)"
   />: 
    null
 }
@@ -89,11 +89,11 @@ return (
  <InputPrimary 
  LABEL= "9-5/8 IN CSG CEMENTING DATA" 
  onSubmit={handleSubmit}
- PreviousCsgShoe={`13-3/8 CSG SHOE (${unitChanger})`}
- PreviousCsgOD="13-3/8 CSG OD (inches)"
- PreviousCsgID="13-3/8 CSG ID (inches)"
- CasingOD="9-5/8 IN CSG OD (inches)"
- CasingID= "9-5/8 IN CSG ID (inches)" 
+ PreviousCsgShoe={`13-3/8 Csg SHOE (${unitChanger})`}
+ PreviousCsgOD="13-3/8 Csg OD (inches)"
+ PreviousCsgID="13-3/8 Csg ID (inches)"
+ CasingOD="9-5/8 IN Csg OD (inches)"
+ CasingID= "9-5/8 IN Csg ID (inches)" 
  />
  :null
 }
@@ -102,11 +102,11 @@ return (
   <InputPrimary
   LABEL= "7 INCH CEMENTING DATA"
   onSubmit={handleSubmit}
-  PreviousCsgShoe={`9-5/8 CSG SHOE (${unitChanger})`} 
-  PreviousCsgOD="9-5/8 CSG OD (inches)"
-  PreviousCsgID="9-5/8 CSG ID (inches)"
-  CasingOD="7 INCH CSG OD (inches)"
-  CasingID= "7 INCH CSG ID (inches)"
+  PreviousCsgShoe={`9-5/8 Csg Shoe (${unitChanger})`} 
+  PreviousCsgOD="9-5/8 Csg OD (inches)"
+  PreviousCsgID="9-5/8 Csg ID (inches)"
+  CasingOD="7 inch Csg OD (inches)"
+  CasingID= "7 inch Csg ID (inches)"
   />
   : null
 }
@@ -123,21 +123,14 @@ return (
     <InputPrimary 
     LABEL= "LINER CEMENTING DATA" 
     onSubmit={handleSubmit}
-    PreviousCsgShoe= {`PREVIOUS CSG SHOE (${unitChanger})`}
-    PreviousCsgOD="PREVIOUS CSG OD (inches)"
-    PreviousCsgID="PREVIOUS CSG ID (inches)"
-    CasingOD="LINER CSG OD (inches)"
-    CasingID= "LINER CSG ID (inches)"
+    PreviousCsgShoe= {`Previous Csg Shoe (${unitChanger})`}
+    PreviousCsgOD="Previous Csg OD (inches)"
+    PreviousCsgID="Previous Csg ID (inches)"
+    CasingOD="Liner Csg OD (inches)"
+    CasingID= "Liner Csg ID (inches)"
     />
      : null
   }
-
-{/* ---------------BUMP PRESSURE----------- */}
-  {/* {mode==="bump-pressure"?
-    <BumpPressure/>
-      : null
-  }
- */}
 
    </Grid> 
 </div>
