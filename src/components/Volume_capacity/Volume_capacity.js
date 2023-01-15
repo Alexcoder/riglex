@@ -35,7 +35,6 @@ const Volume_Capacity = () => {
    
   const result = {capacity, Anncapacity, volume}
 
-console.log(Anncapacity)
   return (
   <main className= "vol_cap_main">
     <section className= "vol_cap_section1">

@@ -24,13 +24,12 @@
     border: 1px solid gray;
   }
   .button_field{
-    width: 9rem;
+    width: 7rem;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.2rem;
     margin-bottom: 0.2rem;
-    border: 1px solid gray;
-    box-shadow: 1px 1px 0.4rem 1px gray;
+    border: none;
   }
   .button_field:hover{
     background-color: transparent;
@@ -44,19 +43,19 @@
   margin-top: 1rem;
   border: 1px solid gray;
 }
+.greenColor{
+  background: green;
+  color: white
+}
 
 @media screen and (max-width: 1024px){
-  .button_field:hover{
-    background-color: green;
-    border: 1px solid gray;
-    color: white;
-  }
   .input_primary_container{
     margin-left: 5%;
   }
 
   .button_field{
-    width: 8.5rem;
+    width: 35%rem;
+    margin: 0.5rem 0rem
   }
 }
   .input_primary_grid_container{

@@ -11,6 +11,7 @@ const useResultPrimary =()=>{
         mode, 
         Liner_Slurry_Volume, 
         unitChanger,
+        setShowPrimaryResult
     } 
     = useGlobalState();
   const{
@@ -47,7 +48,6 @@ const Navigate = (page) => {
     history.push(page)
 }                                  
 
-
     return {
         BumpPressureChanger, 
         Liner_Displacement_Volume,
@@ -56,6 +56,7 @@ const Navigate = (page) => {
         Liner_Slurry_Volume, 
         unitChanger,
         Navigate,
+        setShowPrimaryResult
 }
         
 }

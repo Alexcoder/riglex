@@ -13,23 +13,23 @@ const ResultPage1338 = ( ) => {
          mode, 
          Liner_Slurry_Volume, 
          unitChanger,
-         Navigate,
+         setShowPrimaryResult
         } 
          = useResultPrimary();
   const{ jobType, volOfLead, volOfTail,displacement,topOfLead, } = wellData;
   
 
      return (
-       <div  className="xcontainerDiv"  >
+       <div  className="resultPrimaryContainer"  >
         
-        <Grid container alignItems="center" justifyContent="center" textAlign="center" mt={4}>
+        <Grid container alignItems="center" justifyContent="center" >
         <Paper elevation={2} 
          sx={{
-          padding: "2rem 2rem 2rem 2rem", 
-          height:{xs: "45rem",sm:"30rem", md: "30rem"} 
+          padding: "2rem", 
+          height:{xs: "22rem",sm:"22rem", md: "22rem"} 
         }}>
-          <h1 style={{ color: "blue", marginTop: "0.5rem"}}>RESULT</h1>   
-          <div className='vol_result'  style={{marginLeft: "0rem"}}>
+          <h1 style={{ color: "blue" }}>RESULT</h1>   
+          <div>
             <h4>{jobType} </h4> 
             {mode==="liner"?
               <>
@@ -40,16 +40,15 @@ const ResultPage1338 = ( ) => {
               :<>
               <h4><span style={{color: "red"}}>{volOfLead}</span> bbl of Lead Slurry</h4> 
               <h4><span style={{color: "red"}}>{volOfTail}</span> bbl of Tail Slurry</h4>
-             <h4><span style={{color: "blue"}}>{displacement}</span> bbl Displacement </h4> 
-             <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
+              <h4><span style={{color: "blue"}}>{displacement}</span> bbl Displacement </h4> 
+              <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
               </>
             }
               <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Pressure to Bump Plug</h4> :
         </div>
-
-        <button className="result_button green" onClick={()=> Navigate('/select/primary')}>BACK</button>
-        <button className="result_button red" onClick={()=> Navigate('/select')}>EXIT</button>
-
+        <section style={{textAlign: "center"}}>
+        <button className="result_button green" onClick={()=> setShowPrimaryResult(false)}>BACK</button>
+        </section>
         </Paper>
         </Grid>   
 

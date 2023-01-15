@@ -8,17 +8,19 @@ export const StateContext = createContext();
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(inputDataPrimary);
   const [activeNav, setActiveNav] = useState("home");
-  const [mode , setMode] = useState("");
-  const [theme, setTheme] = useState("green");
+  const [mode , setMode] = useState("OTHERS");
+  const [theme, setTheme] = useState("greenColor");
   const [jobMode, setJobMode] = useState();
   const [plug, setPlug] = useState(inputDataPlug)
   const [drillPipe, setDrillPipe] = useState(false)
   const [navMode, setNavMode] = useState("")
   const [sidebar, setSidebar] = useState(true)
+  const [showPlugResult, setShowPlugResult] = useState(false)
+  const [showPrimaryResult, setShowPrimaryResult] = useState(false)
 
-  const handleSetModeUnit=(unit)=>{
-    localStorage.setItem('unitButton', wellData.unit);
-    setWellData({...wellData, unit: unit} )
+  const handleSetModeUnit=(anything)=>{
+    setWellData({...wellData, unit: anything} )
+    localStorage.setItem('unitButton', anything);
   }
 
   wellData.lengthOfTailAboveShoe = wellData.presentCsgShoe - wellData.topOfTail
@@ -76,7 +78,8 @@ export const ContextProvider = ({children}) => {
      mode , setMode, theme, setTheme, wellData, setWellData,
      activeNav, setActiveNav, jobMode, setJobMode, plug,
      setPlug, drillPipe, setDrillPipe, navMode, setNavMode, Liner_Slurry_Volume, ChangerPresentCsgOD,
-     unitChanger, SwitchJobUnit, handleSetModeUnit, sidebar, setSidebar
+     unitChanger, SwitchJobUnit, handleSetModeUnit, sidebar, setSidebar,showPlugResult, setShowPlugResult,
+     showPrimaryResult, setShowPrimaryResult,
     }}
     >
         {children}

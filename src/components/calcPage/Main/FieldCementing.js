@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React  from 'react';
+// {useEffect}
 import {useHistory} from 'react-router-dom';
 import { Grid} from '@mui/material';
 import '../Primary/InputPrimary.css';
@@ -9,10 +10,11 @@ import { useGlobalState } from '../../../state';
 
 const FieldCementing = () =>  { 
   const history = useHistory()
-  const {theme, mode, setMode, wellData ,setWellData, unitChanger}= useGlobalState();
-
+  const {theme, mode, setMode, wellData , unitChanger}= useGlobalState();
+  const {unit}= wellData
+  // setWellData
    const handleButtonColor = (value) => {
-    if(wellData.unit=== value){
+    if(unit=== value){
       return theme 
     } else {
       return 
@@ -22,19 +24,20 @@ const FieldCementing = () =>  {
 
    const handleSelect=(e)=>{
     setMode(e.target.value);
-    localStorage.setItem('mode', mode) ;
+    // setMode(localStorage.getItem("mode"));
+    // localStorage.setItem('mode', mode) ;
+    // localStorage.setItem('mode', e.target.value) ;
    }
 
    if(mode==="bump-pressure") history.push("/select/bump-pressure")
 
 
   //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
-   useEffect(()=>{
-    if(mode) localStorage.setItem('mode', mode) ;
-    if(wellData.unit) localStorage.setItem('unitButton', wellData.unit) ;
-    setMode(localStorage.getItem('mode', mode));
-    setWellData({...wellData, unit: (localStorage.getItem("unitButton", wellData.unit))  });
-  },[wellData,setWellData, setMode, mode])
+  //  useEffect(()=>{
+  //   if(mode) localStorage.setItem('mode', mode) ;
+  //   if(unit)localStorage.setItem('unitButton', unit) ;
+  //   setWellData({...wellData, unit: (localStorage.getItem("unitButton"))  });
+  // },[wellData,setWellData, setMode, mode, unit])
 
 
 const handleSubmit =(e)=> {
@@ -61,7 +64,7 @@ return (
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
 <Grid container textAlign= "center" justifyContent="center" alignItems="center">
-  { mode==="OTHERS"  ? 
+  { mode==="OTHERS" || null  ? 
     <InputPrimary 
     LABEL= "PRIMARY CEMENTING DATA" 
     onSubmit={handleSubmit}

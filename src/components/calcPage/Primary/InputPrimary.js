@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL}) =>{ 
 
-      const {wellData, setWellData, theme, mode, ChangerPresentCsgOD, unitChanger, handleSetModeUnit} = useGlobalState();
+      const {wellData, setWellData, theme, mode, ChangerPresentCsgOD, unitChanger, handleSetModeUnit, setShowPrimaryResult} = useGlobalState();
 
       const history = useHistory();
       const handleChange=(e)=>{
@@ -28,7 +28,7 @@ const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL
     
 
 const handleViewResult=()=>{
-   history.push("/select/result-primary");
+   setShowPrimaryResult(true);
 }
 
   return (

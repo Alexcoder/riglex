@@ -12,6 +12,14 @@
         margin-bottom: 0.2rem;
         height: 3rem;
 }
+.plug_unit_button{
+    border: none;
+    width: 15%;
+    padding: 1%;
+    margin: 0.5rem 0.2rem;
+    border-radius: 5%;
+
+}
 .plug_button{
     color: black;
     border-radius: 50%;
@@ -40,7 +48,7 @@
     font-size: 1.1rem;
     border-color: transparent;
 }
-.back_andsubmit_button_container{
+.inputPlugContainer{
     display: flex;
     gap: 1rem;
 
@@ -57,15 +65,17 @@
         margin-left: 0rem;
     }
     
-    .back_andsubmit_button_container{
-    flex-direction: column;
-    gap: 0.5rem;
-}
 .drillpipe_data_container{
         width: 98%; 
         height: 3rem;
         margin-top: 0.5rem; 
 }
+.plug_unit_button{
+    width: 30%;
+    padding: 2%;
+    margin: 0.8rem 0.3rem;
+}
+
 
 
 }

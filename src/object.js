@@ -5,7 +5,7 @@ export const inputDataPrimary = {
     openHoleID: "",
     overlap: "",
     lengthOfTailAboveShoe: "",
-    unit: "",
+    unit: "ft",
     shoeTrack: "",
     measuredDepth: "",
     ratHole: "",
@@ -62,7 +62,6 @@ export const inputDataPrimary = {
       drillPipeMD: "",
       dpOuterZoneId: "",
       unit: "",
-      // drillPipe: false,
   }
 
 
