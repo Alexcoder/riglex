@@ -30,7 +30,7 @@
 @media screen and (max-width: 1024px){
     .sideBar_container{
         position : fixed;
-        top: 16;
+        top: 32;
         bottom: 0;
         width:82%;
         padding: 0.2rem 0.2rem 0.1rem 0rem;
@@ -40,7 +40,7 @@
         width:100%;
         background: lightgray;
         border: 1px solid transparent;
-        padding: 2rem 0rem;
+        padding: 1rem 0rem;
     }
     
     
