@@ -14,7 +14,7 @@ export const ContextProvider = ({children}) => {
   const [plug, setPlug] = useState(inputDataPlug)
   const [drillPipe, setDrillPipe] = useState(false)
   const [navMode, setNavMode] = useState("")
-  const [sidebar, setSidebar] = useState(true)
+  const [sidebar, setSidebar] = useState(false)
   const [showPlugResult, setShowPlugResult] = useState(false)
   const [showPrimaryResult, setShowPrimaryResult] = useState(false)
 

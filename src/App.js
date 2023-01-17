@@ -36,16 +36,17 @@ function App() {
   }, [setMode,setNavMode, path])
   
   return (
-    <main onClick={()=> setSidebar(false)}>
+    <main>
       <Header />
-    <section >
+    <section onClick={()=> setSidebar(false)}>
+
       <div className="app_container">
       <section>
       {SideBarShow()}
       </section>
       <section>
       <Switch>
-       {/* <Route path="*" exact component={Redirect("/")}/> */}
+       <Route path="*" exact component={ConversionPage}/>
        <Route path="/" exact component={ConversionPage}/>
        <Route path="/select/field-unit-converter" exact component={ConversionPage}/>
        <Route path="/select/primary" exact component={FieldCementing}/>
