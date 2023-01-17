@@ -23,18 +23,14 @@
     margin-top: 1rem;
     border: 1px solid gray;
   }
-  .button_field{
-    width: 7rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-    margin-bottom: 0.2rem;
+  .primary_unit_button{
     border: none;
-  }
-  .button_field:hover{
-    background-color: transparent;
-    color: blue;
-  }
+    width: 14%;
+    padding: 1%;
+    margin: 0.5rem 0.2rem;
+    border-radius: 5%;
+}
+
 .input_primary_BackButton{
   width: 20rem;
   padding: 0.8rem;
@@ -52,13 +48,9 @@
   .input_primary_container{
     margin-left: 5%;
   }
-
-  .button_field{
-    width: 35%rem;
-    margin: 0.5rem 0rem
-  }
+  .primary_unit_button{
+    width: 19%;
+    padding: 2%;
+    margin: 0.5rem 0.2rem;
 }
-  .input_primary_grid_container{
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+}

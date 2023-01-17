@@ -15,7 +15,8 @@ const InputPlug = ({LABEL}) => {
     drillPipe, 
     setDrillPipe, 
     handleSetModeUnit, 
-    showPlugResult, setShowPlugResult
+    // showPlugResult,
+    setShowPlugResult
     } =  useGlobalState();
 
 
@@ -25,7 +26,7 @@ const handleChange=(e)=>{
 }
 
 const handleButtonColor = (value) => {
-  if(wellData.unit=== value){
+  if(wellData.unit===value){
     return theme 
   } else {
     return 
@@ -36,7 +37,6 @@ const handleButtonColor = (value) => {
     setShowPlugResult(true)
   }
 
-  console.log(showPlugResult)
   return (
     <div className="plug_input_container">
 

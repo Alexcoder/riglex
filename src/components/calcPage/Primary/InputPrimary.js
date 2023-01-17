@@ -1,11 +1,11 @@
 import React from 'react';
-import './InputPrimary.css';
 import { Grid, Paper} from '@mui/material';
 
 import { useGlobalState } from '../../../state';
 
 import {SinglePrimary} from '../..';
 import { useHistory } from 'react-router-dom';
+import './InputPrimary.css';
 
 
 const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL}) =>{ 
@@ -18,7 +18,7 @@ const InputPrimary = ({ PreviousCsgShoe, PreviousCsgID,CasingOD, CasingID ,LABEL
       }
 
       const handleButtonColor = (value) => {
-        if(wellData.unit=== value){
+        if(wellData.unit===value){
           return theme 
         } else {
           return 
@@ -41,9 +41,9 @@ const handleViewResult=()=>{
 
      <Grid container textAlign="center" justifyContent="center" sx={{gap:"2rem"}} className="flexUnitButton">
    <button  onClick={()=>{handleSetModeUnit("ft")} }
-       className={`button_field ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
+       className={`primary_unit_button ${handleButtonColor("ft")}`} value={"ft"} > FEET</button>
     <button onClick={()=> {handleSetModeUnit("m") }} 
-      className={`button_field ${handleButtonColor("m")}`} value={"m"} > METER </button>
+      className={`primary_unit_button ${handleButtonColor("m")}`} value={"m"} > METER </button>
    </Grid> 
 
 
@@ -81,9 +81,9 @@ const handleViewResult=()=>{
       </Grid> 
 
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem gray", borderRadius: "1rem", width: "13rem" }} onClick={()=> history.push("/select/bump-pressure")}> BUMP PRESSURE </button>
+      style={{borderRadius: "5%", width: "13rem" }} onClick={()=> history.push("/select/bump-pressure")}> BUMP PRESSURE </button>
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{boxShadow: "0.2rem 0.2rem 0.3rem 0rem gray", borderRadius: "1rem", width: "13rem" }} 
+      style={{borderRadius: "5%", width: "13rem" }} 
       onClick={handleViewResult}> VIEW RESULT </button>
     </Paper>    
 
