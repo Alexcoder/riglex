@@ -74,7 +74,6 @@ const ResultPlug = () => {
   return (
     <div className="resultPlugContainer">
       <div>
-        {TopOfSpacer3}
       <div>
         <div>{(drillPipe && (Check<0)) && "Stage2" }</div>
         <div>{(drillPipe && (Check>0)) && "Stage3 OverFlow" }</div>

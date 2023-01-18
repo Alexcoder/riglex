@@ -28,6 +28,7 @@
 @media screen and (max-width: 620px){
     .resultPlugContainer >div{
         width:50%;
+        padding: 1.2rem;
     }
     
 }
