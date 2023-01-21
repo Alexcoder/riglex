@@ -62,7 +62,7 @@ const ResultPlug = () => {
          return (
              <div>
                  <div>Volume = {Volume} bbl</div>
-                 <div>Spacer Ahead 3 = {VolumeOfSpacerAhead} bbl</div>
+                 <div>Spacer Ahead  = {VolumeOfSpacerAhead} bbl</div>
                  <div>Spacer Behind 3 = {VolumeOfSpacerBehind3} bbl</div>
              </div>
          )
