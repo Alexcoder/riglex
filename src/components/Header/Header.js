@@ -1,8 +1,8 @@
 import React from 'react';
 import {useGlobalState} from "../../state/context/Context.js";
-import { Container, AppBar, Typography, ButtonBase } from '@mui/material';
 // import {MenuIcon} from "@mui/icons-material";
 import MenuIcon from '@mui/icons-material/Menu';
+import "./Header.css"
 
 
 const Header = () => {
@@ -11,14 +11,14 @@ const {setSidebar}= useGlobalState();
 
 
   return (
-    <Container  sx={{ marginBottom: "2rem"}}>
-      <ButtonBase onClick={()=> {setSidebar((prev)=> !prev)}}>
-            <AppBar sx={{display:"flex"}}>
-              <MenuIcon sx={{justifyContent: "flexStart"}}/>
-            <Typography elevation={5} variant="h4" sx={{color: "white", textAlign:"center"}}>FIELD APP</Typography>
-          </AppBar>
-      </ButtonBase>
-    </Container>
+    <main className="header-container" >
+            <div onClick={()=> {setSidebar((prev)=> !prev)}} >
+              <div>
+              <MenuIcon style={{justifyContent: "flexStart", color:"white", margin: "0rem 0rem 0rem 2rem", fontSize:"3rem"}}/>
+              </div>
+              <div style={{color: "white", fontSize:"2rem",alignItems:"center", fontWeight: 600,}}>FIELD APP</div>
+          </div>
+    </main>
   )
 }
 

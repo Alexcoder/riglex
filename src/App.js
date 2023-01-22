@@ -37,7 +37,7 @@ function App() {
   
   return (
     <main>
-      <Header />
+        <Header />
     <section onClick={()=> setSidebar(false)}>
 
       <div className="app_container">
@@ -46,7 +46,6 @@ function App() {
       </section>
       <section>
       <Switch>
-       {/* <Route path="*" exact component={ConversionPage}/> */}
        <Route path="/" exact component={ConversionPage}/>
        <Route path="/select/field-unit-converter" exact component={ConversionPage}/>
        <Route path="/select/primary" exact component={FieldCementing}/>

@@ -1,0 +1,25 @@
+.header-container{
+    position: fixed;
+    top: 0; 
+    width: 100vw; 
+    height: 4rem;
+    background: rgb(29, 2, 59); 
+    z-index: 500;
+}
+.header-container >div{
+    display: flex; 
+    gap: 38%
+}
+
+@media screen and (max-width: 1024px){
+    .header-container >div{
+        gap: 30%
+    }
+    
+}
+@media screen and (max-width: 620px){
+    .header-container >div{
+        gap: 15%
+    }
+    
+}
