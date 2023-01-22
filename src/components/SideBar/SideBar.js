@@ -5,7 +5,7 @@ const SideBar = ()=>{
     const { Navigate, handleColor,} = useSideBar()
 
     return(
-        <main>
+        <main className="sidebar">
             <div className="sideBar_container">
                 <button 
                 className={handleColor("unit-conversion")}

@@ -1,4 +1,5 @@
 .header-container{
+    padding-top: 1rem;
     position: fixed;
     top: 0; 
     width: 100vw; 
@@ -18,6 +19,10 @@
     
 }
 @media screen and (max-width: 620px){
+    .header-container{
+        height: 5rem;
+        padding-top: 1.5rem;
+    }
     .header-container >div{
         gap: 15%
     }

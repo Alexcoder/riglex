@@ -44,7 +44,7 @@ const ResultPlug = () => {
          )
      }
 
-     const DrillPipeMD_to_TopCement = drillPipeMD - TopOfCementWithPipeIn; //length
+     const DrillPipeMD_to_TopCement = TopOfCementWithPipeIn - drillPipeMD; //length
      const VolSpacerAheadA = DrillPipeMD_to_TopCement * AnnularCapacityStinger;
      const RemainingVolume = volOfSpacerAhead - VolSpacerAheadA;
      const LengthSpacerAhead1 = DrillPipeMD_to_TopCement;
