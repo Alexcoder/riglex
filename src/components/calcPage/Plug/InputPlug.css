@@ -61,8 +61,10 @@
 /* ----------MEDIA 620PX--------- */
 @media screen and (max-width: 1024px){
     .plug_input_container{
-        margin-left: 0rem;
-    }
+        width: 90%;
+        margin-left: 0rem; 
+       }
+    
     
 .drillpipe_data_container{
         width: 98%; 
@@ -74,7 +76,4 @@
     padding: 2%;
     margin: 0.8rem 0.3rem;
 }
-
-
-
 }

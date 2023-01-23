@@ -46,8 +46,11 @@
 
 @media screen and (max-width: 1024px){
   .input_primary_container{
-    margin-left: 5%;
-  }
+      width: 90%; 
+      margin-left: 0%;
+      padding: 0.5rem 0rem 0.5rem 1rem;
+    }
+  
   .primary_unit_button{
     width: 19%;
     padding: 2%;
