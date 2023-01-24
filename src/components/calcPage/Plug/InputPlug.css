@@ -1,8 +1,10 @@
 .plug_input_container{
     text-align: center; 
+    align-items: center;
+    display: flex;
     justify-content: center;
-    width: 70%;
-    margin-left: 10%;
+    width: 80%;
+    margin-left: 5%;
     margin-top: 2%;
 }
 .drillpipe_data_container{
