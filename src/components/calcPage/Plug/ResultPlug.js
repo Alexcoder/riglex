@@ -55,8 +55,8 @@ const ResultPlug = () => {
      const TopOfSpacer3 = (drillPipeMD -  LengthSpacerAhead2).toFixed(0)
      const Displacement3 = (CapacityOfDP * TopOfSpacer3).toFixed(1);
     
-     const VolSpacerBehind1 = LengthSpacerAhead1 * AnnularCapacityStinger ;
-     const VolSpacerBehind2 = LengthSpacerAhead2 * AnnularDrillPipe ;
+     const VolSpacerBehind1 = LengthSpacerAhead1 * CapacityOfStinger ;
+     const VolSpacerBehind2 = LengthSpacerAhead2 * CapacityOfDP ;
      const VolumeOfSpacerBehind3 = (Number(VolSpacerBehind1)+ Number(VolSpacerBehind2)).toFixed(1)
  
      const StingerDrillPipe = () => {
