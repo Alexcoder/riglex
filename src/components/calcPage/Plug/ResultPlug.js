@@ -47,13 +47,14 @@ const ResultPlug = () => {
      const DrillPipeMD_to_TopCement = TopOfCementWithPipeIn - drillPipeMD; //length
      const VolSpacerAheadA = DrillPipeMD_to_TopCement * AnnularCapacityStinger;
      const RemainingVolume = volOfSpacerAhead - VolSpacerAheadA;
+     const AnnularDrillPipe = (dpOuterZoneId**2-drillPipeOD**2)/(changer);
      const LengthSpacerAhead1 = DrillPipeMD_to_TopCement;
-     const LengthSpacerAhead2 = RemainingVolume / AnnularCapacityStinger;
+     const LengthSpacerAhead2 = RemainingVolume / AnnularDrillPipe;
     //  const SpacerTotalLength = Number(LengthSpacerAhead1) + Number(LengthSpacerAhead2) ;
     //  const TopOfSpacer3 = (bottom-LengthOfCementWithPipeIn - SpacerTotalLength).toFixed(0)
      const TopOfSpacer3 = (drillPipeMD -  LengthSpacerAhead2).toFixed(0)
      const Displacement3 = (CapacityOfDP * TopOfSpacer3).toFixed(1);
-     const AnnularDrillPipe = (dpOuterZoneId**2-drillPipeOD**2)/(changer);
+    
      const VolSpacerBehind1 = LengthSpacerAhead1 * AnnularCapacityStinger ;
      const VolSpacerBehind2 = LengthSpacerAhead2 * AnnularDrillPipe ;
      const VolumeOfSpacerBehind3 = (Number(VolSpacerBehind1)+ Number(VolSpacerBehind2)).toFixed(1)
