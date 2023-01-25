@@ -49,7 +49,7 @@ e.preventDefault()
 return (
 <div style={{ alignItems:"center", justifyContent:"center", background:"gray",}}>
     <div style={{textAlign: "center"}}>
-  <select className="select_FieldCementing" type="number" value={Mode}
+  <select className="select_FieldCementing" type="number" value={mode}
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
       <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>Primary Cementing</option>
