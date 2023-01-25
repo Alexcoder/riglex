@@ -6,7 +6,7 @@
     height: 100%;
     width:180%;
     z-index: 100;
-    background: gray;
+    background: dimgrey;
     padding: 0.2rem 0.2rem 0rem 0rem;
     position: relative;
 }
@@ -31,7 +31,7 @@
 @media screen and (max-width: 1024px){
     .sidebar{
         position: fixed;
-        top:0.5;
+        top:6rem;
         z-index:200;
         width:90%;
         height: 100%;
