@@ -40,7 +40,7 @@ const handleButtonColor = (value) => {
   return (
     <div className="plug_input_container">
 
-    <Paper elevation={3} sx={{padding: "1rem"}}>
+    <Paper elevation={3} sx={{padding: "1rem", marginBottom:{xs:"2rem"}}}>
     <Grid container
      textAlign="center" alignItems="center" justifyContent="center">
      <h1 style={{color: "blue", margin: "-1rem 0rem 0.5rem 0rem"}}>{LABEL}</h1>
