@@ -45,7 +45,7 @@ e.preventDefault()
 }
 
 return (
-<div>
+<div style={{ alignItems:"center", justify Content:"center", background:"gray",}}>
     <div style={{textAlign: "center"}}>
   <select className="select_FieldCementing" type="number" value={mode}
     onChange={handleSelect}>
