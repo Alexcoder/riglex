@@ -12,7 +12,7 @@ const FieldCementing = () =>  {
   const history = useHistory()
   const {theme, mode, setMode, wellData , unitChanger}= useGlobalState();
   const {unit}= wellData
-  const[preMode setPreMode]= useState();
+  const[preMode, setPreMode]= useState();
   // setWellData
    const handleButtonColor = (value) => {
     if(unit=== value){
@@ -47,7 +47,7 @@ e.preventDefault()
 }
 
 return (
-<div style={{ alignItems:"center", justifyContent:"center", background:"black",}}>
+<div style={{ alignItems:"center", justifyContent:"center", background:"gray",}}>
     <div style={{textAlign: "center"}}>
   <select className="select_FieldCementing" type="number" value={preMode}
     onChange={handleSelect}>
