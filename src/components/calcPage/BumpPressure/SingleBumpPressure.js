@@ -1,5 +1,5 @@
 import React from 'react';
-import {TextField, Grid} from '@mui/material';
+import {TextField, Grid, Typography} from '@mui/material';
 
 const SingleBumpPressure =({label, onChange, value, name})=>{
     return(
