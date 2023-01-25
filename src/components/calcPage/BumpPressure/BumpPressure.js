@@ -22,7 +22,7 @@ const BumpPressure = () => {
 
   return (
     <Container sx={{textAlign: "center", alignItems:"center",justifyContent:"center",color: "blue", background:"gray", width: "100vw",paddingTop:"2rem",paddingBottom:"2rem", margin:{md:"1rem 0rem 0rem 15%", sm:"0.5rem 0rem 0rem 0rem", xs:"0rem 0rem 0rem 0rem"},}}>
-      <Paper elevation={5} sx={{padding: "1rem 1rem 2rem 1rem", width: {md:"75%", sm:"91%", xs: "91%" },}}>
+      <Paper elevation={5} sx={{padding: "1rem 1rem 2rem 1rem", width: {md:"75%", sm:"91%", xs: "91.5%" },}}>
       <Typography variant="h5" mb={1} sx={{color: "blue"}}>BUMP PRESSURE</Typography>
         <div style={{display: "flex", justifyContent:"center", gap: "1rem", marginBottom:"1rem" }}>
            <Button sx={{width: "10.5rem"}} variant={handleVariant("ft")} onClick={()=> setWellData({...wellData, unit : "ft"})}>FEET</Button>
