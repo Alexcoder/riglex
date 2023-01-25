@@ -44,7 +44,7 @@ const ResultPage1338 = ( ) => {
               <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
               </>
             }
-              <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Bump Pressure</h4> :
+              <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Bump Pressure</h4> 
         </div>
         <section style={{textAlign: "center"}}>
         <button className="result_button green" onClick={()=> setShowPrimaryResult(false)}>BACK</button>
