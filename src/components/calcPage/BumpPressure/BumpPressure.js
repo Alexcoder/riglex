@@ -21,7 +21,7 @@ const BumpPressure = () => {
 
 
   return (
-    <Container sx={{textAlign: "center", color: "blue", width: "", margin:{md:"2rem 0rem 0rem 15%", sm:"2rem 0rem 0rem 0rem", xs:"2rem 0rem 0rem 0rem"},}}>
+    <Container sx={{textAlign: "center", alignItems:"center",justifyContent:"center",color: "blue", width: "100%", margin:{md:"2rem 0rem 0rem 15%", sm:"2rem 0rem 0rem 0rem", xs:"2rem 0rem 0rem 0rem"},}}>
       <Paper elevation={5} sx={{padding: "1rem 0rem 2rem 0rem", width: {md:"75%", sm:"100%", xs: "100%" },}}>
       <Typography variant="h5" mb={1} sx={{color: "blue"}}>BUMP PRESSURE</Typography>
         <div style={{display: "flex", justifyContent:"center", gap: "1rem", marginBottom:"1rem" }}>
