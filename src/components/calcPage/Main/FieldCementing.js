@@ -35,7 +35,7 @@ const FieldCementing = () =>  {
 
   //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
       useEffect(()=>{
-       if(preMode) setMode(localStorage.getItem('mode');
+       if(preMode) setMode(localStorage.getItem('mode'));
   //   if(mode) localStorage.setItem('mode', mode) ;
   //   if(unit)localStorage.setItem('unitButton', unit) ;
   //   setWellData({...wellData, unit: (localStorage.getItem("unitButton"))  });
