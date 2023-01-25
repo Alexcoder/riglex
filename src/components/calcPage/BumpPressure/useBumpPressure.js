@@ -1,10 +1,8 @@
 import {useGlobalState} from '../../../state';
-import {useHistory} from 'react-router-dom';
 
 
 const useBumpPressure =()=>{
-  const history = useHistory();
-  const {wellData, setWellData,} = useGlobalState()
+  const {wellData, setWellData, setShowPrimaryResult} = useGlobalState()
   const {
         tvd, 
         unit, 
@@ -30,7 +28,7 @@ const useBumpPressure =()=>{
                & topOfFloatTvd>="0" 
                & tvd>="0"
                & presentCsgTvd>="0")
-              history.push("/select/result-primary")
+               setShowPrimaryResult(true)
               else alert("Empty field not allowed")
           }
           function handleVariant(selectedUnit){

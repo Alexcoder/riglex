@@ -6,7 +6,7 @@ import SingleBumpPressure from './SingleBumpPressure';
 import useBumpPressure from './useBumpPressure';
 
 const BumpPressure = () => {
-  const {wellData,setWellData, unitChanger} = useGlobalState()
+  const {wellData,setWellData, unitChanger, } = useGlobalState()
   const {
         tvd, 
         mudWeight, 
@@ -22,11 +22,11 @@ const BumpPressure = () => {
 
   return (
     <Container sx={{textAlign: "center", alignItems:"center",justifyContent:"center",color: "blue", background:"gray", width: "100vw",paddingTop:"2rem",paddingBottom:"2rem", margin:{md:"1rem 0rem 0rem 15%", sm:"0.5rem 0rem 0rem 0rem", xs:"0rem 0rem 0rem 0rem"},}}>
-      <Paper elevation={5} sx={{padding: "1rem 1rem 2rem 1rem", width: {md:"75%", sm:"91%", xs: "91.5%" },}}>
+      <Paper elevation={5} sx={{padding: "1rem 1rem 2rem 1rem", width: {md:"75%", sm:"95%", xs: "91.5%" },}}>
       <Typography variant="h5" mb={1} sx={{color: "blue"}}>BUMP PRESSURE</Typography>
         <div style={{display: "flex", justifyContent:"center", gap: "1rem", marginBottom:"1rem" }}>
-           <Button sx={{width: "10.5rem"}} variant={handleVariant("ft")} onClick={()=> setWellData({...wellData, unit : "ft"})}>FEET</Button>
-           <Button sx={{width: "10.5rem"}} variant={handleVariant("m")} onClick={()=> setWellData({...wellData, unit : "m"})}>METER</Button>
+           <Button sx={{width: {md:"10.5rem", sm:"7rem", xs:"5rem"}}} variant={handleVariant("ft")} onClick={()=> setWellData({...wellData, unit : "ft"})}>FEET</Button>
+           <Button sx={{width: {md:"10.5rem", sm:"7rem", xs:"5rem"}}} variant={handleVariant("m")} onClick={()=> setWellData({...wellData, unit : "m"})}>METER</Button>
         </div>
     <Grid container textAlign="center" justifyContent="center" spacing={1} onChange={handleChange}>
       <SingleBumpPressure label="Mud Weight (ppg)" name="mudWeight" value={mudWeight} onChange={handleChange}/>
@@ -37,11 +37,11 @@ const BumpPressure = () => {
       <SingleBumpPressure label={`Top Of Lead TVD (${unitChanger})`} name="topOfLeadTvd" value={topOfLeadTvd} onChange={handleChange}/>
       <SingleBumpPressure label={`Top Of Tail TVD (${unitChanger})`} name="topOfTailTvd" value={topOfTailTvd} onChange={handleChange}/>
       <SingleBumpPressure label={`Float Collar TVD (${unitChanger})`} name="topOfFloatTvd" value={topOfFloatTvd} onChange={handleChange}/>
-      <SingleBumpPressure label={`True Vertical Depth (${unitChanger})`} name="tvd" value={tvd} onChange={handleChange}/>
       <SingleBumpPressure label={`Present Csg Depth TVD (${unitChanger})`} name="presentCsgTvd" value={presentCsgTvd} onChange={handleChange}/>
+      <SingleBumpPressure label={`True Vertical Depth (${unitChanger})`} name="tvd" value={tvd} onChange={handleChange}/>
 
     </Grid>
-    <Button onClick={handleClick} variant="contained" sx={{marginTop:"2rem", width:{md:"18rem", sm:"18rem", xs:"14rem"}}}>VIEW RESULT</Button>
+    <Button onClick={handleClick} variant="contained" sx={{marginTop:"2rem", width:{md:"18rem", sm:"12rem", xs:"12rem"}}}>VIEW RESULT</Button>
       </Paper>
     </Container>
 

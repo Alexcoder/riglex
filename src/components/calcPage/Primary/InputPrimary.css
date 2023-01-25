@@ -3,31 +3,18 @@
     /* font-family: 'Lobster', cursive; */
     /* font-family: 'Montserrat', sans-serif; */
     /* font-family: 'Poppins', sans-serif; */
-  body{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-  }
-  .input_primary_container{
-    /* padding: 1rem 2rem 1rem 2rem; */
+
+    .input_primary_container{
     text-align: center; 
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 75%;
-    margin-left: 15%;
+    width: 82%;
+    margin-left: 12%;
     margin-top: 2%;
+    margin-bottom: 5%;
   }
-  .select_FieldCementing{
-    width:23rem;
-    padding: 1rem 1rem 1rem 1rem; 
-    box-shadow: 2px 2px 0.2rem 0px gray ;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    border: 1px solid gray;
-  }
+
   .primary_unit_button{
     border: none;
     width: 14%;
@@ -37,12 +24,13 @@
 }
 
 .input_primary_BackButton{
-  width: 20rem;
+  border-radius: 3%; 
+  width: 18%;
   padding: 0.8rem;
   margin: 0.5rem;
   font-size: 1rem;
   margin-top: 1rem;
-  border: 1px solid gray;
+  border: none;
 }
 .greenColor{
   background: green;
@@ -52,7 +40,7 @@
 @media screen and (max-width: 1024px){
   .input_primary_container{
       width: 92%; 
-      margin-left: 0%;
+      margin-left: 2%;
       padding: 0.5rem 0rem 0.5rem 1rem;
     }
   
@@ -61,4 +49,16 @@
     padding: 2%;
     margin: 0.5rem 0.2rem;
 }
+.input_primary_BackButton{
+  width: 22%;
 }
+
+}
+@media screen and (max-width: 620px){
+  .input_primary_container{
+    margin-left: 0%;
+  }
+  .input_primary_BackButton{
+    width: 30%;
+  }
+  }

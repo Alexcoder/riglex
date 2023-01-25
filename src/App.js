@@ -36,9 +36,9 @@ function App() {
   }, [setMode,setNavMode, path])
   
   return (
-    <main>
+    <main >
         <Header />
-    <section onClick={()=> setSidebar(false)}>
+    <section onClick={()=> setSidebar(false)} >
 
       <div className="app_container">
       <section>

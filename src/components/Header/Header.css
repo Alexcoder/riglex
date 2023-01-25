@@ -20,7 +20,7 @@
 }
 @media screen and (max-width: 620px){
     .header-container{
-        height: 5rem;
+        height: 4rem;
         padding-top: 2rem;
     }
     .header-container >div{

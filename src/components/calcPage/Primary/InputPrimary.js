@@ -81,9 +81,8 @@ const handleViewResult=()=>{
       </Grid> 
 
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{borderRadius: "5%", width: "13rem" }} onClick={()=> history.push("/select/bump-pressure")}> BUMP PRESSURE </button>
+       onClick={()=> history.push("/select/bump-pressure")}> BUMP PRESSURE </button>
       <button className={theme? `${theme} input_primary_BackButton` :"input_primary_BackButton" } 
-      style={{borderRadius: "5%", width: "13rem" }} 
       onClick={handleViewResult}> VIEW RESULT </button>
     </Paper>    
 

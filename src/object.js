@@ -60,7 +60,7 @@ export const inputDataPrimary = {
       drillPipeID: "",
       drillPipeOD: "",
       drillPipeMD: "",
-      dpOuterZoneId: "",
+      dpOuterZoneId:"",
       unit: "",
   }
 

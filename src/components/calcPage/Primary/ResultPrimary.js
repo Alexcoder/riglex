@@ -7,15 +7,15 @@ import './ResultPrimary.css';
 
 const ResultPage1338 = ( ) => { 
   const { 
-         BumpPressureChanger, 
-         Liner_Displacement_Volume,
-         wellData, 
-         mode, 
-         Liner_Slurry_Volume, 
-         unitChanger,
-         setShowPrimaryResult
-        } 
-         = useResultPrimary();
+    BumpPressureChanger, 
+    Liner_Displacement_Volume,
+    wellData, 
+    mode, 
+    Liner_Slurry_Volume, 
+    unitChanger,
+    setShowPrimaryResult
+  } 
+  = useResultPrimary();
   const{ jobType, volOfLead, volOfTail,displacement,topOfLead, } = wellData;
   
 
@@ -44,7 +44,7 @@ const ResultPage1338 = ( ) => {
               <h4>Top Of Lead : {topOfLead} {unitChanger}</h4> 
               </>
             }
-              <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Pressure to Bump Plug</h4> :
+              <h4> <span style={{color: "red"}}>{BumpPressureChanger}</span> psi Bump Pressure</h4> :
         </div>
         <section style={{textAlign: "center"}}>
         <button className="result_button green" onClick={()=> setShowPrimaryResult(false)}>BACK</button>

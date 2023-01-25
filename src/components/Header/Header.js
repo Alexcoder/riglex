@@ -14,7 +14,7 @@ const {setSidebar}= useGlobalState();
     <main className="header-container" >
             <div onClick={()=> {setSidebar((prev)=> !prev)}} >
               <div>
-              <MenuIcon style={{justifyContent: "flexStart", color:"white", margin: "0rem 0rem 0rem 2rem", fontSize:"3rem"}}/>
+              <MenuIcon sx={{justifyContent: "flexStart", color:"white", margin: "0rem 0rem 0rem 2rem", fontSize:"3rem"}}/>
               </div>
               <div style={{color: "white", fontSize:"2rem",alignItems:"center", fontWeight: 600,}}>FIELD APP</div>
           </div>

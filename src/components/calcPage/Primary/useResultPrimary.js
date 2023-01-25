@@ -32,7 +32,7 @@ const useResultPrimary =()=>{
                        weightOfTailSlurry*(tvd-topOfTailTvd) + weightOfTailSlurry*(tvd-topOfFloatTvd))
                                  -
                        0.052*(weightOfDisplacementFluid*topOfFloatTvd)).toFixed(0)
- const BumpPressureChanger = unit==="ft" ? BumpPressure : (BumpPressure*3.28).toFixed(0)                                 
+ const BumpPressureChanger =BumpPressure==="NaN"? "0": (unit==="ft") ? BumpPressure : (BumpPressure*3.28).toFixed(0)                                 
 
 // Liner Displacement
   const  Drill_Pipe_Capacity = (wellData.drillPipeIdLiner**2)/SwitchJobUnit

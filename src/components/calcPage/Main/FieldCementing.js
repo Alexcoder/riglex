@@ -1,19 +1,17 @@
 import React from 'react';
-// {useEffect}
 import {useHistory} from 'react-router-dom';
 import { Grid} from '@mui/material';
 import '../Primary/InputPrimary.css';
 import {InputPrimary, InputPlug} from '../../../components'
 
 import { useGlobalState } from '../../../state';
+import "./FieldCementing.css";
 
 
 const FieldCementing = () =>  { 
   const history = useHistory()
   const {theme, mode, setMode, wellData , unitChanger}= useGlobalState();
   const {unit}= wellData
- // const[preMode, setPreMode]= useState();
-  // setWellData
    const handleButtonColor = (value) => {
     if(unit=== value){
       return theme 
@@ -25,21 +23,10 @@ const FieldCementing = () =>  {
 
    const handleSelect=(e)=>{
     setMode(e.target.value);
-    // setMode(localStorage.getItem("mode"));
-    // localStorage.setItem('mode', preMode) ;
-    // localStorage.setItem('mode', e.target.value) ;
    }
 
    if(mode==="bump-pressure") history.push("/select/bump-pressure")
 
-
-  //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
-   //   useEffect(()=>{
-   //    if(preMode) setMode(localStorage.getItem('mode'));
-  //   if(mode) localStorage.setItem('mode', mode) ;
-  //   if(unit)localStorage.setItem('unitButton', unit) ;
-  //   setWellData({...wellData, unit: (localStorage.getItem("unitButton"))  });
- //  },[setMode, preMode])
 
 
 const handleSubmit =(e)=> {
@@ -47,22 +34,21 @@ e.preventDefault()
 }
 
 return (
-<div style={{ alignItems:"center", justifyContent:"center", background:"gray",}}>
-    <div style={{textAlign: "center"}}>
-  <select className="select_FieldCementing" type="number" value={mode}
+<div className="f_container">
+    <div >
+  <select className="f_select" type="number" value={mode}
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
       <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>Primary Cementing</option>
       <option className={mode==="1338"? 'green option_class' : "option_class"} value={"1338"}>13-3/8 inch Casing Cementing</option>
       <option className={mode==="958"? 'green option_class' : "option_class"} value={"958"}>9-5/8 inch Casing Cementing</option>
       <option className={`option_class ${handleButtonColor("7INCH")}`} value={"7INCH"}>7 inch Casing Cementing</option>
-      <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>Plug Cementing</option>
+      <option className={`option_class ${handleButtonColor("PLUG")}`} value={"PLUG"}>Balanced Plug</option>
       <option className={`option_class ${handleButtonColor("liner")}`} value={"liner"}>Liner Cementing</option>
       <option className={`option_class ${handleButtonColor("bump-pressure")}`} value={"bump-pressure"}> Bump Pressure</option>
 
    </select>         
     </div>
-    {/* --USED TO CONTAIN BUTTON GRID */}
 
   {/* -----------------------------INPUT PAGE CONDITIONAL RENDERING----------------------------- */}
 <Grid container textAlign= "center" justifyContent="center" alignItems="center">
@@ -118,7 +104,7 @@ return (
 {/* ------------------------PLUG RENDERING------------------------------------ */}
 { mode==="PLUG" ? 
   <InputPlug
-  LABEL= "PLUG CEMENTING DATA" 
+  LABEL= "BALANCED PLUG DATA" 
   onSubmit={handleSubmit}
   />
   : null

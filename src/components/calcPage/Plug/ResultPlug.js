@@ -9,6 +9,8 @@ const ResultPlug = () => {
      const { unit, } = wellData;
      const { zoneId, stingerID, stingerOD, length, OHE, volOfSpacerAhead, bottom,
          drillPipeID,drillPipeOD, drillPipeMD,dpOuterZoneId} = plug;
+
+
  
      const changer = (unit === "ft") ? 1029.4 : 313.8;
      const unitChanger = (unit === "ft") ? "ft" : "m";
