@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 // {useEffect}
 import {useHistory} from 'react-router-dom';
 import { Grid} from '@mui/material';
@@ -12,7 +12,7 @@ const FieldCementing = () =>  {
   const history = useHistory()
   const {theme, mode, setMode, wellData , unitChanger}= useGlobalState();
   const {unit}= wellData
-  const[preMode, setPreMode]= useState();
+ // const[preMode, setPreMode]= useState();
   // setWellData
    const handleButtonColor = (value) => {
     if(unit=== value){
@@ -24,9 +24,9 @@ const FieldCementing = () =>  {
 
 
    const handleSelect=(e)=>{
-    setPreMode(e.target.value);
+    setMode(e.target.value);
     // setMode(localStorage.getItem("mode"));
-     localStorage.setItem('mode', preMode) ;
+    // localStorage.setItem('mode', preMode) ;
     // localStorage.setItem('mode', e.target.value) ;
    }
 
@@ -34,12 +34,12 @@ const FieldCementing = () =>  {
 
 
   //  --------EFFECT HOOK FOR LOCAL STORAGE------------------
-      useEffect(()=>{
-       if(preMode) setMode(localStorage.getItem('mode'));
+   //   useEffect(()=>{
+   //    if(preMode) setMode(localStorage.getItem('mode'));
   //   if(mode) localStorage.setItem('mode', mode) ;
   //   if(unit)localStorage.setItem('unitButton', unit) ;
   //   setWellData({...wellData, unit: (localStorage.getItem("unitButton"))  });
-   },[setMode, preMode])
+ //  },[setMode, preMode])
 
 
 const handleSubmit =(e)=> {
@@ -49,7 +49,7 @@ e.preventDefault()
 return (
 <div style={{ alignItems:"center", justifyContent:"center", background:"gray",}}>
     <div style={{textAlign: "center"}}>
-  <select className="select_FieldCementing" type="number" value={preMode}
+  <select className="select_FieldCementing" type="number" value={Mode}
     onChange={handleSelect}>
       <option className={`option_class`} disabled={mode!=="0"}>Select type of cementing</option>
       <option className={mode==="OTHERS"? 'green option_class' : "option_class"} value={"OTHERS"}>Primary Cementing</option>
