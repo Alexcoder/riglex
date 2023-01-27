@@ -48,6 +48,23 @@ export const inputDataPrimary = {
 
   }
 
+//   export const inputDataPlug = {
+//       zoneId: "6.25",
+//       length: "1000",
+//       stingerOD: "2.875",
+//       OHE: "",
+//       stingerID: "2.441",
+//       slurryYield: "",
+//       volOfSpacerAhead: "50",
+//       bottom: "9600",
+//       drillPipeID: "3.35",
+//       drillPipeOD: "4",
+//       stingerLength: "1200",
+//       dpOuterZoneId:"6.25",
+//       unit: "",
+//       //Volume = 37.9bbl, Spacer Behind=23.1bbl, TopOfSpacer=6351ft, DP Depth=8400ft, displacement=69.2, Stage3
+//   }
+
   export const inputDataPlug = {
       zoneId: "",
       length: "",
@@ -59,7 +76,7 @@ export const inputDataPrimary = {
       bottom: "",
       drillPipeID: "",
       drillPipeOD: "",
-      drillPipeMD: "",
+      stingerLength: "0",
       dpOuterZoneId:"",
       unit: "",
   }

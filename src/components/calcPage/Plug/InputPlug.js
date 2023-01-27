@@ -13,9 +13,9 @@ const InputPlug = ({LABEL}) => {
     plug, 
     setPlug,
     drillPipe, 
-    setDrillPipe, 
+    setDrillPipe,
+    unitChanger, 
     handleSetModeUnit, 
-    // showPlugResult,
     setShowPlugResult
     } =  useGlobalState();
 
@@ -34,7 +34,21 @@ const handleButtonColor = (value) => {
  }
   
   const handleViewResult =()=> {
-    setShowPlugResult(true)
+   if(!plug.zoneId || !plug.stingerID || !plug.stingerOD||!plug.stingerLength 
+      || !plug.length || !plug.volOfSpacerAhead || !plug.bottom) {
+        alert("Empty Input Not Allowed")
+      }
+   else if(plug.zoneId<0 || plug.stingerID<0 || plug.stingerOD<0 || plug.stingerLength<0 
+      || plug.length<0 || plug.volOfSpacerAhead<0 || plug.bottom<0 || plug.slurryYield<0) {
+        alert("Error: Negative Input")
+      }
+   else if(drillPipe & plug.drillPipeID <=0){ alert("DrillPipe ID is empty")}
+   else if(drillPipe & plug.drillPipeOD <=0){ alert("DrillPipe OD is empty") }
+   else if(drillPipe & plug.stingerLength <=0){ alert("Stinger Length is empty") }
+   else if(drillPipe & plug.dpOuterZoneId <=0){ alert("Empty Field : DrillPipe Zone ID") }
+   else if(plug.stingerID >= plug.stingerOD){ alert("Stinger OD must be greater than Stinger ID") }
+   else if(drillPipe & plug.drillPipeID >= plug.drillPipeOD){ alert("Error : DrillPipe OD must be greater DrillPipe ID") }
+   else{ setShowPlugResult(true) }
   }
 
   return (
@@ -51,7 +65,7 @@ const handleButtonColor = (value) => {
         className={`plug_unit_button ${handleButtonColor("m")}`} value={"m"} > METER </button>
        </Grid> 
       <>
-      <SingleInputPlug name="length" value= {plug.length} label="Length Of Plug"
+      <SingleInputPlug name="length" value= {plug.length} label={`Length Of Plug (${unitChanger})`}
       onChange={handleChange}/>
       <SingleInputPlug name="zoneId" value= {plug.zoneId} label="Plug Zone ID  (inches)" 
       onChange={handleChange}/>
@@ -65,7 +79,7 @@ const handleButtonColor = (value) => {
       onChange={handleChange}/>
       <SingleInputPlug name="slurryYield" value= {plug.slurryYield} label="Slurry Yield (cu ft/sk)" 
       onChange={handleChange}/>
-      <SingleInputPlug name="volOfSpacerAhead" value= {plug.volOfSpacerAhead} label="Volume Of Spacer Ahead"
+      <SingleInputPlug name="volOfSpacerAhead" value= {plug.volOfSpacerAhead} label="Spacer Ahead (bbl)"
       onChange={handleChange}/>
       <SingleInputPlug name="bottom" value= {plug.bottom} label="Plug Bottom"       
       onChange={handleChange}/>
@@ -88,7 +102,7 @@ const handleButtonColor = (value) => {
       onChange={handleChange}/>
       <SingleInputPlug name="drillPipeOD" value= {plug.drillPipeOD} label="Drillpipe OD (inches)" 
       onChange={handleChange}/>
-      <SingleInputPlug name="drillPipeMD" value= {plug.drillPipeMD} label="Drillpipe Depth" 
+      <SingleInputPlug name="stingerLength" value= {plug.stingerLength} label={`Stinger Length (${unitChanger})`} 
       onChange={handleChange}/>
       <SingleInputPlug name="dpOuterZoneId" value= {plug.dpOuterZoneId} label="DP Zone ID (inches)" 
       onChange={handleChange}/>

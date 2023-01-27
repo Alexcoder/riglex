@@ -7,11 +7,11 @@ const ResultPlug = () => {
   const { plug, wellData, drillPipe} = useGlobalState();
 
      const { unit, } = wellData;
-     const { zoneId, stingerID, stingerOD, length, OHE, volOfSpacerAhead, bottom,
-         drillPipeID,drillPipeOD, drillPipeMD,dpOuterZoneId} = plug;
+     const { zoneId, stingerID, stingerOD,stingerLength, length, OHE, volOfSpacerAhead, bottom,
+         drillPipeID,drillPipeOD,dpOuterZoneId, } = plug;
 
+     const DrillPipeMD = bottom - Number(stingerLength);
 
- 
      const changer = (unit === "ft") ? 1029.4 : 313.8;
      const unitChanger = (unit === "ft") ? "ft" : "m";
      const Excess = (Number(OHE) + 100) * 0.01;
@@ -27,8 +27,8 @@ const ResultPlug = () => {
      const VolumeOfSpacerAhead = volOfSpacerAhead;
      const Volume = VolOfPlug1.toFixed(1);
 
-     const DisplacementA = (drillPipeMD * CapacityOfDP) ;
-     const DisplacementB = (TopOfSpacer-drillPipeMD) * CapacityOfStinger; 
+     const DisplacementA = (DrillPipeMD * CapacityOfDP) ;
+     const DisplacementB = (TopOfSpacer-DrillPipeMD) * CapacityOfStinger; 
      const Displacement2 = (Number(DisplacementA) + Number(DisplacementB)).toFixed(1) ;
 
      const Displacement1 = ((bottom - LengthOfCementWithPipeIn - LengthOfSpacer) * CapacityOfStinger).toFixed(1);
@@ -46,15 +46,13 @@ const ResultPlug = () => {
          )
      }
 
-     const DrillPipeMD_to_TopCement = TopOfCementWithPipeIn - drillPipeMD; //length
+     const DrillPipeMD_to_TopCement = TopOfCementWithPipeIn - DrillPipeMD; //length
      const VolSpacerAheadA = DrillPipeMD_to_TopCement * AnnularCapacityStinger;
      const RemainingVolume = volOfSpacerAhead - VolSpacerAheadA;
      const AnnularDrillPipe = (dpOuterZoneId**2-drillPipeOD**2)/(changer);
      const LengthSpacerAhead1 = DrillPipeMD_to_TopCement;
      const LengthSpacerAhead2 = RemainingVolume / AnnularDrillPipe;
-    //  const SpacerTotalLength = Number(LengthSpacerAhead1) + Number(LengthSpacerAhead2) ;
-    //  const TopOfSpacer3 = (bottom-LengthOfCementWithPipeIn - SpacerTotalLength).toFixed(0)
-     const TopOfSpacer3 = (drillPipeMD -  LengthSpacerAhead2).toFixed(0)
+     const TopOfSpacer3 = (DrillPipeMD -  LengthSpacerAhead2).toFixed(0)
      const Displacement3 = (CapacityOfDP * TopOfSpacer3).toFixed(1);
     
      const VolSpacerBehind1 = LengthSpacerAhead1 * CapacityOfStinger ;
@@ -67,21 +65,21 @@ const ResultPlug = () => {
              <div>
                  <div>Volume = {Volume} bbl</div>
                  <div>Spacer Ahead  = {VolumeOfSpacerAhead} bbl</div>
-                 <div>Spacer Behind 3 = {VolumeOfSpacerBehind3} bbl</div>
+                 <div>Spacer Behind*** = {VolumeOfSpacerBehind3} bbl</div>
              </div>
          )
      }
  
-     const Check = drillPipeMD - TopOfSpacer //CHECK SPACER CROSSOVER
+     const Check = DrillPipeMD - TopOfSpacer //CHECK SPACER CROSSOVER
  
 
   return (
     <div className="resultPlugContainer">
       <div>
       <div>
-        <div>{(drillPipe && (Check<0)) && "Stage2" }</div>
-        <div>{(drillPipe && (Check>0)) && "Stage3 OverFlow" }</div>
-        <div>{!drillPipe  && "UniForm Stinger" }</div>
+        <div>{(drillPipe && (Check<0)) && "STAGE2" }</div>
+        <div>{(drillPipe && (Check>0)) && "STAGE3 OVERFLOW SPACER IN DRILLPIPE" }</div>
+        <div>{!drillPipe  && "UNIFORM STINGER" }</div>
       {
        (!drillPipe || (drillPipe &&(Check<0)))? 
         UniformStinger()
@@ -90,11 +88,23 @@ const ResultPlug = () => {
         : null
       }
       </div>
-      <div> { (drillPipe&&(Check>0))? "Top Of Spacer3": "Top Of Spacer"} = { (drillPipe &&(Check>0))? TopOfSpacer3 : TopOfSpacer} {unitChanger}</div>
-      <div> DrillPipe Depth = {drillPipeMD} {unitChanger}</div>
-      {(!drillPipe) ? <div> Displacement1 = {Displacement1} bbl</div>: null}
-      {(drillPipe && (Check < 0) )? <div> Displacement2 = {Displacement2} bbl</div>: null}
-      {(drillPipe && (Check > 0 ))? <div> Displacement3 = {Displacement3} bbl</div>: null}
+      <div> { 
+          (drillPipe&&(Check>0))
+          ? "Top Of Spacer***"
+          : "Top Of Spacer"
+          } = { 
+          (drillPipe &&(Check>0))
+          ? `${TopOfSpacer3>0 ? `${TopOfSpacer3} ${unitChanger}` : "Wrong Input"}` 
+          : `${TopOfSpacer>0 ? `${TopOfSpacer} ${unitChanger}` : "Wrong Input"}`
+          } 
+        
+      </div>
+      {drillPipe ? <div> Drill Pipe Length = { DrillPipeMD } {unitChanger}</div>: null}
+      {drillPipe ? <div> Stinger Length= { stingerLength } {unitChanger}</div>: null}
+      {!drillPipe ? <div> Stinger Length = { DrillPipeMD+Number(stingerLength) } {unitChanger}</div>: null}
+      {(!drillPipe) ? <div> Displacement* = {Displacement1>0? `${Displacement1} bbl`: "Wrong Data"}</div>: null}
+      {(drillPipe && (Check < 0) )? <div> Displacement** = {Displacement2>0? `${Displacement2} bbl` : "Wrong Data"}</div>: null}
+      {(drillPipe && (Check > 0 ))? <div> Displacement*** = {Displacement3>0? `${Displacement3} bbl`: "Wrong Data"}</div>: null}
     </div>
   </div> 
   )
