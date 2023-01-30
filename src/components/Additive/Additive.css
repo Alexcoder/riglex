@@ -50,6 +50,7 @@
     }    
     .additive-container >div{
         width:90%;
+        position: fixed;
         margin: 1rem 0rem 2rem 0rem;
     }
     
