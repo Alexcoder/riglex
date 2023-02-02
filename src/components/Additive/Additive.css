@@ -38,20 +38,41 @@
         margin-top: -2rem;
     }    
     .additive-container >div{
+        position: fixed;
         width:90%;
-        margin: 1rem 0rem 2rem 0rem;
+        margin-top: -15rem;
         padding: 1rem 0.05rem; 
     }
 }
 
 @media screen and (max-width: 620px){
     .additive-container{
+        /* position: fixed; */
         margin-top: -1rem;
     }    
     .additive-container >div{
+        position: fixed;
         width:90%;
-        margin-top: 0.2rem;
+        margin-top: -8rem;
     }
     
 
+}
+@media screen and (max-width: 420px){
+    .additive-container{
+        margin-top: -1rem;
+    }    
+    .additive-container >div{
+        position: fixed;
+        width:90%;
+        margin-top: -12rem;
+    }
+    
+
+}
+@media screen and (max-width: 390px){
+    .additive-container >div{
+        width:95%;
+        margin-top: -5rem;
+    }
 }
