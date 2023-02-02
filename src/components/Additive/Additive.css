@@ -65,7 +65,7 @@
     .additive-container >div{
         position: fixed;
         width:90%;
-        margin-top: -10rem;
+        margin-top: -8rem;
     }
     
 
@@ -73,6 +73,6 @@
 @media screen and (max-width: 390px){
     .additive-container >div{
         width:95%;
-        margin-top: -5rem;
+        margin-top: -4rem;
     }
 }
