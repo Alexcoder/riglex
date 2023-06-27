@@ -1,72 +1,40 @@
-import React, {useEffect} from 'react';
-import {Switch, Route, useLocation,} from 'react-router-dom';
-import {useGlobalState} from  "./state/context/Context.js"
-import {ConversionPage, FieldCementing, ResultPrimary, ResultPlug ,Additive, Header,
-        BumpPressure, Volume_Capacity, SideBar} from './components';
+import {Routes, Route } from 'react-router-dom';
+import Header from "./components/Header/HeaderNav.js";
+import Navbar from './components/NavBar/Navbar.jsx';
+import P1338 from "./components/Primary/1338/1338.js";
+import P958 from "./components/Primary/958/958.js";
+import P7inch from "./components/Primary/7inch/7inch.js";
+import ResultCsgJob from './components/Primary/Result/Result.jsx';
+
+import UniformStinger from './components/Plug/UniformStinger/UniformStinger.jsx';
+import WithDrillPipe from './components/Plug/WithDrillPipe/WithDrillPipe.jsx';
+
+
+import Additive from './components/Additive/Additive.js';
+import Conversion from "./components/Conversion/Conversion.js";
+
 import "./App.css";        
 
 
 function App() {
-  const location = useLocation();
-  const path = location.pathname;
-  const {
-    sidebar, 
-    setMode, 
-    setNavMode,
-    setSidebar,
-    showPlugResult,
-    setShowPlugResult,
-    showPrimaryResult, 
-    setShowPrimaryResult} = useGlobalState();
-
-  const SideBarShow = ()=> {
-    if(sidebar) {return <SideBar/>}
-    else {return null}
-  }
-  const toggleView=()=>{
-    setShowPlugResult(false);
-    setShowPrimaryResult(false);
-  }
-
-  useEffect(() => {
-    if(path==="/"){
-      setMode("unit-conversion");
-      setNavMode("unit-conversion");
-    }
-  }, [setMode,setNavMode, path])
   
   return (
-    <main >
+    <main style={{width:"auto", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
         <Header />
-    <section onClick={()=> setSidebar(false)} >
+        <Navbar/>
+        <Routes>
+          <Route path="/1338" element={<P1338/>} />
+          <Route path="/958" element={<P958/>} />
+          <Route path="/7inch" element={<P7inch/>} />
+          <Route path="/result" element={<ResultCsgJob/>} />
+          <Route path="/additive" element={<Additive/>} />
+          <Route path="/unit-converter" element={<Conversion/>} />
 
-      <div className="app_container">
-      <section>
-      {SideBarShow()}
-      </section>
-      <section>
-      <Switch>
-       <Route path="/" exact component={ConversionPage}/>
-       <Route path="/select/field-unit-converter" exact component={ConversionPage}/>
-       <Route path="/select/primary" exact component={FieldCementing}/>
-       <Route path="/select/additive" exact component={Additive}/>
-       <Route path="/select/bump-pressure" exact component={BumpPressure}/>
-       <Route path="/select/volume-capacity" exact component={Volume_Capacity}/>
-      </Switch>
+          <Route path="/plug/uniform-stinger" element={<UniformStinger/>} />
+          <Route path="/plug/with-drill-pipe" element={<WithDrillPipe/>} />
 
-      <div onClick={toggleView}>
-      {
-        showPlugResult ?
-         <ResultPlug/>
-         :showPrimaryResult ?
-         <ResultPrimary/>
-         : null
-      }
-      </div>
 
-      </section>
-      </div>
-    </section>
+        </Routes>
     </main>
   );
 }

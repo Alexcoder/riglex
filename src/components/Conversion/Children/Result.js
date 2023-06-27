@@ -9,7 +9,7 @@ const Result =({factor, modeConversion, setModeConversion })=>{
 
 
     return(
-        <div>
+        <div style={{marginTop:"1rem"}}>
             {
             !factor & !modeConversion ?
             <div className='text'> Select To Continue !</div>

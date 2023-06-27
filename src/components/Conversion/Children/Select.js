@@ -6,7 +6,7 @@ const Select =(props)=>{
 
     return(
         <div>
-        <div className="label_select">SELECT</div >
+        {/* <div className="label_select">SELECT</div > */}
        <select   value={modeConversion} onChange={(e)=> setModeConversion(e.target.value)}
         className="select"> 
             <option disabled={modeConversion}>SELECT</option>

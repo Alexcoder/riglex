@@ -11,18 +11,18 @@ const Input =(props)=>{
 
 
     return(
-        <div>
-            <h1 className="h1_data"> {data} </h1>
-             <div className="textField_toggle">
+        <div className='input-cont'>
+            <h2 className="h1_data"> {data} </h2>
+             <div className="textField_cont">
               <TextField 
                  type='number' 
-                 variant="outlined"
+                //  variant="outlined"
                  value={factor} 
                  label={`${baseUnit}`} 
-                 sx={{fontWeight:"600"}}
+                 sx={{fontWeight:"500", border: "1px solid none"}}
                  onChange={(e)=> {modeConversion && setFactor(e.target.value)}}
                 />
-              <button style={{height:"3.57rem"}} onClick={Revert}><SyncAltIcon/></button>
+              <div style={{height:""}} onClick={Revert}><SyncAltIcon sx={{marginTop:"1rem"}}/></div>
           </div>
           </div>
     

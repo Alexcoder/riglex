@@ -1,32 +1,26 @@
 
 
 export const inputDataPrimary = {
-    jobMode: "",
     openHoleID: "",
-    overlap: "",
+    presentCsgID: "",
+    presentCsgOD(casing){
+      if(casing==="13-3/8 inch") return Number(13.375)
+      else if(casing==="9-5/8 inch") return Number(9.625)
+      else if(casing==="7 inch") return Number(7)
+      else return ""
+    },
+    previousCsgID: "",
     lengthOfTailAboveShoe: "",
-    unit: "ft",
-    shoeTrack: "",
     measuredDepth: "",
-    ratHole: "",
     leadExcess: "",
     tailExcess: "",
     previousCsgShoe: "",
-    presentCsgOD: "",
-    presentCsgID: "",
-    previousCsgID: "",
+    presentCsgShoe:"",
     topOfLead:"",
     topOfTail:"",
+    topOfFloatCollar:"",
+// }
 //     
-    presentCsgShoe:"",
-    csgCsgAnn: "",
-    openHoleCsgAnn: "",
-    casingCap: "",
-    topOfFloat: "",
-    //RESULT
-    volOfLead:"",
-    volOfTail: "",
-    displacement:"",
 
     //LINER
     drillPipeIdLiner:"",
@@ -44,8 +38,6 @@ export const inputDataPrimary = {
    topOfFloatTvd:"",
    presentCsgTvd: "",
    tvd:"",
-
-
   }
 
 //   export const inputDataPlug = {

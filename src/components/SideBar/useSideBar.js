@@ -1,23 +1,22 @@
 import { useEffect } from "react";
-import { useHistory, } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useGlobalState } from '../../state';
 
 
 const useSideBar = () =>{
-    const {push} = useHistory();
+    const navigate = useNavigate();
     const {navMode, setNavMode, setMode, setSidebar} =  useGlobalState();
-
 
     const handleColor = (clicked) =>{
         if(navMode===clicked){
             return "sideBar_green"
         } else{ return "sideBar_button"}
-    }
+    };
 
     const Navigate = (page, clicked) =>{
         setNavMode(clicked);
         setMode(()=> clicked==="primary" ? "OTHERS" : clicked);
-        push(page);
+        navigate(page);
         setSidebar(false);
     }
 
@@ -26,11 +25,7 @@ const useSideBar = () =>{
         setNavMode(localStorage.getItem('navMode'))
       }, [navMode, setNavMode])
      
-
-    return{
-        Navigate,
-        handleColor,
-    }
+    return{ Navigate, handleColor }
 }
 
 export default useSideBar;

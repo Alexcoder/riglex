@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import MySelect from "./Children/Select";
 import MyInput from "./Children/Input";
@@ -8,7 +8,7 @@ import './Conversion.css';
 
 
 const ConversionPage = () => { 
-  const history= useHistory();
+  const navigate= useNavigate();
   const [factor, setFactor] = useState("")
   const [modeConversion, setModeConversion] = useState("")
   
@@ -24,13 +24,12 @@ const handleClear =()=> {
   localStorage.setItem('factor', null); 
   setModeConversion(modeConversion)
 };
-const handleBack =()=> history.push("/select");
+const handleBack =()=> navigate("/");
 
 
 
   return (
-  <div  style={{backgroundColor: "", height: "25rem", textAlign:"center", justfyContent:"center", width: "100vw"}}>
-
+  <div  style={{width:"auto", marginTop:"8rem", display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", gap:"1rem"}}>
     <MySelect
     modeConversion={modeConversion}
     setModeConversion={setModeConversion}
@@ -59,11 +58,11 @@ const handleBack =()=> history.push("/select");
         <button 
           className="button_back"
           onClick={handleBack} >
-            BACK
+            EXIT
         </button>
       </div>
 
-    <div className="lexwares">Lexwares @2022</div>
+    <div className="lexwares">Lexwares &copy;2022</div>
     </Grid>
     </div>
   </div>
