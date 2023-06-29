@@ -63,15 +63,63 @@ export const inputDataPrimary = {
       stingerOD: "",
       OHE: "",
       stingerID: "",
+      stingerLength:"",
       slurryYield: "",
       volOfSpacerAhead: "",
       bottom: "",
       drillPipeID: "",
       drillPipeOD: "",
-      stingerLength: "0",
       dpOuterZoneId:"",
-      unit: "",
+      unit: "ft",
+
+      excess(){
+       const excess = (Number(this.OHE) + 100)/100;
+       return excess
+      },
+      unitSwitch(){
+        const toggle = this.unit==="ft" ? 1024.8 : 313.8 ;
+        return toggle
+      },
+      stingerCap(){
+       const res = (Math.pow(this.stingerID,2) )/ this.unitSwitch() ;
+       return res
+      },
+      annCap(){
+       const res = (Math.pow((this.zoneId), 2) - Math.pow((this.stingerOD),2) )/ this.unitSwitch()
+       return res
+      },
+      zoneIdCap(){
+       const res = (Math.pow((this.zoneId), 2) / this.unitSwitch());
+       return res
+      },
+      volume(){
+       const res = ( this.zoneIdCap() * this.length * this.excess() ).toFixed(2)
+       return res
+      },
+      spacerLength(){
+       const res = ((this.volOfSpacerAhead) / (this.annCap())); 
+       return res
+      },
+      volOfSpacerBehind(){
+       const res =  (this.spacerLength() * this.stingerCap()); 
+       return res
+      },
+      lengthOfCementWithPipeInside(){
+       const sum = (this.annCap() + this.zoneIdCap());
+       const res = this.volume() /  sum ;
+       return res
+      },
+      displacement(){
+       const length = this.bottom - this.lengthOfCementWithPipeInside() - this.spacerLength();     
+       const res = this.stingerCap() * length;
+       console.log("Top Of Spacer", length)
+       return res
+      },
+      // isSpacerInDrillPiPe : ""
   }
+
+
+
 
 
   export const PlugMeasurementUnit =[

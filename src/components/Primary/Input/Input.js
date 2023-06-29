@@ -15,7 +15,7 @@ const Input = ({presentCsg, previousCsg}) => {
 
  
   return (
-    <main style={{marginTop:"0rem", padding:"2rem 4rem"}}>
+    <main style={{marginTop:"-2rem", padding:"2rem 4rem"}}>
       <hr/>
       <section className='primary-sub'>
       { InputData.map((item, i)=>(

@@ -1,0 +1,21 @@
+.prim-cont{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.prim-btn-cont{
+    display: flex;
+    gap: 1rem;
+}
+.prim-btn{
+    background: green;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .prim-cont{
+        margin-top: 8rem;
+    }   
+}

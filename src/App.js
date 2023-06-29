@@ -6,8 +6,8 @@ import P958 from "./components/Primary/958/958.js";
 import P7inch from "./components/Primary/7inch/7inch.js";
 import ResultCsgJob from './components/Primary/Result/Result.jsx';
 
-import UniformStinger from './components/Plug/UniformStinger/UniformStinger.jsx';
-import WithDrillPipe from './components/Plug/WithDrillPipe/WithDrillPipe.jsx';
+import CasingJob from "./pages/Primary/Primary.jsx"
+import PlugJob from "./pages/Plug/Plug.jsx"
 
 
 import Additive from './components/Additive/Additive.js';
@@ -30,8 +30,8 @@ function App() {
           <Route path="/additive" element={<Additive/>} />
           <Route path="/unit-converter" element={<Conversion/>} />
 
-          <Route path="/plug/uniform-stinger" element={<UniformStinger/>} />
-          <Route path="/plug/with-drill-pipe" element={<WithDrillPipe/>} />
+          <Route path="/casingJob" element={<CasingJob/>} />
+          <Route path="/plug" element={<PlugJob/>} />
 
 
         </Routes>

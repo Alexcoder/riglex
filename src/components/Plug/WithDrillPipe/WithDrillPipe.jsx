@@ -1,50 +1,18 @@
 import { useGlobalState } from '../../../state/context/Context';
 import PlugJobWrapper from "../Wrappers/PlugJobWrapper";
+import useWithDrillPipeData from '../Hooks/useWithDrillPipeData';
 import "../Input/Input.css"
 
 const WithDrillPipe = () => {
   const { plug, setPlug } = useGlobalState();
-
-  const InputData = [
-      {
-        title: "drillPipeID",
-        value: plug.drillPipeID,
-        className: "plug-input",
-        placeHolder: "drillPipeID",
-        desc: `DrillPipe ID`,       
-      },
-      {
-        title: "drillPipeOD",
-        value: plug.drillPipeOD,
-        className: "plug-input",
-        placeHolder: "drillPipeOD",
-        desc: `DrillPipe OD`,       
-      },
-      {
-        title: "stingerLength",
-        value: plug.stingerLength,
-        className: "plug-input",
-        placeHolder: "stingerLength",
-        desc: "Length of Stinger",       
-      },
-      {
-        title: "dpOuterZoneId",
-        value: plug.dpOuterZoneId,
-        className: "plug-input",
-        placeHolder: "dpOuterZoneId",
-        desc: "DP OuterZone Id",       
-      },
-    ];
-
-    
-    const handleChange=(e)=>{
+  const { InputData} = useWithDrillPipeData();
+  const handleChange=(e)=>{
       setPlug({...plug, [e.target.name]: e.target.value})
     };
-    
-  
+     
   return (
     <main style={{marginTop:"-4rem", padding:"2rem 4rem"}}>
-      <h2>DRILL PIPE DATA</h2>
+      <h3>DRILL PIPE DATA</h3>
     {/* <hr/> */}
     <section className='plug-sub'>
     { InputData.map((item, i)=>(
