@@ -5,7 +5,7 @@ import {inputDataPlug} from '../../object'
 
 export const StateContext = createContext();
 
-export const DataPrimary = {
+const DataPrimary = {
   openHoleID: "",
   presentCsgID: "",
   presentCsgOD(casing){
@@ -24,31 +24,50 @@ export const DataPrimary = {
   topOfLead:"",
   topOfTail:"",
   topOfFloatCollar:"",
+};
+// LINER INITIAL STATE
+const inputDataLiner = {
+  openHoleID: "",
+  linerCsgID: "",
+  linerCsgOD: "",
+  previousCsgID: "",
+  lengthOfTailAboveShoe: "",
+  measuredDepth: "",
+  leadExcess: "",
+  tailExcess: "",
+  previousCsgShoe: "",
+  linerCsgShoe:"",
+  topOfSlurry:"",
+  topOfFloatCollar:"",
+  
+  drillPipeId:"",
+  drillPipeDepth:"",
+  settingToolAssemblyId: "",
+
+  ShoeTrack(){
+    return (this.measuredDepth - this.linerCsgShoe)
+  },
+  TopOfTail(){
+    return (this.linerCsgShoe - this.lengthOfTailAboveShoe)
+  },
 }
+
 
 
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
   const [plug, setPlug] = useState(inputDataPlug);
+  const [liner, setLiner] = useState(inputDataLiner);
   const [isUniformStinger, setIsUniformStinger]= useState(false);
   const [unit, setUnit] = useState("ft");
 
+  // const [mode , setMode] = useState("OTHERS");
   const [activeNav, setActiveNav] = useState("home");
-  const [mode , setMode] = useState("OTHERS");
   const [theme, setTheme] = useState("greenColor");
-  const [sidebar, setSidebar] = useState(false)
-
-  const handleSetModeUnit=(anything)=>{
-    setWellData({...wellData, unit: anything} )
-    localStorage.setItem('unitButton', anything);
-  }
+  // const [sidebar, setSidebar] = useState(false)
 
 
-  const SwitchJobUnit = wellData.unit==="m"? 313.8 : 1029.4
-  const ChangerPresentCsgOD = mode==="1338" ? 13.375 : mode==="958"? 9.625: mode==="7INCH"? 7 : wellData.presentCsgOD
- const Liner_Slurry_Volume =(Number(wellData.volOfLead) + Number(wellData.volOfTail)).toFixed(1)
-
- 
+  const Liner_Slurry_Volume =(Number(wellData.volOfLead) + Number(wellData.volOfTail)).toFixed(1)
 
 
   return (
@@ -57,13 +76,13 @@ export const ContextProvider = ({children}) => {
      unit, setUnit,
      setTheme, wellData, setWellData,
      isUniformStinger, setIsUniformStinger,
+     liner, setLiner,
 
-      mode , setMode, theme, 
+      // mode , setMode, 
+      theme, 
      activeNav, setActiveNav, plug,
-     setPlug,  Liner_Slurry_Volume, ChangerPresentCsgOD,
+     setPlug,  Liner_Slurry_Volume, 
      
-    //  unitChanger, 
-     SwitchJobUnit, handleSetModeUnit, sidebar, setSidebar, 
     }}
     >
         {children}

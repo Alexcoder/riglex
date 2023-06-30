@@ -9,7 +9,7 @@ const ResultWithDrillPipe = ({setViewResult}) => {
     const { volume, spacerAheadVol, spacerBehindVol, displacement, isSpacerInDrillPipe, displacement2, displacement3, lengthWithPipeIn } = useWithDrillPipeAnalyser();
 
   return (
-    <div className='plug-result-cont'>
+    <div className='plug-result-cont' onClick={()=> setViewResult(false)}>
      <div className='plug-result-cont2'>
        <div>{isSpacerInDrillPipe >0 ? "SPACER IN DRILLPIPE" : "SPACER NOT IN DRILL PIPE"}</div>
        <div>Volume Of Slurry { volume || 0 } bbl</div>

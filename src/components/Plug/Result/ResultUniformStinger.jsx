@@ -7,10 +7,10 @@ const ResultUniformStinger = ({setViewResult}) => {
   const { plug } = useGlobalState();
 
   return (
-    <div className='plug-result-cont'
+    <div className='plug-result-cont' onClick={()=> setViewResult(false)}
     //  style={{display:"grid", gridTemplateColumns:"Repeat(2, 1fr)", gap:"1rem", placeContent:"center", placeItems:"",}}
      >
-    <div className='plug-result-cont2'>
+    <div className='plug-result-cont2' >
      <span style={{textAlign:"center", marginBottom:"0rem"}}>Uniform Stinger</span>
      <div> Slurry Volume {plug.volume() || 0} bbl </div> 
      <div> Spacer Ahead {plug.volOfSpacerAhead} bbl </div>
