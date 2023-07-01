@@ -12,7 +12,7 @@ const WithDrillPipe = () => {
      
   return (
     <main style={{marginTop:"-4rem", padding:"2rem 4rem"}}>
-      <h3>DRILL PIPE DATA</h3>
+      <h4 style={{textAlign:"center"}}>DRILL PIPE DATA</h4>
     {/* <hr/> */}
     <section className='plug-sub'>
     { InputData.map((item, i)=>(

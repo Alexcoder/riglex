@@ -5,6 +5,7 @@ import "./Plug.css";
 
 const Plug = () => {
   const {isUniformStinger, setIsUniformStinger } = useGlobalState();
+
   const handleClick =(type)=>{
     if(type==="uniform") setIsUniformStinger(true)
     else setIsUniformStinger(false)

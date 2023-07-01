@@ -3,16 +3,17 @@ import useUniformStingerData from '../Hooks/useUniformStingerData';
 import "./Input.css";
 
 const Input = () => {
-  const { plug, setPlug } = useGlobalState();
+  const { plug, setPlug, isUniformStinger } = useGlobalState();
   const {InputData}= useUniformStingerData();
   
   const handleChange=(e)=>{
     setPlug({...plug, [e.target.name]: e.target.value})
   };
 
+  const isSmallDevice = window.innerWidth <= 720;
  
   return (
-    <main style={{marginTop:"0rem", padding:"2rem 4rem"}}>
+    <main style={{marginTop: isSmallDevice? "-1rem" :" 0rem", padding:"2rem 4rem"}}>
       <hr/>
       <section className='plug-sub'>
       { InputData.map((item, i)=>(
@@ -28,7 +29,7 @@ const Input = () => {
         </div>
       ))}
       </section>
-      <hr/>
+     { isUniformStinger && <hr/> }
     </main>
   )
 }

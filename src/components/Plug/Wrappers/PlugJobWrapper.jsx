@@ -8,7 +8,7 @@ const PlugJobWrapper = (Component) => {
    
    function Sub (...props){
      const [viewResult, setViewResult]= useState(false);
-     const { isUniformStinger  } = useGlobalState()
+     const { isUniformStinger  } = useGlobalState();
      return(
         <div style={{marginTop:"0rem"}}>
          { 
@@ -25,7 +25,9 @@ const PlugJobWrapper = (Component) => {
          }
          <Input />
          <Component {...props} />
+         <div style={{textAlign:"center"}} >
          <button onClick={()=> setViewResult(true)}>View Result</button>
+         </div>
         </div>
      )
   }

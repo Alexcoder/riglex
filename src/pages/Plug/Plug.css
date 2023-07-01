@@ -23,3 +23,10 @@
     background: green;
     color: white;
 }
+
+@media screen and (max-width: 720px){
+    .plug-cont{
+        margin-top: 9rem;
+    }
+     
+}
