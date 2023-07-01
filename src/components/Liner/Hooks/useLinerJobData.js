@@ -1,7 +1,7 @@
 import { useGlobalState } from '../../../state/context/Context';
 
 const useLinerJobData = ( ) => {
-    const { liner, setLiner }= useGlobalState();
+    const { liner }= useGlobalState();
 
     const InputData = [
         {
@@ -30,14 +30,7 @@ const useLinerJobData = ( ) => {
           value: liner.previousCsgID,
           className: "primary-input",
           placeHolder: "previousCsgID",
-          desc: `previousCsg csg ID`,       
-        },
-        {
-          title: "measuredDepth",
-          value: liner.measuredDepth,
-          className: "primary-input",
-          placeHolder: "measuredDepth",
-          desc: "Measured Depth",       
+          desc: `Previous csg ID`,       
         },
         {
           title: "previousCsgShoe",
@@ -46,69 +39,90 @@ const useLinerJobData = ( ) => {
           placeHolder: "previousCsgShoe",
           desc: `Previous Casing Shoe`,       
         },
-        {
-          title: "Tail Slurry Length Above Shoe",
-          value: liner.lengthOfTailAboveShoe,
-          className: "primary-input",
-          placeHolder: "Tail Slurry Length Above Shoe",
-          desc: `Tail Slurry Length Above Shoe`,       
-        },
-        {
-          title: "leadExcess",
-          value: liner.leadExcess,
-          className: "primary-input",
-          placeHolder: "leadExcess",
-          desc: "Lead Excess",       
-        },
-        {
-          title: "tailExcess",
-          value: liner.tailExcess,
-          className: "primary-input",
-          placeHolder: "tailExcess",
-          desc: "Tail Excess",       
-        },
-        {
-          title: "linerCsgShoe",
-          value: liner.linerCsgShoe,
-          className: "primary-input",
-          placeHolder: "liner csg shoe",
-          desc: `Liner Csg Shoe @`,       
-        },
-        {
-          title: "topOfLead",
-          value: liner.topOfLead,
-          className: "primary-input",
-          placeHolder: "topOfLead",
-          desc: "Top of Lead @",       
-        },
-        {
-          title: "topOfFloatCollar",
-          value: liner.topOfFloatCollar,
-          className: "primary-input",
-          placeHolder: "topOfFloatCollar",
-          desc: "Float Collar @",       
-        },
-        {
-          title: "drillPipeId",
-          value: liner.drillPipeId,
-          className: "primary-input",
-          placeHolder: "drillPipeId",
-          desc: "DrillPipe ID",       
-        },
-        {
-          title: "drillPipeDepth",
-          value: liner.drillPipeDepth,
-          className: "primary-input",
-          placeHolder: "drillPipeDepth",
-          desc: "DrillPipe Dept",       
-        },
-        {
-          title: "settingToolAssemblyId",
-          value: liner.settingToolAssemblyId,
-          className: "primary-input",
-          placeHolder: "settingToolAssemblyId",
-          desc: "Setting Tool Assembly ID",       
-        },
+        // {
+          //   title: "Tail Slurry Length Above Shoe",
+          //   value: liner.lengthOfTailAboveShoe,
+          //   className: "primary-input",
+          //   placeHolder: "Tail Slurry Length Above Shoe",
+          //   desc: `Tail Slurry Length Above Shoe`,       
+          // },
+          // {
+            //   title: "leadExcess",
+            //   value: liner.leadExcess,
+            //   className: "primary-input",
+            //   placeHolder: "leadExcess",
+            //   desc: "Lead Excess",       
+            // },
+            {
+              title: "tailExcess",
+              value: liner.tailExcess,
+              className: "primary-input",
+              placeHolder: "tailExcess",
+              desc: "Slurry Excess",       
+            },
+            // {
+              //   title: "topOfLead",
+              //   value: liner.topOfLead,
+              //   className: "primary-input",
+              //   placeHolder: "topOfLead",
+              //   desc: "Top of Lead @",       
+            // },
+            {
+              title: "drillPipeID",
+              value: liner.drillPipeID,
+              className: "primary-input",
+              placeHolder: "drillPipeId",
+              desc: "DrillPipe ID",       
+            },
+            {
+              title: "settingToolAssemblyID",
+              value: liner.settingToolAssemblyID,
+              className: "primary-input",
+              placeHolder: "settingToolAssemblyID",
+              desc: "Setting Tool Assembly ID",       
+            },
+            {
+              title: "drillPipeDepth",
+              value: liner.drillPipeDepth,
+              className: "primary-input",
+              placeHolder: "drillPipeDepth",
+              desc: "DrillPipe Dept @",       
+            },
+            {
+              title: "topOfSlurry",
+              value: liner.topOfSlurry,
+              className: "primary-input",
+              placeHolder: "topOfSlurry",
+              desc: "Top Of Slurry @",       
+            },
+            {
+              title: "topOfLiner",
+              value: liner.topOfLiner,
+              className: "primary-input",
+              placeHolder: "topOfLiner",
+              desc: "Top Of Liner @",       
+            },
+            {
+              title: "topOfFloatCollar",
+              value: liner.topOfFloatCollar,
+              className: "primary-input",
+              placeHolder: "topOfFloatCollar",
+              desc: "Float Collar @",       
+            },
+            {
+              title: "linerCsgShoe",
+              value: liner.linerCsgShoe,
+              className: "primary-input",
+              placeHolder: "liner csg shoe",
+              desc: `Liner Csg Shoe @`,       
+            },
+            {
+              title: "measuredDepth",
+              value: liner.measuredDepth,
+              className: "primary-input",
+              placeHolder: "measuredDepth",
+              desc: "Measured Depth @",       
+            },
         ]
     
   return {InputData, }

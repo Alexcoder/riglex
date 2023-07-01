@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import LinerJobWrapper from '../Wrappers/LinerJobWrapper';
 
 const Liner = () => {
   return (
-    <div>Liner</div>
+    <div></div>
   )
 }
 
-export default Liner
+export default LinerJobWrapper(Liner);

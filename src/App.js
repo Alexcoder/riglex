@@ -8,6 +8,7 @@ import ResultCsgJob from './components/Primary/Result/Result.jsx';
 
 import CasingJob from "./pages/Primary/Primary.jsx"
 import PlugJob from "./pages/Plug/Plug.jsx"
+import LinerJob from "./pages/Liner/Liner.jsx"
 
 
 import Additive from './components/Additive/Additive.js';
@@ -32,6 +33,7 @@ function App() {
 
           <Route path="/casingJob" element={<CasingJob/>} />
           <Route path="/plug" element={<PlugJob/>} />
+          <Route path="/liner" element={<LinerJob/>} />
 
 
         </Routes>

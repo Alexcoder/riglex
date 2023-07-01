@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, TextField, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 const SingleAdditive = ({label,value,onChange}) => {
 
@@ -9,18 +9,24 @@ const SingleAdditive = ({label,value,onChange}) => {
            display:"flex", 
            background:"white",
            justifyContent:"space-between",
-           padding:"0.5rem 2rem",
+           alignItems: "center",
+           padding:"0.5rem 1rem",
            border:"0.1px solid lightgray",
          }}>
       <Typography 
          sx={{
-             marginTop:"1rem", 
              textAlign:"start"
              }}>
               {label}
       </Typography>
-      <TextField
-           sx={{width: "30%",}}
+      <input
+           style={{
+            width: "25%", 
+            border:"1px solid lightgray", 
+            padding:"0.3rem",
+            borderRadius:"0.2rem",
+            boxShadow:"0 0 2px 0 gray"
+          }}
            type='number' 
            variant="outlined"
            value={value} 

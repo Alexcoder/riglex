@@ -30,19 +30,20 @@ const inputDataLiner = {
   openHoleID: "",
   linerCsgID: "",
   linerCsgOD: "",
+  linerCsgShoe:"",
   previousCsgID: "",
   lengthOfTailAboveShoe: "",
   measuredDepth: "",
   leadExcess: "",
   tailExcess: "",
   previousCsgShoe: "",
-  linerCsgShoe:"",
   topOfSlurry:"",
   topOfFloatCollar:"",
+  topOfLiner:"",
   
-  drillPipeId:"",
+  drillPipeID:"",
   drillPipeDepth:"",
-  settingToolAssemblyId: "",
+  settingToolAssemblyID: "",
 
   ShoeTrack(){
     return (this.measuredDepth - this.linerCsgShoe)

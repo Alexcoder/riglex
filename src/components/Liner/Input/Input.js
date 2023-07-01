@@ -1,15 +1,16 @@
 import React from 'react';
 import { useGlobalState } from '../../../state/context/Context';
-import useLinerJobData from "../Hooks/useCsgJobData";
+import useLinerJobData from "../Hooks/useLinerJobData";
 
 import "./Input.css";
 
 const Input = () => {
-  const { wellData, setWellData } = useGlobalState();
+  const { liner, setLiner } = useGlobalState();
   const {InputData}= useLinerJobData();
   
   const handleChange=(e)=>{
-    setWellData({...wellData, [e.target.name]: e.target.value})
+    const { name , value } = e.target;
+    setLiner({...liner, [name]: value})
   };
 
  

@@ -1,11 +1,11 @@
 import { useGlobalState } from "../../../state/context/Context";
-import useCsgJobAnalyser from "../Hooks/useCsgJobAnalyser";
+import useLinerJobAnalyser from "../Hooks/useLinerJobAnalyser";
 import "./styles.css"
 
 const Result = (props) => {
     const { setViewResult }= props;
     const {wellData, unit} = useGlobalState();
-    const {Lead, Tail, isDisplaced} = useCsgJobAnalyser(wellData, unit);
+    const {Volume, Displacement} = useLinerJobAnalyser(wellData, unit);
     function closeResult(){
       setViewResult(false)
     } ;
@@ -13,9 +13,8 @@ const Result = (props) => {
   return (
     <div className="prim-result-cont">
       <div className="prim-result-cont2">
-        <div>Volume of Lead Slury {Lead} bbls</div>
-        <div>Volume of Tail Slurry {Tail} bbls</div>
-        <div>Displacement {isDisplaced} bbls</div>
+        <div>Volume of Liner Slury {Volume.toFixed(1)} bbls</div>
+        <div>Displacement {Displacement.toFixed(1)} bbls</div>
         <button
         onClick={closeResult }
         >back</button>

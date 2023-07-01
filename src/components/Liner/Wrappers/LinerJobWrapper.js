@@ -3,24 +3,21 @@ import Input from '../Input/Input';
 import Result from '../Result/Result';
 import "./styles.css";
 
-const CasingJobWrapper = (CasingComponent, presentCsg, previousCsg, ) => {
+const LinerJobWrapper = ( CasingComponent ) => {
     
   const Sub=(props)=>{
     const [viewResult, setViewResult] = useState(false)
   
       return(
-          <div style={{marginTop:"1rem", textAlign:"center", background:"white",}}>
-          <h3 className="wrapper-title">{presentCsg} CASING CEMENTING</h3>
+          <div style={{marginTop:"7.5rem", textAlign:"center", background:"white",}}>
+          <h3 className="wrapper-title">LINER CASING CEMENTING</h3>
           {
            viewResult &&
           <Result 
            setViewResult={setViewResult}
           />
           }
-          <Input
-           presentCsg={presentCsg}
-           previousCsg={previousCsg}  
-          />
+          <Input />
           <CasingComponent 
           {...props } 
           />
@@ -34,4 +31,4 @@ const CasingJobWrapper = (CasingComponent, presentCsg, previousCsg, ) => {
   return Sub
 }
 
-export default CasingJobWrapper;
+export default LinerJobWrapper;
