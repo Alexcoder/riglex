@@ -1,7 +1,7 @@
 
 .landing-cont{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -13,5 +13,25 @@
         color : blue;
         font-size: 40px;
         font-weight: 500;
+      .wrapper  div{
+            flex: 1 1 0%;
+        }
     }
+    
+}
+@media screen and (max-width: 720px) {
+    .landing-cont{
+        display: flex;
+        flex-wrap: nowrap;
+        .wrapper{
+            font-size: 25px;
+            font-weight: 500;
+          .wrapper  div{
+                flex: 1 1 0%;
+            }
+        }
+        
+    }
+    
+    
 }

@@ -8,14 +8,14 @@ const LandingPage = () => {
     useEffect(()=>{
        const timeout = setTimeout(()=>{
          navigate("/unit-converter")
-       },5000)
+       },6000)
        return ()=> clearTimeout(timeout)
     },[navigate]);
 
   return (
     <main className="landing-cont">
         <div className="wrapper">
-          DINO CEMENTING HUB
+          <div>DINO CEMENTING HUB</div>
         </div>
     </main>
   )
