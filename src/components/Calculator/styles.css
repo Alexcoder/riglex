@@ -1,0 +1,79 @@
+
+:root{
+ --dark : black;
+ --light : #888;
+ --bright : #ffff;
+ --red: darkred;
+
+}
+
+.calc-cont{
+    min-height: 100vh;
+    /* width: 100vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0.6, 0.6, 0.6, 0.6);
+    box-shadow: 1px 1px 1px rgba(0.6, 0.6, 0.6, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.calc-cont button{
+    appearance: none;
+    border: none;
+    padding: 10px;
+}
+.calc-cont button:hover{
+    opacity: 0.8;
+}
+.calc-wrapper{
+  /* border: 1px solid gray; */
+  /* padding: 1rem ; */
+  border-radius: 0.2rem;
+  border-radius: 0.4rem;
+}
+.display{
+    display: flex;
+    justify-content: right;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 2rem 0rem;
+    background-color: var(--dark);
+    color: var(--light);
+    font-size: 22px;
+}
+.display .close{
+    float: right;
+    position: absolute; 
+    margin: -1.5rem 0.5rem 0 0; 
+    background: red;
+    color: white;
+    padding: 0 0.5rem
+}
+.display span{
+    font-size: 15px;;
+}
+.operators{
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.operators button{
+    flex: 1 1 0%;
+    background: var(--red);
+    color: var(--bright);
+}
+.digits{
+    display: flex;
+    flex-wrap: wrap;
+}
+.digits button{
+    flex: 1 1 33.3333%;
+    background-color: var(--dark);
+    color: var(--bright);
+}

@@ -62,6 +62,8 @@ export const ContextProvider = ({children}) => {
   const [isUniformStinger, setIsUniformStinger]= useState(false);
   const [unit, setUnit] = useState("ft");
 
+  const [calculator, setCalculator] = useState(false);
+
   // const [mode , setMode] = useState("OTHERS");
   const [activeNav, setActiveNav] = useState("home");
   const [theme, setTheme] = useState("greenColor");
@@ -77,7 +79,7 @@ export const ContextProvider = ({children}) => {
      unit, setUnit,
      setTheme, wellData, setWellData,
      isUniformStinger, setIsUniformStinger,
-     liner, setLiner,
+     liner, setLiner, calculator, setCalculator,
 
       // mode , setMode, 
       theme, 

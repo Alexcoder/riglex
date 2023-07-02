@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { useGlobalState } from "../../state/context/Context";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [selected, setSelected] = useState(localStorage.getItem("sel") || 0);
+  const { setCalculator } = useGlobalState();
   
   const handleColor = (i) =>{
    if(selected===i) return "green"
@@ -22,10 +24,15 @@ const Navbar = () => {
     { jobType : "Unit Converter", page : "/unit-converter",},
     { jobType : "Additive", page : "/additive",},
     { jobType : "Quiz", page : "/quiz",},
+    // { jobType : "Calculator", page : "/quiz",},
   ];
 
+  const toggleCalculator = () =>{
+    setCalculator((prev)=> !prev)
+  }
+
   return (
-    <main className= "nav-cont">
+    <main className= "nav-cont" >
       {
         nav.map((item,i)=>
         <button
@@ -36,6 +43,7 @@ const Navbar = () => {
         </button>
         )
       }
+      <button onClick={toggleCalculator}>Calculator</button>
     </main>
   )
 }

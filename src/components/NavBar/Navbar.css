@@ -14,13 +14,13 @@
 
 @media screen and (max-width: 420px) {
     .nav-cont{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        place-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 0.3rem;
         padding: 0.5rem;
     } 
-    .nav-cont > button{
-    min-width: 7rem;
-}   
+    .nav-cont button{
+     flex: 1 1 25%;
+    }
 }
