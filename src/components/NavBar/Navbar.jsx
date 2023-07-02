@@ -24,7 +24,6 @@ const Navbar = () => {
     { jobType : "Unit Converter", page : "/unit-converter",},
     { jobType : "Additive", page : "/additive",},
     { jobType : "Quiz", page : "/quiz",},
-    // { jobType : "Calculator", page : "/quiz",},
   ];
 
   const toggleCalculator = () =>{

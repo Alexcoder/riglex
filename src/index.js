@@ -15,11 +15,11 @@ const store = legacy_createStore(reducers, compose(applyMiddleware(thunk)))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
-    <ContextProvider>
       <BrowserRouter>
+       <ContextProvider>
          <App />,
+       </ContextProvider>
       </BrowserRouter>
-    </ContextProvider>
     </Provider>
 
 );
