@@ -29,7 +29,7 @@ const handleBack =()=> navigate("/");
 
 
   return (
-  <div  style={{width:"auto", marginTop:"8rem", display:"flex", flexDirection:"column", justifyContent:"center",alignItems:"center", gap:"1rem"}}>
+  <div className='conversion-cont' >
     <MySelect
     modeConversion={modeConversion}
     setModeConversion={setModeConversion}

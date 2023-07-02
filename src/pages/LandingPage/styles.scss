@@ -1,0 +1,17 @@
+
+.landing-cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .wrapper{
+        color : blue;
+        font-size: 40px;
+        font-weight: 500;
+    }
+}

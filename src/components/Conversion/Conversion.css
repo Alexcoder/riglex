@@ -1,3 +1,12 @@
+.conversion-cont{
+    width: auto;
+    margin-top: 8rem; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    gap: 1rem;
+}
 .main_container{
     background-color: whiteSmoke;
     padding: 1rem;
@@ -79,8 +88,14 @@
     opacity: 0.6;
 }
 
-
-
-
+@media screen and (max-width: 720px) {
+    .conversion-cont{
+        margin-top: 12rem;
+    }    
+}
 
 ::-webkit-scrollbar{display: none}
+
+
+
+

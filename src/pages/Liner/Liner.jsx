@@ -1,9 +1,10 @@
-import React from 'react';
-import Liner from "../../components/Liner/Liner/Liner"
+import Liner from "../../components/Liner/Liner/Liner";
+import "./styles.scss";
 
 const LinerJob = () => {
+
   return (
-    <div>
+    <div className='liner-page'>
         <Liner />
     </div>
   )
