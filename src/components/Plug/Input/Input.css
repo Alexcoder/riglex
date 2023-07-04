@@ -1,4 +1,7 @@
-
+.input-plug-cont{
+  margin-top: 0rem; 
+  padding: 2rem 4rem
+}
 .plug-sub{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -24,5 +27,7 @@
       .plug-sub{
           grid-template-columns: repeat(1, 1fr);
         }
-        
+        .input-plug-cont{
+          margin-top: -1rem; 
+        }         
   }

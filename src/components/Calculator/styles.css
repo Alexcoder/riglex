@@ -21,6 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 25;
 }
 .calc-cont button{
     appearance: none;
@@ -28,7 +29,8 @@
     padding: 10px;
 }
 .calc-cont button:hover{
-    opacity: 0.8;
+    /* opacity: 0.9; */
+    background-color: #888;
 }
 .calc-wrapper{
   /* border: 1px solid gray; */

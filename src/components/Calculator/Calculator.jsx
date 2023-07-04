@@ -23,8 +23,15 @@ const Calculator = () => {
         setCalc((prev)=> prev + value)
 
         if(!operators.includes(value)){
-          // eslint-disable-next-line
-            setResult(eval(calc + value).toString())
+          // setResult(eval(calc + value).toString())
+          setResult(()=>{
+            try{
+              return  Function(`return ${calc.concat(value)}`)()
+              // eslint-disable-next-line
+            }catch(err){
+              return err
+          }  
+          })
         }
     };
 

@@ -10,10 +10,10 @@ const Input = () => {
     setPlug({...plug, [e.target.name]: e.target.value})
   };
 
-  const isSmallDevice = window.innerWidth <= 720;
+  // const isSmallDevice = window.innerWidth <= 720;
  
   return (
-    <main style={{marginTop: isSmallDevice? "-1rem" :" 0rem", padding:"2rem 4rem"}}>
+    <main className="input-plug-cont" >
       <hr/>
       <section className='plug-sub'>
       { InputData.map((item, i)=>(

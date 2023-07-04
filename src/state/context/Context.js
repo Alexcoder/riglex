@@ -15,7 +15,7 @@ const DataPrimary = {
     else return ""
   },
   previousCsgID: "",
-  lengthOfTailAboveShoe: "",
+  // lengthOfTailAboveShoe: "",
   measuredDepth: "",
   leadExcess: "",
   tailExcess: "",
@@ -59,13 +59,12 @@ export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
   const [plug, setPlug] = useState(inputDataPlug);
   const [liner, setLiner] = useState(inputDataLiner);
-  const [isUniformStinger, setIsUniformStinger]= useState(false);
+  const [isUniformStinger, setIsUniformStinger]= useState(true);
   const [unit, setUnit] = useState("ft");
 
   const [calculator, setCalculator] = useState(false);
 
   // const [mode , setMode] = useState("OTHERS");
-  const [activeNav, setActiveNav] = useState("home");
   const [theme, setTheme] = useState("greenColor");
   // const [sidebar, setSidebar] = useState(false)
 
@@ -83,7 +82,7 @@ export const ContextProvider = ({children}) => {
 
       // mode , setMode, 
       theme, 
-     activeNav, setActiveNav, plug,
+     plug,
      setPlug,  Liner_Slurry_Volume, 
      
     }}

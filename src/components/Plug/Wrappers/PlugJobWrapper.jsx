@@ -8,7 +8,59 @@ const PlugJobWrapper = (Component) => {
    
    function Sub (...props){
      const [viewResult, setViewResult]= useState(false);
-     const { isUniformStinger  } = useGlobalState();
+     const { isUniformStinger, plug  } = useGlobalState();
+     const {
+      zoneId,
+      length,
+      stingerOD,
+      // OHE,
+      stingerID,
+      stingerLength,
+      // slurryYield,
+      volOfSpacerAhead,
+      bottom,  
+      drillPipeID,
+      drillPipeOD,
+      dpOuterZoneId,     
+     } = plug ;
+
+     const  plugSwitch = () =>{
+      if(isUniformStinger){
+         return {
+            zoneId,
+            length,
+            stingerOD,
+            // OHE,
+            stingerID,
+            // slurryYield,
+            volOfSpacerAhead,
+            bottom,  
+         }
+      }
+      else {
+         return {
+            zoneId,
+            length,
+            stingerOD,
+            // OHE,
+            stingerID,
+            stingerLength,
+            // slurryYield,
+            volOfSpacerAhead,
+            bottom,  
+            drillPipeID,
+            drillPipeOD,
+            dpOuterZoneId,     
+         }
+      }
+     };
+     
+     const view = ()=>{
+       const isEmptyInput = Object.values(plugSwitch()).some(value=> value==="");
+       setViewResult(!isEmptyInput ? true : false)
+     }
+     console.log(plugSwitch());
+
      return(
         <div style={{marginTop:"0rem"}}>
          { 
@@ -26,7 +78,7 @@ const PlugJobWrapper = (Component) => {
          <Input />
          <Component {...props} />
          <div style={{textAlign:"center"}} >
-         <button onClick={()=> setViewResult(true)}>View Result</button>
+         <button onClick={view}>View Result</button>
          </div>
         </div>
      )
