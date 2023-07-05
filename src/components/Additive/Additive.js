@@ -35,13 +35,13 @@ const Additive = () => {
     setAdditiveConcentration("");
   }
 
-
+ var isSmallDevice = window.innerWidth <=720
 
   return (
-  <main className="additive-container">
+  <main className="additive-container" style={{padding: isSmallDevice ? "0 1rem" : ""}}>
      <div> 
          <div>
-            <h2 className="additive-check">
+            <h2 className="additive-check" >
                 Additive Check 
             </h2>
          </div>

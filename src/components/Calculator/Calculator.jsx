@@ -25,7 +25,7 @@ const Calculator = () => {
         if(!operators.includes(value)){
           // setResult(eval(calc + value).toString())
                // eslint-disable-next-line
-          setResult(Function(`return ${calc.concat(value)}`)().toString())
+          setResult(Function(`return ${calc.concat(value)}`)().toFixed(4).toString())
           // setResult(()=>{
           //   try{
           //     // eslint-disable-next-line
