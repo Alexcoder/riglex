@@ -17,21 +17,23 @@ const Calculator = () => {
           if(value==="." && calc.includes(".")) return
         if(
             (operators.includes(value) && calc==="") ||
-            (operators.includes(value) && operators.includes(calc.slice(-1)))
+            (operators.includes(value) && operators.includes(calc.charAt(calc.length-1)))
         ) return;
 
         setCalc((prev)=> prev + value)
 
         if(!operators.includes(value)){
           // setResult(eval(calc + value).toString())
-          setResult(()=>{
-            try{
-              // eslint-disable-next-line
-              return  Function(`return ${calc.concat(value)}`)()
-            }catch(err){
-              return err
-          }  
-          })
+               // eslint-disable-next-line
+          setResult(Function(`return ${calc.concat(value)}`)().toString())
+          // setResult(()=>{
+          //   try{
+          //     // eslint-disable-next-line
+          //     return  Function(`return ${calc.concat(value)}`)()
+          //   }catch(err){
+          //     return err
+          // }  
+          // })
         }
     };
 
@@ -51,6 +53,7 @@ const Calculator = () => {
 const handleDelete = () =>{
   setCalc((prev)=>{
     const newItem = prev.slice(0, -1)
+    // const newItem = calc.slice(0,lastItem)
     setCalc(newItem)
   })
 }
