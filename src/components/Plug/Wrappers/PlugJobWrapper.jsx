@@ -55,11 +55,10 @@ const PlugJobWrapper = (Component) => {
       }
      };
      
+     const emptyInput = Object.values(plugSwitch()).some(val=> val==="" || val <"0");
      const view = ()=>{
-       const isEmptyInput = Object.values(plugSwitch()).some(value=> value==="");
-       setViewResult(!isEmptyInput ? true : false)
+       setViewResult(!emptyInput ? true : false)
      }
-     console.log(plugSwitch());
 
      return(
         <div style={{marginTop:"0rem"}}>
@@ -78,7 +77,9 @@ const PlugJobWrapper = (Component) => {
          <Input />
          <Component {...props} />
          <div style={{textAlign:"center"}} >
-         <button onClick={view}>View Result</button>
+            {  !emptyInput &&
+               <button onClick={view}>View Result</button>
+            }
          </div>
         </div>
      )
