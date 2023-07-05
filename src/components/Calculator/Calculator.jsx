@@ -26,8 +26,8 @@ const Calculator = () => {
           // setResult(eval(calc + value).toString())
           setResult(()=>{
             try{
-              return  Function(`return ${calc.concat(value)}`)()
               // eslint-disable-next-line
+              return  Function(`return ${calc.concat(value)}`)()
             }catch(err){
               return err
           }  
