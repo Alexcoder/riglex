@@ -22,7 +22,7 @@ const Input = ({presentCsg, previousCsg}) => {
         <div key={i} className='primary-map'>
             <div>{item.desc}</div>
             <input
-            disabled={item.name==="presentCsgOD" && presentCsg!=="Present"}
+            disabled={item.disabled}
              className={item.className}
              name={item.title}
              value={(item.value)}

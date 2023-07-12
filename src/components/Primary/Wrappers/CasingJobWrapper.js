@@ -44,21 +44,13 @@ const CasingJobWrapper = (CasingComponent, presentCsg, previousCsg, ) => {
 
 
     
-    const noEmptyInput =  Object.entries(wellData).every(([key,value]) => {
+    const noEmptyInput =  Object.entries(wellData).every(([key,value]) => { 
+      //checks if all input has a value greater than 0 and presentId < previousId
       return (value !=="" && value >"0" && (presentCsgID < previousCsgID))
     })
     const showResult = () =>{
         setViewResult( noEmptyInput ? true : false)
     }
-
-    // function hasNonZeroElement(){
-    //   for (const key in check){
-    //     if(check.hasOwnProperty(key) && check[key]>=40){
-    //       return true
-    //     }
-    //   }
-    //   return false
-    // }
 
       return(
           <div style={{marginTop:"1rem", textAlign:"center", background:"white",}}>
