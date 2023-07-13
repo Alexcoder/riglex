@@ -27,9 +27,9 @@ const useCsgJobAnalyser = (wellData, unit) => {
    const LengthOfTailAboveShoe = presentCsgShoe - topOfTail;
    const ShoeTrack = presentCsgShoe - topOfFloatCollar;
   //  Lead Slurry
-   const SlurryLengthInOHCsgAnn = topOfTail - previousCsgShoe-topOfLead;
+   const SlurryLengthInOHCsgAnn = topOfTail - previousCsgShoe;
    const VolumeInOpenHoleToCasingAnnulus = AnnularCapCsgOH * SlurryLengthInOHCsgAnn * LeadExcess;
-   const VolumeInCsgToCsgAnnulus = AnnularCapCsgToCsg * previousCsgShoe;
+   const VolumeInCsgToCsgAnnulus = AnnularCapCsgToCsg * previousCsgShoe-topOfLead;
    const VolumeOfLead = (Number(VolumeInOpenHoleToCasingAnnulus) + Number(VolumeInCsgToCsgAnnulus)).toFixed(2)
   //  Tail Slurry
    const VolumeInShoeTrack = CsgCapacity * ShoeTrack;
