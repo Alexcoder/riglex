@@ -1,4 +1,4 @@
-import {Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import {Routes, Route, useLocation,  } from 'react-router-dom';
 import Header from "./components/Header/HeaderNav.js";
 import Navbar from './components/NavBar/Navbar.jsx';
 import P1338 from "./components/Primary/1338/1338.js";
@@ -23,27 +23,7 @@ import "./App.css";
 function App() {
   const { calculator } = useGlobalState();
   const path = useLocation().pathname;
-  const navigate = useNavigate();
  
-  const myRoute = ["/", "/casingJob", "/plug", "liner"]
-
-  function browse(arr, i){
-    if(i > arr.length){
-       return ""
-    }
-      const int =  setTimeout(()=>{
-          navigate(arr[i])
-          browse(arr, i+1)
-        },[3000]) 
-        return ()=> clearTimeout(int)
-  }
-
-  function handleClick(){//a button is assigned this click function
-    browse(myRoute, 0)
-  }
-
-  
-
   
   return (
     <main style={{width:"auto", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
@@ -64,7 +44,6 @@ function App() {
           <Route path="/liner" element={<LinerJob/>} />
 
         </Routes>
-        <button onClick={handleClick}>Recursion</button>
     </main>
   );
 }
