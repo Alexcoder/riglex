@@ -26,7 +26,6 @@ const HeaderNav = () => {
       browse(myRoute, 0)
     }
   
- 
 
   return (
     <main className="header-cont">
