@@ -11,11 +11,11 @@
     bottom: 0;
     @keyframes myAnimation {
         0% {font-size: 35px; color: blue;}
-        100% {font-size: 45px; color: blue}
+        100% {font-size: 40px; color: blue}
     }
     .wrapper{
         color : blue;
-        font-size: 45px;
+        font-size: 40px;
         font-weight: 500;
         animation-name: myAnimation ;
         animation-duration: 7s ;
