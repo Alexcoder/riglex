@@ -34,12 +34,12 @@
         display: flex;
         flex-wrap: nowrap;          
             @keyframes myAnimation {
-                0% {font-size: 22px; color: blue;}
-                100% {font-size: 25px; color: blue}
+                0% {font-size: 20px; color: blue;}
+                100% {font-size: 30px; color: blue}
             }
             .wrapper{
                 color : blue;
-                font-size: 25px;
+                font-size: 30px;
                 font-weight: 500;
                 animation-name: myAnimation ;
                 animation-duration: 7s ;
