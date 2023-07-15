@@ -32,14 +32,25 @@
 @media screen and (max-width: 720px) {
     .landing-cont{
         display: flex;
-        flex-wrap: nowrap;
-        .wrapper{
-            font-size: 25px;
-            font-weight: 500;
+        flex-wrap: nowrap;          
+            @keyframes myAnimation {
+                0% {font-size: 22px; color: blue;}
+                100% {font-size: 25px; color: blue}
+            }
+            .wrapper{
+                color : blue;
+                font-size: 25px;
+                font-weight: 500;
+                animation-name: myAnimation ;
+                animation-duration: 7s ;
+                animation-timing-function: ease-in-out ;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+            }
+        
           .wrapper  div{
                 flex: 1 1 0%;
             }
-        }
         
     }
     
