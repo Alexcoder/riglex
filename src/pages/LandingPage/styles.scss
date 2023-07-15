@@ -35,6 +35,8 @@
         flex-wrap: nowrap;          
             @keyframes myAnimation {
                 0% {font-size: 20px; color: blue;}
+                30% {font-size: 23px; color: blue;}
+                70% {font-size: 27px; color: blue;}
                 100% {font-size: 30px; color: blue}
             }
             .wrapper{
