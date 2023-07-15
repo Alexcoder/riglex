@@ -8,7 +8,7 @@ const LandingPage = () => {
     useEffect(()=>{
        const timeout = setTimeout(()=>{
          navigate("/unit-converter")
-       },5000)
+       },7000)
        return ()=> clearTimeout(timeout)
     },[navigate]);
 
