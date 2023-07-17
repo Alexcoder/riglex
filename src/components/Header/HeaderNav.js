@@ -10,7 +10,7 @@ const HeaderNav = () => {
     const navigate = useNavigate();
     const {setSidebar} = useGlobalState();
 
-    const myRoute = ["/", "/casingJob", "/plug", "/liner", "/unit-converter","/additive"]
+    const myRoute = ["/", "/job", "/plug", "/liner", "/unit-converter","/additive"]
 
     function browse(arr, i){
       if(i > arr.length){

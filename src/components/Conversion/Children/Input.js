@@ -19,10 +19,10 @@ const Input =(props)=>{
                 //  variant="outlined"
                  value={factor} 
                  label={`${baseUnit}`} 
-                 sx={{fontWeight:"500", border: "1px solid none"}}
+                 sx={{fontWeight:"500", border: "1px solid none",}}
                  onChange={(e)=> {modeConversion && setFactor(e.target.value)}}
                 />
-              <div style={{height:""}} onClick={Revert}><SyncAltIcon sx={{marginTop:"1rem"}}/></div>
+              <div style={{height:"", }} onClick={Revert}><SyncAltIcon sx={{marginTop:"1rem", }}/></div>
           </div>
           </div>
     

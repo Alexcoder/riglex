@@ -1,5 +1,6 @@
-
-const useCsgJobAnalyser = (wellData, unit) => {
+import { useGlobalState } from "../../../state/context/Context"
+const useCsgJobAnalyser = (wellDataxxx, unit) => {
+  const { wellData } = useGlobalState();
 
   const {
     openHoleID,
@@ -20,7 +21,7 @@ const useCsgJobAnalyser = (wellData, unit) => {
    const OHCapacity = (Math.pow(openHoleID,2))/ UnitSwitch;
    const CsgCapacity = (Math.pow(presentCsgID,2))/ UnitSwitch;
    const AnnularCapCsgOH = (Math.pow(openHoleID,2) - Math.pow(presentCsgOD(),2))/UnitSwitch ;
-   const AnnularCapCsgToCsg = (Math.pow(previousCsgID,2) -Math.pow(presentCsgOD(),2))/UnitSwitch;
+   const AnnularCapCsgToCsg = (Math.pow(previousCsgID,2) - Math.pow(presentCsgOD(),2))/UnitSwitch;
    const LeadExcess = (Number(leadExcess) + 100)/100;
    const TailExcess = (Number(tailExcess) + 100)/100;
    const RatHole = measuredDepth - presentCsgShoe;

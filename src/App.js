@@ -17,6 +17,8 @@ import Conversion from "./components/Conversion/Conversion.js";
 
 import { useGlobalState } from './state/context/Context.js';
 
+import CsgJob from './components/Primary2/Job.jsx';
+
 import "./App.css";        
 
 
@@ -42,6 +44,8 @@ function App() {
           <Route path="/casingJob" element={<CasingJob/>} />
           <Route path="/plug" element={<PlugJob/>} />
           <Route path="/liner" element={<LinerJob/>} />
+
+          <Route path="/job" element={<CsgJob/>} />
 
         </Routes>
     </main>

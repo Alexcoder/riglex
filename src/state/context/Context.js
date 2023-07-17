@@ -57,6 +57,7 @@ const inputDataLiner = {
 
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
+  const [wellData2, setWellData2] = useState({});
   const [plug, setPlug] = useState(inputDataPlug);
   const [liner, setLiner] = useState(inputDataLiner);
   const [isUniformStinger, setIsUniformStinger]= useState(true);
@@ -79,6 +80,7 @@ export const ContextProvider = ({children}) => {
      setTheme, wellData, setWellData,
      isUniformStinger, setIsUniformStinger,
      liner, setLiner, calculator, setCalculator,
+     wellData2, setWellData2,
 
       // mode , setMode, 
       theme, 
