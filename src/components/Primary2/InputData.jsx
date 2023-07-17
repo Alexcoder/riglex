@@ -1,21 +1,21 @@
 import { useGlobalState } from "../../state/context/Context";
 
 function useCsgDobData(casing, previousCsg){
-    const { wellData2, } = useGlobalState();
+    const { wellData2 } = useGlobalState();
 
     
     const InputData1 = [//Casing ID
        {
-               title: "presentCsgOD",
-               value: wellData2.casingOD,
-               placeholder: "presentCsgOD",
+               title: "casingOD",
+               value: wellData2.casingOD(casing),
+               placeholder: "Casing OD",
                desc : `${casing} csg OD`,
-               disabled : false  ,    
+               disabled : casing!=="" ? true : false  ,    
             },
             {
-                title: "presentCsgID",
-                value: wellData2.presentCsgID,
-                placeholder: "presentCsgID",
+                title: "casingID",
+                value: wellData2.casingID,
+                placeholder: "casingID",
                 desc : `${casing} csg ID`,
                 disabled : false  ,    
             },
@@ -29,12 +29,12 @@ function useCsgDobData(casing, previousCsg){
         ];
         const InputData2 = [
             {
-                title: "openHoleID",
-                value: wellData2.openHoleID,
+                title: "openHole",
+                value: wellData2.openHole(casing),
                 className: "primary-input",
-                placeholder: "openHoleID",
+                placeholder: "openHole",
                 desc: "Open Hole ID", 
-                disabled : false  ,    
+                disabled : casing!=="" ? true : false  ,    
             },
         {
           title: "leadExcess",

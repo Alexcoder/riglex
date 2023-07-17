@@ -57,7 +57,20 @@ const inputDataLiner = {
 
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
-  const [wellData2, setWellData2] = useState({});
+  const [wellData2, setWellData2] = useState({
+    casingOD(size){
+      if(size==="13-3/8 inch") return 13.375
+      else if(size==="9-5/8 inch") return 9.625
+      else if(size==="7 inch") return 7
+      else return ""
+    },
+    openHole(size){
+      if(size==="13-3/8 inch") return 16
+      else if(size==="9-5/8 inch") return 12.25
+      else if(size==="7 inch") return 8.5
+      else return ""
+    },
+  });
   const [plug, setPlug] = useState(inputDataPlug);
   const [liner, setLiner] = useState(inputDataLiner);
   const [isUniformStinger, setIsUniformStinger]= useState(true);
