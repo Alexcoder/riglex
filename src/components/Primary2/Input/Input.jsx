@@ -2,11 +2,11 @@ import { useGlobalState } from '../../../state/context/Context';
 import "./styles.css";
 
 const InputField = ( { item } ) => {
-    const { wellData, setWellData } = useGlobalState();
+    const { wellData2, setWellData2 } = useGlobalState();
 
     const handleChange = (e) =>{
         const { name , value } = e.target;
-        setWellData({ ...wellData, [name] : value });
+        setWellData2({ ...wellData2, [name] : value });
 
     
         

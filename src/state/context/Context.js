@@ -57,19 +57,29 @@ const inputDataLiner = {
 
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
+  const [casingType, setCasingType] = useState("13-3/8 inch");
   const [wellData2, setWellData2] = useState({
-    casingOD(size){
-      if(size==="13-3/8 inch") return 13.375
-      else if(size==="9-5/8 inch") return 9.625
-      else if(size==="7 inch") return 7
-      else return ""
+    casingOD(casingType){
+      if(casingType==="13-3/8 inch") return "13.375"
+      else if(casingType==="9-5/8 inch") return "9.625"
+      else if(casingType==="7 inch") return "7"
     },
-    openHole(size){
-      if(size==="13-3/8 inch") return 16
-      else if(size==="9-5/8 inch") return 12.25
-      else if(size==="7 inch") return 8.5
-      else return ""
+    openHole(casingType){
+      if(casingType==="13-3/8 inch") return "16"
+      else if(casingType==="9-5/8 inch") return "12.25"
+      else if(casingType==="7 inch") return "8.5"
+      else return "" 
     },
+    casingID : "",
+    casingShoe : "",
+    topOfLead: "",
+    topOfTail : "",
+    topOfFloatCollar: "",
+    previousCsgShoe: "",
+    previousCsgID: "",
+    leadExcess:"",
+    tailExcess: "",
+    measuredDepth:"",
   });
   const [plug, setPlug] = useState(inputDataPlug);
   const [liner, setLiner] = useState(inputDataLiner);
@@ -77,10 +87,6 @@ export const ContextProvider = ({children}) => {
   const [unit, setUnit] = useState("ft");
 
   const [calculator, setCalculator] = useState(false);
-
-  // const [mode , setMode] = useState("OTHERS");
-  const [theme, setTheme] = useState("greenColor");
-  // const [sidebar, setSidebar] = useState(false)
 
 
   const Liner_Slurry_Volume =(Number(wellData.volOfLead) + Number(wellData.volOfTail)).toFixed(1)
@@ -90,13 +96,12 @@ export const ContextProvider = ({children}) => {
     <StateContext.Provider
     value={{
      unit, setUnit,
-     setTheme, wellData, setWellData,
+     wellData, setWellData,
      isUniformStinger, setIsUniformStinger,
      liner, setLiner, calculator, setCalculator,
-     wellData2, setWellData2,
+     wellData2, setWellData2, casingType, setCasingType,
 
       // mode , setMode, 
-      theme, 
      plug,
      setPlug,  Liner_Slurry_Volume, 
      

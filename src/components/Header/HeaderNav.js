@@ -28,14 +28,15 @@ const HeaderNav = () => {
   
 
   return (
-    <main className="header-cont">
-      <div style={{display:"flex", alignItems:"center", gap:"0.3rem"}}>
-         <HomeIcon onClick={()=> navigate("/")} sx={{fontSize:"2.5rem"}}/>
-         <button onClick={handleClick} style={{marginBottom:"-0.5rem"}}>preview</button>
-      </div>
-      <div className='header-title'> FIELD APP </div>
-      <div><MenuIcon onClick={()=> setSidebar((prev)=> !prev)}/></div>
-  </main>
+    <div className="header">
+      <span style={{display:"flex", alignItems:"center", gap:"0.3rem"}}>
+        <HomeIcon onClick={()=> navigate("/")} sx={{fontSize:"2.5rem"}}/>
+        <button onClick={handleClick} style={{marginBottom:""}}>prev</button>
+    </span>
+    <span className='title'> FIELD APP </span>
+   <span style={{float:"right"}}><MenuIcon onClick={()=> setSidebar((prev)=> !prev)}/></span>
+
+  </div>
   )
 }
 

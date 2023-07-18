@@ -1,40 +1,43 @@
 import { useGlobalState } from "../../state/context/Context";
 
-function useCsgDobData(casing, previousCsg){
-    const { wellData2 } = useGlobalState();
+function useCsgDobData(){
+    const { wellData2, casingType } = useGlobalState();
 
+    const previousCsg = casingType==="13-3/8 inch"? "Previous  " :
+    casingType==="9-5/8 inch" ? "13-3/8 inch  " :
+    casingType==="7 inch" ? "9-5/8 inch  " : "";  
     
     const InputData1 = [//Casing ID
        {
                title: "casingOD",
-               value: wellData2.casingOD(casing),
+               value: wellData2.casingOD(casingType),
                placeholder: "",
-               desc : `${casing} csg OD`,
-               disabled : casing!=="" ? true : false  ,    
+               desc : `${casingType} csg OD`,
+               disabled : casingType!=="" ? true : false  ,    
             },
             {
                 title: "casingID",
                 value: wellData2.casingID,
                 placeholder: "0",
-                desc : `${casing} csg ID`,
+                desc : `${casingType} csg ID`,
                 disabled : false  ,    
             },
             {
                 title: "previousCsgID",
                 value: wellData2.previousCsgID,
                 placeholder: "0",
-                desc: `${previousCsg} ID`,       
+                desc: `${previousCsg} Csg ID`,       
                 disabled : false  ,    
             },
         ];
         const InputData2 = [
             {
                 title: "openHole",
-                value: wellData2.openHole(casing),
+                value: wellData2.openHole(casingType),
                 className: "primary-input",
                 placeholder: "0",
-                desc: "Open Hole ID", 
-                disabled : casing!=="" ? true : false  ,    
+                desc: "Open Hole", 
+                disabled : casingType!=="" ? true : false  ,    
             },
         {
           title: "leadExcess",
@@ -45,7 +48,7 @@ function useCsgDobData(casing, previousCsg){
           disabled : false  ,    
         },
         {
-            title: "tailExcess",
+          title: "tailExcess",
           value: wellData2.tailExcess,
           className: "primary-input",
           placeholder: "excess value eg 15",
@@ -73,11 +76,11 @@ function useCsgDobData(casing, previousCsg){
         disabled : false  ,    
     },
     {
-          title: "presentCsgShoe",
-          value: wellData2.presentCsgShoe,
+          title: "casingShoe",
+          value: wellData2.casingShoe,
           className: "primary-input",
           placeholder: "0",
-          desc: `${casing} Casing Shoe @`,       
+          desc: `${casingType} Casing Shoe @`,       
           disabled : false  ,    
         },
         {

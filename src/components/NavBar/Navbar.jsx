@@ -18,9 +18,9 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const nav = [
-    { jobType : "CasingJob", page : "/job",},
-    { jobType : "Liner Job", page : "/liner",},
-    { jobType : "Plug Job", page : "/plug",},
+    { jobType : "Casing", page : "/job",},
+    { jobType : "Liner ", page : "/liner",},
+    { jobType : "Plug ", page : "/plug",},
     { jobType : "Unit Converter", page : "/unit-converter",},
     { jobType : "Additive", page : "/additive",},
     { jobType : "Quiz", page : "/quiz",},
