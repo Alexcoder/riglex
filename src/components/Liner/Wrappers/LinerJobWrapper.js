@@ -9,7 +9,7 @@ const LinerJobWrapper = ( CasingComponent ) => {
     const [viewResult, setViewResult] = useState(false)
   
       return(
-          <div style={{marginTop:"7.5rem", textAlign:"center", background:"white",}}>
+          <div className="liner">
           <h3 className="wrapper-title">LINER CASING CEMENTING</h3>
           {
            viewResult &&

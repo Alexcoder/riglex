@@ -20,7 +20,7 @@ const Input = () => {
       <section className='primary-sub'>
       { InputData.map((item, i)=>(
         <div key={i} className='primary-map'>
-            <div>{item.desc}</div>
+            <div style={{textAlign:"start"}}>{item.desc}</div>
             <input
              className={item.className}
              name={item.title}
