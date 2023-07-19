@@ -15,7 +15,7 @@ const Input = () => {
 
  
   return (
-    <main style={{marginTop:"-2rem", padding:"2rem 4rem"}}>
+    <main style={{marginTop:"-2rem", padding:"1rem 0rem"}}>
       <hr/>
       <section className='primary-sub'>
       { InputData.map((item, i)=>(

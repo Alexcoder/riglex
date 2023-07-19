@@ -1,14 +1,10 @@
 .primary-sub{
   display: flex;
   flex-wrap: wrap;
-  /* gap: 1rem; */
+  gap: 1rem;
   /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem; */
-  @media screen and (max-width: 1024px) {
-    /* padding-left: 10rem; */
-}
-
 
 }
 .primary-sub div{
@@ -21,24 +17,24 @@
   border-radius: 0.2rem;
   justify-content: space-between;
   align-items: center;
-  @media screen and (max-width: 1024px) {
-    width: 100vw;
-}
 }
 
 .primary-input{
     border: 1px solid gray;
     width: 40%;
     padding: 0.5rem 0 0rem 0rem ;
-    @media screen and (max-width: 1024px) {
-      /* width: 80vw; */
-  }
 }
 
 @media screen and (max-width: 1024px) {
+  .primary-sub{
+    width: auto;
+  }
     .primary-sub div{
         /* grid-template-columns: repeat(1, 1fr); */
         flex: 1 1 100%;
+      }
+      .primary-input {
+        width: 60%;
       }
       
 }
