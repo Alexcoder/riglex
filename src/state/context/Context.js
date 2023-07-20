@@ -58,6 +58,7 @@ const inputDataLiner = {
 export const ContextProvider = ({children}) => {
   const [wellData, setWellData] = useState(DataPrimary);
   const [casingType, setCasingType] = useState("13-3/8 inch");
+  const [width, setWidth] = useState(false)
   const [navSmallJobSelect, setNavSmallJobSelect] = useState(false)
   const [wellData2, setWellData2] = useState({
     casingOD(casingType){
@@ -102,6 +103,7 @@ export const ContextProvider = ({children}) => {
      liner, setLiner, calculator, setCalculator,
      wellData2, setWellData2, casingType, setCasingType,
      navSmallJobSelect, setNavSmallJobSelect,
+     width, setWidth,
 
       // mode , setMode, 
      plug,

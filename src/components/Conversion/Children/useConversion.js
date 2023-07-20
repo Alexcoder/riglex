@@ -19,8 +19,12 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
     const MT_to_sacks = ((factor*2205)/94).toFixed(2) //Converting from MT to sacks
     const ft_m = ((factor/3.28)).toFixed(2) //Converting from ft to m
     const m_ft = ((factor*3.28)).toFixed(2) //Converting from m to ft
-    const Centigrade_to_Fahrenheit = ((Number(factor)*1.8)+32).toFixed(1) //Converting from Centigrade to Fahrenheit
-    const Fahrenheit_to_Centigrade = ((Number(factor)-32)*100/180).toFixed(1) //Converting Fahrenheit to Centigrade
+    const Centigrade_to_Fahrenheit = (((factor)*1.8)+32).toFixed(1) //Converting from Centigrade to Fahrenheit
+    const Fahrenheit_to_Centigrade = (((factor)-32)*100/180).toFixed(1) //Converting Fahrenheit to Centigrade
+    const ltr_to_gal = ((factor)/3.78541).toFixed(2) //Converting Litre to gallon
+    const gal_to_ltr = ((factor) * 3.78541).toFixed(2) //Converting gallon to litre
+    const ltr_to_bbl = ((factor)/158.987294928).toFixed(2) //Converting Litre to Barrel
+    const bbl_to_ltr = ((factor) * 158.987294928).toFixed(2) //Converting Barrel to litre
   
   
     const ResultChanger= modeConversion==="bbl-cuft"  ?  bbl_to_cuft: 
@@ -39,6 +43,10 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
                          modeConversion==="MT-sacks"  ?  MT_to_sacks : 
                          modeConversion==="ft-m"      ?  ft_m : 
                          modeConversion==="m-ft"      ?  m_ft :
+                         modeConversion==="ltr-gal"      ?  ltr_to_gal :
+                         modeConversion==="gal-ltr"      ?  gal_to_ltr :
+                         modeConversion==="ltr-bbl"      ?  ltr_to_bbl :
+                         modeConversion==="bbl-ltr"      ?  bbl_to_ltr :
                          modeConversion==="Centigrade-Fahrenheit"  ? Centigrade_to_Fahrenheit :
                          modeConversion==="Fahrenheit-Centigrade"  ? Fahrenheit_to_Centigrade : null
                         //  
@@ -58,6 +66,10 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
                          modeConversion==="kg-lbs"? "kg" : 
                          modeConversion==="lbs-kg"? "lbs" : 
                          modeConversion==="m-ft"? "meter" :
+                         modeConversion==="ltr-gal"? "litre" :
+                         modeConversion==="gal-ltr"? "gallon" :
+                         modeConversion==="ltr-bbl"? "litre" :
+                         modeConversion==="bbl-ltr"? "barrel" :
                          modeConversion==="Centigrade-Fahrenheit"  ? "Celsius" :
                          modeConversion==="Fahrenheit-Centigrade"  ? "Fahrenheit" :
                         null   //NOTE VALUES ARE cuft m bbl sacks mt value={"bbl"} in the options selection
@@ -78,6 +90,10 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
                          modeConversion==="kg-lbs"  ? "lbs" : 
                          modeConversion==="lbs-kg"  ? "kg" : 
                          modeConversion==="m-ft"  ? "ft" :
+                         modeConversion==="ltr-gal"  ? "gal" :
+                         modeConversion==="gal-ltr"  ? "ltr" :
+                         modeConversion==="ltr-bbl"  ? "bbl" :
+                         modeConversion==="bbl-ltr"  ? "ltr" :
                          modeConversion==="Centigrade-Fahrenheit"  ? "Fahrenheit" :
                          modeConversion==="Fahrenheit-Centigrade"  ? "Celsius" : null
                          //  
@@ -97,6 +113,10 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
                          modeConversion==="MT-sacks"? "Convert From MetricTon to Sacks": 
                          modeConversion==="ft-m"? "Convert From Feet to Meters": 
                          modeConversion==="m-ft"? "Convert From Meters to Feet": 
+                         modeConversion==="ltr-gal"? "Convert From Litre to Gallon": 
+                         modeConversion==="gal-ltr"? "Convert From Gallon to Litre": 
+                         modeConversion==="ltr-bbl"? "Convert From Litre to Barrel": 
+                         modeConversion==="bbl-ltr"? "Convert From Barrel to Litre": 
                          modeConversion==="Centigrade-Fahrenheit"? "Convert From Celsius to Fahrenheit": 
                          modeConversion==="Fahrenheit-Centigrade"? "Convert From Fahrenheit to Celsius": 
                          "Conversion Calculator"
@@ -118,6 +138,10 @@ const useConversion =(factor, modeConversion, setModeConversion )=>{
                            else if(modeConversion==="sacks-MT") setModeConversion("MT-sacks"); 
                            else if(modeConversion==="m-ft") setModeConversion("ft-m");
                            else if(modeConversion==="ft-m") setModeConversion("m-ft");
+                           else if(modeConversion==="ltr-gal") setModeConversion("gal-ltr");
+                           else if(modeConversion==="gal-ltr") setModeConversion("ltr-gal");
+                           else if(modeConversion==="ltr-bbl") setModeConversion("bbl-ltr");
+                           else if(modeConversion==="bbl-ltr") setModeConversion("ltr-bbl");
                            else if(modeConversion==="Centigrade-Fahrenheit") setModeConversion("Fahrenheit-Centigrade");
                            else if(modeConversion==="Fahrenheit-Centigrade") setModeConversion("Centigrade-Fahrenheit");
                            else return

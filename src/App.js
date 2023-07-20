@@ -32,7 +32,7 @@ function App() {
   return (
     <main style={{width:"auto", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
         {path!=="/" && <Header />}
-        {path!=="/" && <Navbar/>}
+        {path!=="/" && <Navbar/>} 
         {path!=="/" && <SmallDeviceNavBar/>}
         {navSmallJobSelect && <SelectJobSmallDevice/>} 
         {calculator && <Calculator/>} 

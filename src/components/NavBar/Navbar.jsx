@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [selected, setSelected] = useState(localStorage.getItem("sel") || 0);
-  const { setCalculator } = useGlobalState();
+  const { setCalculator, width, setWidth } = useGlobalState();
   
   const handleColor = (i) =>{
    if(selected===i) return "green"
@@ -27,17 +27,18 @@ const Navbar = () => {
   ];
 
   const toggleCalculator = () =>{
-    setCalculator((prev)=> !prev)
+    setCalculator((prev)=> !prev);
+    setWidth(false)
   }
 
   return (
-    <main className= "nav-cont" >
+    <main className= "nav-cont" style={{transform: width ? "translateX(0)" : "", }}>
       {
         nav.map((item,i)=>
         <button
           key={i} 
-          style={{background : handleColor(i)}}
-          onClick={()=> { navigate(item.page); setSelected(i)}}>
+          style={{background : handleColor(i), }}
+          onClick={()=> { navigate(item.page); setSelected(i); setWidth(false)}}>
           {item.jobType}
         </button>
         )

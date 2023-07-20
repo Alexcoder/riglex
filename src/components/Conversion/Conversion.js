@@ -15,7 +15,7 @@ const ConversionPage = () => {
 
 useEffect(()=>{
 if(modeConversion) localStorage.setItem('modeConversion',modeConversion) ;
-setModeConversion((localStorage.getItem('modeConversion', modeConversion)))
+setModeConversion((localStorage.getItem('modeConversion')))
 },[modeConversion])
 
 

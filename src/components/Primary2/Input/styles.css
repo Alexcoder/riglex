@@ -16,7 +16,7 @@ input{
     border: 1px solid gray;
 }
 .job{
-    margin-top: 6.5rem; 
+    margin-top: 4rem; 
     display: grid; 
     gap: 0.3rem; 
     padding: 0.5rem;

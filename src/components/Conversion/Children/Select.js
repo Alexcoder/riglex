@@ -26,6 +26,10 @@ const Select =(props)=>{
             <option className={modeConversion==="MT-sacks"    ?   "green" : null} value={"MT-sacks"}>Cement MetricTon To Sacks</option>
             <option className={modeConversion==="ft-m"    ?   "green" : null} value={"ft-m"}>Feet To Meter</option>
             <option className={modeConversion==="m-ft"     ?   "green" : null} value={"m-ft"}>Meter To Feet</option>
+            <option className={modeConversion==="ltr-gal"     ?   "green" : null} value={"ltr-gal"}>Litre To Gallon</option>
+            <option className={modeConversion==="gal-ltr"     ?   "green" : null} value={"gal-ltr"}>Gallon To Litre</option>
+            <option className={modeConversion==="ltr-bbl"     ?   "green" : null} value={"ltr-bbl"}>Litre To Barrel</option>
+            <option className={modeConversion==="bbl-ltr"     ?   "green" : null} value={"bbl-ltr"}>Barrel To Litre</option>
             <option className={modeConversion==="Centigrade-Fahrenheit" ?   "green" : null} value={"Centigrade-Fahrenheit"}>Celsius To Fahrenheit</option>
             <option className={modeConversion==="Fahrenheit-Centigrade" ?   "green" : null} value={"Fahrenheit-Centigrade"}>Fahrenheit To Celsius</option>
             </select>

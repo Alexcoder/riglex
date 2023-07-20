@@ -1,4 +1,3 @@
-import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import  HomeIcon  from '@mui/icons-material/Home';
 import  MenuIcon  from '@mui/icons-material/Menu';
@@ -8,7 +7,7 @@ import './HeaderNav.css';
 
 const HeaderNav = () => {
     const navigate = useNavigate();
-    const {setSidebar} = useGlobalState();
+    const {setSidebar, setWidth} = useGlobalState();
 
     const myRoute = ["/", "/job", "/plug", "/liner", "/unit-converter","/additive"]
 
@@ -34,7 +33,7 @@ const HeaderNav = () => {
         <button onClick={handleClick} style={{marginBottom:""}}>prev</button>
     </span>
     <span className='title'> FIELD APP </span>
-   <span style={{float:"right"}}><MenuIcon onClick={()=> setSidebar((prev)=> !prev)}/></span>
+   <span style={{float:"right"}}><MenuIcon onClick={()=>{setWidth((prev)=> !prev) ; setSidebar((prev)=> !prev)}}/></span>
 
   </div>
   )

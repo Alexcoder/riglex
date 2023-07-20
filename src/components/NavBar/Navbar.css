@@ -3,16 +3,27 @@
     position: fixed;
     top: 3.1rem;
     left: 0;
-    right: 0;
+    right: 2rem;
+    bottom: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     padding: 0.5rem;
     z-index: 20;
     box-shadow: 0px 0px 5px 0px rgb(54, 52, 52);
+    width: 18rem;
+    transform: translateX(-16rem);
+    transition: transform 1s ease-in-out;
 }
+.nav-cont button{
+    flex: 1 1 100%;
+    padding: 1rem 0.5rem;
+    border: none;
+   }
 
-@media screen and (max-width: 420px) {
+
+@media screen and (max-width: 720px) {
     .nav-cont{
         display: none;
         flex-wrap: wrap;
@@ -20,7 +31,4 @@
         gap: 0.3rem;
         padding: 0.5rem;
     } 
-    .nav-cont button{
-     flex: 1 1 25%;
-    }
 }

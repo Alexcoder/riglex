@@ -1,13 +1,17 @@
 .liner{
-    margin-top: 4rem; 
+    margin-top: 2rem; 
     text-align: center; 
-    width: auto;
+    width: 80%;
+    margin-left: 8rem;
     padding: 2rem;
     /* background: white */
+    @media screen and (max-width: 1024px) {
+        margin-left: 0rem;
+    }
     @media screen and (max-width: 720px) {
         margin-top: 1rem;
     }
-}
+};
 .csg-wrapper-btn{
         margin-bottom: 1rem; 
         margin-top: -2rem;

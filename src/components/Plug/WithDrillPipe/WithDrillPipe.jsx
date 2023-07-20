@@ -11,7 +11,7 @@ const WithDrillPipe = () => {
     };
      
   return (
-    <main style={{marginTop:"-4rem", padding:"2rem 4rem"}}>
+    <main style={{marginTop:"-4rem", padding:"2rem 1rem"}}>
       <h4 style={{textAlign:"center"}}>DRILL PIPE DATA</h4>
     {/* <hr/> */}
     <section className='plug-sub'>

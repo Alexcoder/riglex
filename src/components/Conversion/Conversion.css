@@ -1,6 +1,6 @@
 .conversion-cont{
     width: auto;
-    margin-top: 8rem; 
+    margin-top: 6rem; 
     display: flex;
     flex-direction: column; 
     justify-content: center;
@@ -25,10 +25,10 @@
     text-align: center;
 }
 .select{
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 0.2rem;
     padding: 1rem;
-    width: 100%;
+    min-width: 19rem;
     /* text-align:center; */
     box-shadow: 0rem 0.1rem 0.5rem 0rem gray;
 }

@@ -5,7 +5,7 @@ import "./styles.css";
 const Calculator = () => {
     const [calc, setCalc] = useState("");
     const [result, setResult] = useState("");
-    const { setCalculator } = useGlobalState();
+    const { setCalculator, } = useGlobalState();
 
     const operators = ["+" , "-" , "*" , "/", "."];
 

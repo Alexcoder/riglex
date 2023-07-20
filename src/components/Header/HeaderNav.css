@@ -10,7 +10,8 @@
     background: rgb(9, 9, 62);
     color: white;
     padding: 0.1rem 0.3rem;
-    width: auto
+    width: auto;
+    z-index: 30;
 }
 .header > .title{
     /* padding-right: 3.5rem; */

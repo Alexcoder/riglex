@@ -4,11 +4,10 @@
     justify-content: center;
     align-items: center;
     width: auto;
-    margin-top: 7rem;
+    margin-top: 5rem;
 }
 .plug-btn-cont{
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
     gap: 1rem;
     width: auto;
@@ -22,11 +21,12 @@
 .plug-btn-background{
     background: green;
     color: white;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 720px){
     .plug-cont{
-        margin-top: 8rem;
+        margin-top: 3rem;
     }
      
 }
