@@ -1,5 +1,4 @@
 .additive-container{
-    background: rgba(0, 0, 0, 0.425);
     display: flex;
     text-align: center;
     /* align-items: center; */
@@ -7,16 +6,16 @@
     position: relative;
     width: 30%;
     min-height: 100vh;
-    /* padding-bottom: 2rem; */
+    padding-bottom: 2rem;
     padding-top: 7rem;
 }
 
 .additive-container >div{
-    background: rgb(54, 54, 114);
+    background: rgb(36, 36, 39);
     padding: 1rem 0.03rem;
     width:29%;
     border-radius: 0.3rem;
-    height: fit-content;
+    /* height: fit-content; */
 }
 
 .additive-check{

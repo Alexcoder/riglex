@@ -1,6 +1,8 @@
 import {Routes, Route, useLocation,  } from 'react-router-dom';
 import Header from "./components/Header/HeaderNav.js";
 import Navbar from './components/NavBar/Navbar.jsx';
+import SmallDeviceNavBar from './components/NavBar/SmallDevice/SmallDevice.jsx';
+import SelectJobSmallDevice from './components/NavBar/SmallDevice/SelectJob/SelectJob.jsx';
 import P1338 from "./components/Primary/1338/1338.js";
 import P958 from "./components/Primary/958/958.js";
 import P7inch from "./components/Primary/7inch/7inch.js";
@@ -23,7 +25,7 @@ import "./App.css";
 
 
 function App() {
-  const { calculator } = useGlobalState();
+  const { calculator, navSmallJobSelect } = useGlobalState();
   const path = useLocation().pathname;
  
   
@@ -31,6 +33,8 @@ function App() {
     <main style={{width:"auto", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}} >
         {path!=="/" && <Header />}
         {path!=="/" && <Navbar/>}
+        {path!=="/" && <SmallDeviceNavBar/>}
+        {navSmallJobSelect && <SelectJobSmallDevice/>} 
         {calculator && <Calculator/>} 
         <Routes>
           <Route path="/" element={<LandingPage/>} />

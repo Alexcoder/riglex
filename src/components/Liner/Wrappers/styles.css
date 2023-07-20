@@ -4,6 +4,9 @@
     width: auto;
     padding: 2rem;
     /* background: white */
+    @media screen and (max-width: 720px) {
+        margin-top: 1rem;
+    }
 }
 .csg-wrapper-btn{
         margin-bottom: 1rem; 

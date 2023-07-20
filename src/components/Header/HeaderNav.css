@@ -16,5 +16,8 @@
     /* padding-right: 3.5rem; */
     font-size: 35px;
     font-weight: 450;
+    @media screen and (max-width: 720px) {
+        font-size: 30px;   
+    }
 }
 
