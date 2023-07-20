@@ -77,7 +77,7 @@ const handleClear = () =>{
       <div className="operators">
         <button style={{fontSize:"1.2rem"}} onClick={()=> upDateCalc("+")}> + </button>
         <button style={{fontSize:"1.7rem"}}  onClick={()=> upDateCalc("-")}> - </button>
-        <button style={{textAlign:"center", paddingTop:"0.5rem", fontSize:"1.2rem"}} onClick={()=> upDateCalc("")}> x </button>
+        <button style={{textAlign:"center", paddingTop:"0.5rem", fontSize:"1.2rem"}} onClick={()=> upDateCalc("*")}> x </button>
         <button style={{fontSize:"1.2rem"}} onClick={()=> upDateCalc("/")}> / </button>
         <button onClick={handleDelete}> DEL </button>
         <button onClick={handleClear}> CLEAR </button>
