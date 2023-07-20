@@ -5,9 +5,9 @@
     justify-content: center;
     position: relative;
     width: 30%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding-bottom: 2rem;
-    padding-top: 7rem;
+    padding-top: 4.5rem;
 }
 
 .additive-container >div{
@@ -39,6 +39,6 @@
     .additive-container >div{
         width:90%;
         position: fixed;
-        top: 10rem;
+        top: 7.5rem;
     }
 }
