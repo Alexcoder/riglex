@@ -84,7 +84,6 @@ const handleClear = () =>{
       </div>
 
       <div className="digits">
-        {/* <button onClick={()=> upDateCalc("00")}>00</button> */}
         {BtnDigits()}
         <button style={{fontSize:"1.9rem"}} onClick={()=> upDateCalc(".")}> . </button>
         <button style={{fontSize:"1.2rem"}} onClick={()=> setCalc(result)}> = </button>
