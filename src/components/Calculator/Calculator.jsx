@@ -25,15 +25,15 @@ const Calculator = () => {
         if(!operators.includes(value)){
           // setResult(eval(calc + value).toString())
                // eslint-disable-next-line
-          setResult(Function(`return ${calc.concat(value)}`)().toFixed(2).toString())
-          // setResult(()=>{
-          //   try{
-          //     // eslint-disable-next-line
-          //     return  Function(`return ${calc.concat(value)}`)()
-          //   }catch(err){
-          //     return err
-          // }  
-          // })
+          // setResult(Function(`return ${calc.concat(value)}`)().toFixed(2).toString())
+          setResult(()=>{
+            try{
+              // eslint-disable-next-line
+              return  Function(`return ${calc.concat(value)}`)()
+            }catch(err){
+              return err
+          }  
+          })
         }
     };
 
@@ -41,7 +41,7 @@ const Calculator = () => {
     const BtnDigits = () =>{
       for(let i=0 ; i < 10; i++){
        digits.push( 
-       <button 
+       <button style={{fontSize:"1.2rem"}} 
         onClick={()=> upDateCalc(i.toString())} key={i}>
         {i}
         </button> 
@@ -75,10 +75,10 @@ const handleClear = () =>{
       </div>
 
       <div className="operators">
-        <button style={{fontSize:"1rem"}} onClick={()=> upDateCalc("+")}> + </button>
-        <button style={{fontSize:"1rem"}}  onClick={()=> upDateCalc("-")}> - </button>
-        <button style={{textAlign:"center", paddingTop:"1rem", fontSize:"1rem"}} onClick={()=> upDateCalc("*")}> * </button>
-        <button onClick={()=> upDateCalc("/")}> / </button>
+        <button style={{fontSize:"1.2rem"}} onClick={()=> upDateCalc("+")}> + </button>
+        <button style={{fontSize:"1.7rem"}}  onClick={()=> upDateCalc("-")}> - </button>
+        <button style={{textAlign:"center", paddingTop:"0.5rem", fontSize:"1.2rem"}} onClick={()=> upDateCalc("")}> x </button>
+        <button style={{fontSize:"1.2rem"}} onClick={()=> upDateCalc("/")}> / </button>
         <button onClick={handleDelete}> DEL </button>
         <button onClick={handleClear}> CLEAR </button>
       </div>
@@ -86,8 +86,8 @@ const handleClear = () =>{
       <div className="digits">
         {/* <button onClick={()=> upDateCalc("00")}>00</button> */}
         {BtnDigits()}
-        <button style={{fontSize:"1.5rem"}} onClick={()=> upDateCalc(".")}> . </button>
-        <button onClick={()=> setCalc(result)}> = </button>
+        <button style={{fontSize:"1.9rem"}} onClick={()=> upDateCalc(".")}> . </button>
+        <button style={{fontSize:"1.2rem"}} onClick={()=> setCalc(result)}> = </button>
       </div>
 
       <div className="calc-bracket">
