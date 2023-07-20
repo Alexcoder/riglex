@@ -29,7 +29,8 @@ const Calculator = () => {
           setResult(()=>{
             try{
               // eslint-disable-next-line
-              return  Function(`return ${calc.concat(value)}`)()
+              let res = Function(`return ${calc.concat(value)}`)()
+              return  Intl.NumberFormat().format(res)
             }catch(err){
               return err
           }  
