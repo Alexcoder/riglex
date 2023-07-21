@@ -14,7 +14,7 @@ const LandingPage = () => {
     },[navigate]);
 
     useEffect(()=>{
-       const timeout = setInterval(()=>{
+       const timeout = setTimeout(()=>{
          setFont("31px")
        },100)
        return ()=> clearInterval(timeout)

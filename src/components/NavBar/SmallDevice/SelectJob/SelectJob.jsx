@@ -17,10 +17,28 @@ const SelectJob = () => {
      function handleClick(page) {
         navigate(page);
         setNavSmallJobSelect(false)
-     } 
+     } ;
+    const myRoute = ["/", "/job", "/plug", "/liner", "/unit-converter","/additive"]
+
+    function browse(arr, i){
+      if(i > arr.length){
+         return ""
+      }
+      navigate(arr[i])
+        setTimeout(()=>{
+            browse(arr, i+1)
+          },[3000]) 
+    }
+  
+    function handlePreview(){//a button is assigned this click function
+      browse(myRoute, 0);
+      setNavSmallJobSelect(false)
+    }
+  
+
     
   return (
-    <div className="select-job">
+    <div className="select-job" onClick={()=> setNavSmallJobSelect(false)}>
         <div>
         { 
          nav.map((item,i)=>
@@ -31,6 +49,8 @@ const SelectJob = () => {
          </button>
          )
         }
+        <button onClick={handlePreview} style={{marginBottom:""}}>Preview</button>
+        <button>About</button>
         </div>
     </div>
   )
