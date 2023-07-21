@@ -85,7 +85,7 @@ export const inputDataPrimary = {
        return res
       },
       annCap(){
-       const res = (Math.pow((this.zoneId), 2) - Math.pow((this.stingerOD),2) )/ this.unitSwitch()
+       const res = (Math.pow(this.zoneId, 2) - Math.pow(this.stingerOD,2) )/ this.unitSwitch()
        return res
       },
       zoneIdCap(){
@@ -105,7 +105,7 @@ export const inputDataPrimary = {
        return res
       },
       lengthOfCementWithPipeInside(){
-       const sum = (this.annCap() + this.zoneIdCap());
+       const sum = (Number(this.annCap()) + Number(this.stingerCap()));
        const res = this.volume() /  sum ;
        return res
       },
