@@ -7,7 +7,7 @@ import './HeaderNav.css';
 
 const HeaderNav = () => {
     const navigate = useNavigate();
-    const {setSidebar, setWidth} = useGlobalState();
+    const { setWidth, setNavSmallJobSelect} = useGlobalState();
 
 
   return (
@@ -16,7 +16,7 @@ const HeaderNav = () => {
         <HomeIcon onClick={()=> navigate("/")} sx={{fontSize:"2.5rem"}}/>
     </span>
     <span className='title'> FIELD APP </span>
-   <span style={{float:"right"}}><MenuIcon onClick={()=>{setWidth((prev)=> !prev) ; setSidebar((prev)=> !prev)}}/></span>
+   <span style={{float:"right"}}><MenuIcon onClick={()=>{setWidth((prev)=> !prev) ; setNavSmallJobSelect((prev)=> !prev)}}/></span>
 
   </div>
   )
